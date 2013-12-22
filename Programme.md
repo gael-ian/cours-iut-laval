@@ -9,15 +9,15 @@
 * position
 * float & clear
 * display block|inline|inline-block
-* Table display
-* Box-sizing
-* Flexbox
 
 
 ## Séance 2 - Nouveautés CSS3
 
 **Date :** 08/01/2014 - 13h30 / 16h30
 
+* Media queries
+* Table display
+* Box-sizing
 * Transitions
 * Ombrage
 * Dégradés
@@ -32,14 +32,15 @@
 
 * reset/normalize
 * Frameworks CSS : Blueprint, Bootstrap, Foundation
-* Préprocesseur : Less, Sass
+* Pré-processeurs : Less, Sass
+* Post-processeurs
 
 
 ## Séance 7 - Tour d'horizon des CMS / Framework
 
 **Date :** 16/01/2014 - 13h30 / 16h30
 
-* CMS : Wordpress (PHP), Drupal (PHP), Joomla (PHP), …
+* CMS : Wordpress (PHP), Drupal (PHP), Joomla (PHP), CMS made simple (PHP), ezPublish (PHP), Spip (PHP), Plone (Python), Django CMS (Python), Radiant CMS (Ruby), …
 * Framework web : Symphony (PHP), Zend Framework (PHP), Rails (Ruby), Django (Python)
 * Micro-framework : Silex (PHP), Limonade (PHP), Sinatra (Ruby)
 
