@@ -1,6 +1,9 @@
 # Programme
 
+
 ## Séance 1 - Positionnement CSS
+
+**Date :** 08/01/2014 - 9h30 / 12h30
 
 * Positionnement dans le flux
 * position
@@ -10,7 +13,10 @@
 * Box-sizing
 * Flexbox
 
+
 ## Séance 2 - Nouveautés CSS3
+
+**Date :** 08/01/2014 - 13h30 / 16h30
 
 * Transitions
 * Ombrage
@@ -19,28 +25,43 @@
 * Animations
 * Transformations
 
+
 ## Séance 3 - Tour d'horizon des outils CSS
+
+**Date :** 16/01/2014 - 9h30 / 12h30
 
 * reset/normalize
 * Frameworks CSS : Blueprint, Bootstrap, Foundation
 * Préprocesseur : Less, Sass
 
+
+## Séance 7 - Tour d'horizon des CMS / Framework
+
+**Date :** 16/01/2014 - 13h30 / 16h30
+
+* CMS : Wordpress (PHP), Drupal (PHP), Joomla (PHP), …
+* Framework web : Symphony (PHP), Zend Framework (PHP), Rails (Ruby), Django (Python)
+* Micro-framework : Silex (PHP), Limonade (PHP), Sinatra (Ruby)
+
+
 ## Séance 4 - Programmation objet en JavaScript
+
+**Date :** 22/01/2014 - 13h30 / 16h30
 
 * Portée des variables
 * Fonctions anonymes
 * Prototype & Héritage
 
+
 ## Séance 5 - <canvas> 2D
+
+**Date :** 12/02/2014 - 9h30 / 12h30
 
 * Bases en natif (ex horloge)
 
+
 ## Séance 6 - <canvas> 3D
 
+**Date :** 12/02/2014 - 13h30 / 16h30
+
 * Bibliothèques (processing.js / easel.js / à déterminer)
-
-## Séance 7 - Tour d'horizon des CMS / Framework
-
-* CMS : Wordpress (PHP), Drupal (PHP), Joomla (PHP), …
-* Framework web : Symphony (PHP), Zend Framework (PHP), Rails (Ruby), Django (Python)
-* Micro-framework : Silex (PHP), Limonade (PHP), Sinatra (Ruby)
