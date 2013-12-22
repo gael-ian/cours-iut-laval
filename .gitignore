@@ -1,0 +1,51 @@
+
+### Mess files
+
+.~lock.*
+.tmp*
+**.orig
+
+
+### Editors meta-data
+
+# Kate
+# Swap Files #
+.*.kate-swp
+.swp.*
+
+
+# vim swap files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+
+
+### OS temporary files
+
+## Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+
+## Linux
+*~
+
