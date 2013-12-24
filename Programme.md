@@ -36,7 +36,7 @@
 * Post-processeurs
 
 
-## Séance 7 - Tour d'horizon des CMS / Framework
+## Séance 4 - Tour d'horizon des CMS / Framework
 
 **Date :** 16/01/2014 - 13h30 / 16h30
 
@@ -45,7 +45,7 @@
 * Micro-framework : Silex (PHP), Limonade (PHP), Sinatra (Ruby)
 
 
-## Séance 4 - Programmation objet en JavaScript
+## Séance 5 - Programmation objet en JavaScript
 
 **Date :** 22/01/2014 - 13h30 / 16h30
 
@@ -54,14 +54,14 @@
 * Prototype & Héritage
 
 
-## Séance 5 - <canvas> 2D
+## Séance 6 - \<canvas\> 2D
 
 **Date :** 12/02/2014 - 9h30 / 12h30
 
 * Bases en natif (ex horloge)
 
 
-## Séance 6 - <canvas> 3D
+## Séance 7 - \<canvas\> 3D
 
 **Date :** 12/02/2014 - 13h30 / 16h30
 
