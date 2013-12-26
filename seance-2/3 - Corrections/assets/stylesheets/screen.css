@@ -1,0 +1,179 @@
+html {
+	background: #ccc;
+  color: #222;
+}
+
+body {
+  font-family: “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Main content */
+.main {
+  padding: 10px;
+	background: transparent url(../images/dummy.png) 700px center no-repeat;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 53px;
+  margin: 2em 0;
+}
+
+h1 small {
+  color: #000000;
+  font-size: 0.6em;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.column {
+  display: block;
+  float: left;
+
+  padding: 15px;
+  margin: 0 10px;
+
+  width: 268px; /* Why ? */
+
+  border: 1px solid #BBB;
+  border-radius: 15px;
+
+  background: #f6dd00;
+}
+
+.clear {
+	clear: both;
+}
+
+.social {
+  min-height: 300px;
+}
+
+.social a,
+.social a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.social a:hover {
+  min-height: 250px;
+  background-position: center 120px;
+  background-repeat: no-repeat;
+}
+
+.twitter:hover {
+	background-color: #55ACEE;
+	background-image: url(../images/twitter.png);
+}
+
+.github:hover {
+	background-color: #FFFFFF;
+	background-image: url(../images/github.png);
+}
+
+.deviantart:hover {
+	background-color: #d4dfd0;
+	background-image: url(../images/deviantart.png);
+}
+
+/* Footer */
+footer {
+	color: #EEEEEE;
+	font-size: 0.7em;
+
+	padding: 0 10px;
+}
+
+footer a {
+	color: #eeeeee;
+	text-decoration: underline;
+}
+
+/**
+ * Exercice 1 - Modèles de boite
+ */
+.column {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+  width: 300px;
+}
+
+
+/**
+ * Exercice 2 - Webfonts
+ */
+@font-face {
+	font-family: "Sanidana";
+	src: url("../fonts/sanidana.eot");
+	src: url("../fonts/sanidana.eot?") format("eot"),
+	     url("../fonts/sanidana.woff") format("woff"),
+	     url("../fonts/sanidana.ttf") format("truetype"),
+	     url("../fonts/sanidana.svg#sinadana") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+}
+
+h1, h2 {
+  font-family: "Sanidana", “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+}
+
+
+/**
+ * Exercice 3 - Ombrages
+ */
+h1 {
+	text-shadow:  0px  2px #000000,
+								2px  0px #000000,
+								0px -2px #000000,
+								-2px 0px #000000,
+							  0px  4px #f6dd00,
+							  4px  0px #f6dd00,
+							  0px -4px #f6dd00,
+							  -4px 0px #f6dd00;
+}
+
+h1 small {
+	text-shadow: 0px  2px #ffffff,
+							 2px  0px #ffffff,
+							 0px -2px #ffffff,
+							 -2px 0px #ffffff;
+}
+
+.social a:hover {
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+}
+
+
+/**
+ * Exercice 4 - Transitions
+ */
+
+/* Les images de fond doivent être présentes hors champ au début de l'animation. */
+.social a {
+	background-position: center 300px;
+	background-repeat: no-repeat;
+}
+.twitter 		{ background-image: url(../images/twitter.png); 		}
+.github  		{ background-image: url(../images/github.png);  		}
+.deviantart {	background-image: url(../images/deviantart.png); 	}
+
+/* Transition de l'état normal à l'état hover */
+.social a {
+	transition: box-shadow 0.5s linear 0s,
+							min-height 1s ease-in-out 0.5s,
+							background-color 1s ease-in-out 0.5s,
+							background-position 0.5s ease-in-out 1s;
+}

@@ -21,12 +21,13 @@ body {
 }
 
 h1 {
-  font-size: 58px;
+  color: #FFFFFF;
+  font-size: 53px;
   margin: 2em 0;
 }
 
 h1 small {
-  color: #f6dd00;
+  color: #000000;
   font-size: 0.6em;
 }
 
@@ -65,20 +66,24 @@ h2 {
 }
 
 .social a:hover {
-  min-width: 250px;
   min-height: 250px;
+  background-position: center 120px;
+  background-repeat: no-repeat;
 }
 
 .twitter:hover {
-	background: #55ACEE url(../images/twitter.png) center 120px no-repeat;
+	background-color: #55ACEE;
+	background-image: url(../images/twitter.png);
 }
 
 .github:hover {
-	background: #FFFFFF url(../images/github.png) center 120px no-repeat;
+	background-color: #FFFFFF;
+	background-image: url(../images/github.png);
 }
 
 .deviantart:hover {
-	background: #d4dfd0 url(../images/deviantart.png) center 120px no-repeat;
+	background-color: #d4dfd0;
+	background-image: url(../images/deviantart.png);
 }
 
 /* Footer */
