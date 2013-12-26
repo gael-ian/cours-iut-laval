@@ -5,7 +5,7 @@
 ## Sommaire
 
 * Webfonts
-* Box-sizing
+* Modèles de boite
 * Ombrage
 * Dégradés
 * Transitions
@@ -100,6 +100,44 @@ Exemples :
 
 * [CSS Font stacks](http://cssfontstack.com/) pour un certain nombre de polices couramment utilisées
 * [Font stack builder](http://www.erin-lawrence.com/webfonts/) intègre des statistiques sur la disponibilité des polices
+
+
+## Modèles de boite
+
+<figure style="float: right">
+  <figcaption>content-box vs border-box</figcaption>
+  <img src="assets/box-sizing.png" alt="content-box vs border-box" />
+</figure>
+
+Le modèle de boites utilisé pour calculer les dimensions d'un bloc peut désormais être sélectionné parmi plusieurs alternatives grâce à la propriété `box-sizing`.
+
+### content-box
+
+Il s'agit de la valeur par défaut et historiquement la seule valeur supportée par les navigateurs. Les dimensions d'une boite sont calculées sans tenir compte de son espacement intérieur (`padding`) et de ses bordures.
+
+### padding-box
+
+Les dimensions d'une boite sont calculées en tenant compte de son espacement intérieur (`padding`) mais pas de ses bordures. Cette valeur a été ajouté récemment à la spécification et n'est pas encore convenablement supportée par tous les navigateurs.
+
+### border-box
+
+Les dimensions d'une boite sont calculées en tenant compte de son espacement intérieur (`padding`) et de ses bordures.
+
+*Note : Cette propriété doit pour le moment être préfixée pour être utilisée sous Firefox et sous Webkit.*
+
+
+## Ombrage
+
+La spécification CSS 3 prévoit d'appliquer des ombres aux blocs et aux textes d'un document HTML. Si le support est parfois encore récent, les propriétés `box-shadow` et `text-shadow` se dégradent gracieusement sans effort.
+
+### box-shadow
+
+	box-shadow: (inset? horizontal-offset vertical-offset (blur radius (spread distance))? color)*;
+
+### text-shadow
+
+	text-shadow: (inset? horizontal-offset vertical-offset (blur radius)? color)*;
+
 
 
 [^web-safe-fonts]: [Safe web fonts](http://web.mit.edu/jmorzins/www/fonts.html)

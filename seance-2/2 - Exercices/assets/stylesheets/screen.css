@@ -1,0 +1,95 @@
+html {
+	background: #ccc;
+  color: #222;
+}
+
+body {
+  font-family: “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Main content */
+.main {
+  padding: 10px;
+	background: transparent url(../images/dummy.png) 700px center no-repeat;
+}
+
+h1 {
+  font-size: 58px;
+  margin: 2em 0;
+}
+
+h1 small {
+  color: #f6dd00;
+  font-size: 0.6em;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.column {
+  display: block;
+  float: left;
+
+  padding: 15px;
+  margin: 0 10px;
+
+  width: 268px; /* Why ? */
+
+  border: 1px solid #BBB;
+  border-radius: 15px;
+
+  background: #f6dd00;
+}
+
+.clear {
+	clear: both;
+}
+
+.social {
+  min-height: 300px;
+}
+
+.social a,
+.social a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.social a:hover {
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.twitter:hover {
+	background: #55ACEE url(../images/twitter.png) center 120px no-repeat;
+}
+
+.github:hover {
+	background: #FFFFFF url(../images/github.png) center 120px no-repeat;
+}
+
+.deviantart:hover {
+	background: #d4dfd0 url(../images/deviantart.png) center 120px no-repeat;
+}
+
+/* Footer */
+footer {
+	color: #EEEEEE;
+	font-size: 0.7em;
+
+	padding: 0 10px;
+}
+
+footer a {
+	color: #eeeeee;
+	text-decoration: underline;
+}
