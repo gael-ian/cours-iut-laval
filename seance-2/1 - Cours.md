@@ -8,9 +8,8 @@
 * Webfonts
 * Ombrages
 * Transitions
-* Dégradés
-* Media queries
 * Animations
+* Media queries
 * Transformations
 
 
@@ -57,7 +56,6 @@ Une police étant rarement fournie dans chacun de ces formats, elle devra être 
 
 Actuellement, la méthode recommandée pour déclarer une police web [^bulletproof-webfont] est la suivante :
 
-	```
 	/*
 	  Version commentée
 	*/
@@ -110,8 +108,6 @@ Actuellement, la méthode recommandée pour déclarer une police web [^bulletpro
 	  font-style: normal;
 	  font-variant: normal;
 	}
-	
-	```
 
 ### Licences
 
@@ -177,7 +173,6 @@ Une transition se défini à travers plusieurs propriétés :
 
 Ces quatres propriétés peuvent également être utilisées avec des valeurs multiples, séparées par des virgules. L'animation se fera dans ce cas en appliquant à chaque propriété listée pour `transition-property` la durée, le delai et la fonction d'animation présente au même indice dans les listes passées à `transition-duration`, `transition-delay` et `transition-timing-function`.
 
-	```
 	h1 {
 	  font-size: 16px;
 	  line-height: 1.5;
@@ -202,11 +197,9 @@ Ces quatres propriétés peuvent également être utilisées avec des valeurs mu
 	  transition-duration: 1s, 0.5s, 2s;
 	  transition-delay: 0s, 0.5s, 1.5s;
 	}
-	```
 
 Un raccourci `transition` est disponible pour définir une animation en une fois. Comme les autres, cette propriété accepte les valeurs multiples.
 
-	```
 	h1.heavy {
 	  […]
 	  /* Équivalent utilisant la notation raccourcie */
@@ -214,12 +207,103 @@ Un raccourci `transition` est disponible pour définir une animation en une fois
 	  			  line-height 0.5s 0.5s,
 	  			  text-indent 2s 1.5s;
 	}
-	```
+
+Pour chaque transition définie de cette façon, les paramètres autres que le nom de la propriété animée sont tous facultatifs. Leur ordre importe peu mais la première durée rencontrée sera toujours considérée comme correspondant à `transition-duration`.
 
 ### Fonctions d'interpolation
 
-<http://easings.net/fr>
+L'évolution de la valeur d'une propriété au cours d'une transition n'est pas obligatoirement linéaire. Dans la plupart des cas, l'effet produit ne serait d'ailleurs pas naturel ou approprié. Pour répondre à ce problème, les outils d'animation empruntent aux mathématiques des fonctions d'interpolations [^easing-functions]
+
+La spécification CSS prévoit 2 fonctions d'interpolation paramétrables :
+
+* `steps(<n>, <(start|end)>)` pour des progressions par palier
+* `cubic-bezier(<f>, <f>, <f>, <f>)` pour des progressions continue suivant une courbe de Bézier
+
+Ces deux fonctions sont détaillées et illustrées dans [la spécification de la propriété `transition-timing-function`](http://www.w3.org/TR/css3-transitions/#transition-timing-function-property), qui supporte également 7 raccourcis pour les usages les plus fréquents :
+
+* `ease`, équivalente à `cubic-bezier(0.25, 0.1, 0.25, 1)`
+* `linear`, équivalente à `cubic-bezier(0, 0, 1, 1)`
+* `ease-in`, équivalente à `cubic-bezier(0.42, 0, 1, 1)`
+* `ease-out`, équivalente à `cubic-bezier(0, 0, 0.58, 1)`
+* `ease-in-out`, équivalente à `cubic-bezier(0.42, 0, 0.58, 1)`
+* `step-start`, équivalent à `steps(1, start)`
+* `step-end`, équivalent à `steps(1, end)`
+
+<figure>
+  <img src="assets/timing-functions.png" alt="Schéma des courbes de Bézier par défaut disponibles en CSS" />
+  <figcaption>
+    Courbes de Bézier par défaut disponibles en CSS<br />
+    Source : <http://letrainde13h37.fr/17/transitions-et-animations-css/>
+  </figcaption>
+</figure>
+
+**Exercice 4 :** Transitions
+
+
+## Animations
+
+Une animation CSS se défini comme une succession de transitions *via* la propriété `@keyframes`.
+
+	@keyframes zorro {
+	  from {
+	    top: 0;
+	    left: 0;
+	  }
+
+	  33% {
+	    top: 0;
+	    left: 100%;
+	  }
+
+	  66% {
+	    top: 100%;
+	    left: 0;
+	  }
+
+	  to {
+	    top: 100%;
+	    left: 100%;
+	  }
+	}
+
+L'animation peut ensuite être appliquée à un élément *via* la propriété `animation-name` :
+
+	h1 {
+	  animation-name: zorro;
+	}
+
+Il est également possible de contrôler le comportement de l'animation pour chaque élément sur laquelle elle est appliquée *via* les propriétés :
+
+* `animation-duration`, qui attend comme valeur une durée correspondant au temps nécessaire à la réalisation de l'animation.
+* `animation-delay`, qui attend comme valeur une durée correspondant au temps d'attente avant le début de l'animation.
+* `animation-timing-function`, qui attend comme valeur le nom de la fonction qui devra être utilisée pour calculer l'évolution des valeurs animées entre deux étapes. Les fonctions supportées sont les mêmes que pour les transitions.
+* `animation-iteration-count`, qui attend comme valeur un entier correspondant au nombre de fois où l'animation devra être répétée. Le mot-clé `infinite` est supporté pour les animations qui doivent être répétées indéfiniment.
+* `animation-play-state`, qui accepte deux valeurs, `running` ou `paused` 
+* `animation-direction`, qui contrôle la façon dont sera jouée l'animation pour un élément et accepte les valeurs :
+  - `normal`, pour jouer l'animation de la première à la dernière étape
+  - `reverse`, pour jouer l'animation de la dernière à la première étape
+  - `alternate`, pour inverser le sens de l'animation à chaque itération
+  - `alternate-reverse`, pour inverser le sens de l'animation à chaque itération, en démarrant par la dernière étape
+* `animation-fill-mode`, qui contrôle les propriétés appliquées à l'élément animé en dehors de l'animation et accepte les valeurs :
+  - `none`, pour ne pas altérer les règles appliquées en dehors de l'animation
+  - `backwards`, pour appliquer les règles de départ de la première étape jouée durant le `animation-delay`
+  - `forwards`, pour que les règles de la dernière étape jouée restent appliquées après la fin de l'animation
+  - `both`, qui combine `backwards` et `forwards`
+
+Comme pour les transitions, ces 7 propriétés peuvent également être utilisées avec des listes de valeurs, pour appliquer plusieurs animations à un élément.
+
+Un raccourci `animation` est disponible pour définir une animation en une fois. Comme les autres, cette propriété accepte les valeurs multiples.
+
+	h1 {
+	  […]
+	  animation: zorro 3s ease 2s infinite alternate both running;
+	}
+
+Pour chaque animation définie de cette façon, les paramètres autres que le nom de l'animation appliquée sont tous facultatifs. Leur ordre importe peu mais la première durée rencontrée sera toujours considérée comme correspondant à `animation-duration`.
+
+**Exercice 5 :** Animations
 
 [^web-safe-fonts]: [Safe web fonts](http://web.mit.edu/jmorzins/www/fonts.html)
 [^webfont-converter]: [Webfont generator by FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
 [^bulletproof-webfont]: [Further Hardening of the Bulletproof Syntax](http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax)
+[^easing-functions]: [Fonctions d'interpolation fréquentes](http://easings.net/fr)

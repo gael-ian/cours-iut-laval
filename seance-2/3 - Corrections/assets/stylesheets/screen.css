@@ -177,3 +177,34 @@ h1 small {
 							background-color 1s ease-in-out 0.5s,
 							background-position 0.5s ease-in-out 1s;
 }
+
+
+/**
+ * Exercice 5 - Animations
+ */
+@keyframes glow {
+  from {
+		text-shadow: 0px 0px 0px #ccc,
+								 0px 0px 0px #ccc,
+								 0px 0px 0px #ccc,
+								 0px 0px 0px #ccc;
+  }
+
+  70% {
+		text-shadow: 0px  2px 0px #ddd,
+								 2px  0px 0px #ddd,
+								 0px -2px 0px #ddd,
+								 -2px 0px 0px #ddd;
+  }
+
+  to {
+		text-shadow: 0px  4px 1px #fff,
+								 4px  0px 1px #fff,
+								 0px -4px 1px #fff,
+								 -4px 0px 1px #fff;
+  }
+}
+
+h1 small {
+	animation: glow linear 3s infinite alternate-reverse;
+}
