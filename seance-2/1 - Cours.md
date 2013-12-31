@@ -303,6 +303,20 @@ Pour chaque animation définie de cette façon, les paramètres autres que le no
 
 **Exercice 5 :** Animations
 
+## Transformations
+
+// TODO
+
+## Media queries
+
+Les media queries introduite en CSS 3 sont sans doute, avec les webfonts, la nouveauté qui a le plus impacté l'intégration web au cours des dernières années. Elles fournissent les mécanismes nécessaires pour appliquer des règles différentes selon la taille et la résolution de l'écran utilisé.
+
+
+
+## Ressources
+
+* <http://letrainde13h37.fr/17/transitions-et-animations-css/>
+
 [^web-safe-fonts]: [Safe web fonts](http://web.mit.edu/jmorzins/www/fonts.html)
 [^webfont-converter]: [Webfont generator by FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
 [^bulletproof-webfont]: [Further Hardening of the Bulletproof Syntax](http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax)
