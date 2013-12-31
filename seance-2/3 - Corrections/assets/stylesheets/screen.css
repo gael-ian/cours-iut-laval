@@ -1,5 +1,5 @@
 html {
-	background: #ccc;
+  background: #ccc;
   color: #222;
 }
 
@@ -207,4 +207,31 @@ h1 small {
 
 h1 small {
   animation: glow linear 3s infinite alternate-reverse;
+}
+
+
+
+/**
+ * Exercice 6 - Design adaptatif
+ */
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+     width: 100%;
+  }
+  
+  .main {
+    padding-bottom: 200px;
+    background: transparent url(../images/dummy.png) bottom center no-repeat;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 1em auto;
+  }
+  
+  .column {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
