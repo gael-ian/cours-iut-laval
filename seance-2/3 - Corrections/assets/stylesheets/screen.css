@@ -17,7 +17,7 @@ body {
 /* Main content */
 .main {
   padding: 10px;
-	background: transparent url(../images/dummy.png) 700px center no-repeat;
+  background: transparent url(../images/dummy.png) 700px center no-repeat;
 }
 
 h1 {
@@ -72,41 +72,41 @@ h2 {
 }
 
 .twitter:hover {
-	background-color: #55ACEE;
-	background-image: url(../images/twitter.png);
+  background-color: #55ACEE;
+  background-image: url(../images/twitter.png);
 }
 
 .github:hover {
-	background-color: #FFFFFF;
-	background-image: url(../images/github.png);
+  background-color: #FFFFFF;
+  background-image: url(../images/github.png);
 }
 
 .deviantart:hover {
-	background-color: #d4dfd0;
-	background-image: url(../images/deviantart.png);
+  background-color: #d4dfd0;
+  background-image: url(../images/deviantart.png);
 }
 
 /* Footer */
 footer {
-	color: #EEEEEE;
-	font-size: 0.7em;
+  color: #EEEEEE;
+  font-size: 0.7em;
 
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 footer a {
-	color: #eeeeee;
-	text-decoration: underline;
+  color: #eeeeee;
+  text-decoration: underline;
 }
 
 /**
  * Exercice 1 - Modèles de boite
  */
 .column {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
   width: 300px;
 }
 
@@ -115,15 +115,15 @@ footer a {
  * Exercice 2 - Webfonts
  */
 @font-face {
-	font-family: "Sanidana";
-	src: url("../fonts/sanidana.eot");
-	src: url("../fonts/sanidana.eot?") format("eot"),
-	     url("../fonts/sanidana.woff") format("woff"),
-	     url("../fonts/sanidana.ttf") format("truetype"),
-	     url("../fonts/sanidana.svg#sinadana") format("svg");
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
+  font-family: "Sanidana";
+  src: url("../fonts/sanidana.eot");
+  src: url("../fonts/sanidana.eot?") format("eot"),
+       url("../fonts/sanidana.woff") format("woff"),
+       url("../fonts/sanidana.ttf") format("truetype"),
+       url("../fonts/sanidana.svg#sinadana") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
 }
 
 h1, h2 {
@@ -135,21 +135,21 @@ h1, h2 {
  * Exercice 3 - Ombrages
  */
 h1 {
-	text-shadow:  0px  2px #000000,
-								2px  0px #000000,
-								0px -2px #000000,
-								-2px 0px #000000,
-							  0px  4px #f6dd00,
-							  4px  0px #f6dd00,
-							  0px -4px #f6dd00,
-							  -4px 0px #f6dd00;
+  text-shadow:  0px  2px #000000,
+                2px  0px #000000,
+                0px -2px #000000,
+                -2px 0px #000000,
+                0px  4px #f6dd00,
+                4px  0px #f6dd00,
+                0px -4px #f6dd00,
+                -4px 0px #f6dd00;
 }
 
 h1 small {
-	text-shadow: 0px  2px #ffffff,
-							 2px  0px #ffffff,
-							 0px -2px #ffffff,
-							 -2px 0px #ffffff;
+  text-shadow: 0px  2px #ffffff,
+               2px  0px #ffffff,
+               0px -2px #ffffff,
+               -2px 0px #ffffff;
 }
 
 .social a:hover {
@@ -163,19 +163,19 @@ h1 small {
 
 /* Les images de fond doivent être présentes hors champ au début de l'animation. */
 .social a {
-	background-position: center 300px;
-	background-repeat: no-repeat;
+  background-position: center 300px;
+  background-repeat: no-repeat;
 }
-.twitter 		{ background-image: url(../images/twitter.png); 		}
-.github  		{ background-image: url(../images/github.png);  		}
-.deviantart {	background-image: url(../images/deviantart.png); 	}
+.twitter    { background-image: url(../images/twitter.png);     }
+.github     { background-image: url(../images/github.png);      }
+.deviantart { background-image: url(../images/deviantart.png);  }
 
 /* Transition de l'état normal à l'état hover */
 .social a {
-	transition: box-shadow 0.5s linear 0s,
-							min-height 1s ease-in-out 0.5s,
-							background-color 1s ease-in-out 0.5s,
-							background-position 0.5s ease-in-out 1s;
+  transition: box-shadow 0.5s linear 0s,
+              min-height 1s ease-in-out 0.5s,
+              background-color 1s ease-in-out 0.5s,
+              background-position 0.5s ease-in-out 1s;
 }
 
 
@@ -184,27 +184,27 @@ h1 small {
  */
 @keyframes glow {
   from {
-		text-shadow: 0px 0px 0px #ccc,
-								 0px 0px 0px #ccc,
-								 0px 0px 0px #ccc,
-								 0px 0px 0px #ccc;
+    text-shadow: 0px 0px 0px #ccc,
+                 0px 0px 0px #ccc,
+                 0px 0px 0px #ccc,
+                 0px 0px 0px #ccc;
   }
-
+  
   70% {
-		text-shadow: 0px  2px 0px #ddd,
-								 2px  0px 0px #ddd,
-								 0px -2px 0px #ddd,
-								 -2px 0px 0px #ddd;
+    text-shadow: 0px  2px 0px #ddd,
+                 2px  0px 0px #ddd,
+                 0px -2px 0px #ddd,
+                 -2px 0px 0px #ddd;
   }
-
+  
   to {
-		text-shadow: 0px  4px 1px #fff,
-								 4px  0px 1px #fff,
-								 0px -4px 1px #fff,
-								 -4px 0px 1px #fff;
+    text-shadow: 0px  4px 1px #fff,
+                 4px  0px 1px #fff,
+                 0px -4px 1px #fff,
+                 -4px 0px 1px #fff;
   }
 }
 
 h1 small {
-	animation: glow linear 3s infinite alternate-reverse;
+  animation: glow linear 3s infinite alternate-reverse;
 }

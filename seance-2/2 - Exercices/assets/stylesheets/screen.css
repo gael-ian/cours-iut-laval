@@ -1,5 +1,5 @@
 html {
-	background: #ccc;
+  background: #ccc;
   color: #222;
 }
 
@@ -17,7 +17,7 @@ body {
 /* Main content */
 .main {
   padding: 10px;
-	background: transparent url(../images/dummy.png) 700px center no-repeat;
+  background: transparent url(../images/dummy.png) 700px center no-repeat;
 }
 
 h1 {
@@ -72,29 +72,29 @@ h2 {
 }
 
 .twitter:hover {
-	background-color: #55ACEE;
-	background-image: url(../images/twitter.png);
+  background-color: #55ACEE;
+  background-image: url(../images/twitter.png);
 }
 
 .github:hover {
-	background-color: #FFFFFF;
-	background-image: url(../images/github.png);
+  background-color: #FFFFFF;
+  background-image: url(../images/github.png);
 }
 
 .deviantart:hover {
-	background-color: #d4dfd0;
-	background-image: url(../images/deviantart.png);
+  background-color: #d4dfd0;
+  background-image: url(../images/deviantart.png);
 }
 
 /* Footer */
 footer {
-	color: #EEEEEE;
-	font-size: 0.7em;
+  color: #EEEEEE;
+  font-size: 0.7em;
 
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 footer a {
-	color: #eeeeee;
-	text-decoration: underline;
+  color: #eeeeee;
+  text-decoration: underline;
 }
