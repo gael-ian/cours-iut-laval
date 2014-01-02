@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -136,7 +136,6 @@ nav i {
 
 .main aside {
   width: 300px;
-  background: #DDD;
 }
 
 .main figure {

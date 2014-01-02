@@ -50,9 +50,50 @@ La propriété `vertical-align` peut également lui être appliquée pour contr�
 
 ## Exercice 3<br />CSS table layout model
 
+	nav {
+	  /* `display: table` ne respecte pas la largeur spécifiée
+	   * et étire le menu si le contenu dépasse
+	   */
+	  display: inline-table;
+	  
+	  /* Recrée la marge de 5px entre chaque onglet */
+	  border-collapse: separate;
+	  border-spacing: 5px 0;
+	  
+	  /* Supprime visuellement cette marge pour le premier onglet */
+	  margin-left: -5px;
+	}
+	
+	nav a,
+	nav i {
+	  display: table-cell;
+	  min-width: 20%;
+	}
+
 Le modèle d'agencement en tableau CSS ne résoud pas le problème d'un menu devant s'adapter automatiquement en fonction du nombre d'éléments qu'il contient. Il propose seulement une méthode alternative.
 
 ## Exercice 4<br />float & clear
+
+	.main {
+	  display: inline-block;
+	}
+	
+	.main article,
+	.main aside {
+	  float: left;
+	}
+	
+	.main article {
+	  width: 620px;
+	}
+	
+	.main aside {
+	  width: 300px;
+	}
+	
+	.main figure {
+	  float: left;
+	}
 
 Les éléments positionnés grâce à la propriété `float` n'appartiennent plus au flux de la page et ne sont donc pas pris en compte pour l'aggrandissement de leur conteneur, `.main`.
 
@@ -68,7 +109,7 @@ Consiste à appliquer la règle `clear: both` sur un élément vide factice, con
 
 Le pseudo-élément ne doit pas être vide pour être généré et doit supporter la propriété CSS `clear`.
 
-	.clearfix:after {
+	.main:after {
 	  content: "";
 	  display: table;
 	  clear: both;
@@ -93,9 +134,56 @@ C'est cette dernière méthode qui est appliquée d'emblée dans le cas de la `f
 
 ## Exercice 5<br />CSS table layout model
 
+	/*
+	 * Facultatif : comme dans le cas d'un tableau HTML, la spécification CSS prévoit
+	 * que le navigateur se charge d'ajouter automatiquement un conteneur de type `table-row`
+	 * pour englober les cellules si aucun n'est déclaré (ou `table` pour englober les lignes, …)
+	 *
+	 * Il n'est bien sûr pas recommandé de se reposer sur ce comportement.
+	 */
+	.main {
+	  display: table-row;
+	}
+	
+	.main article,
+	.main aside {
+	  display: table-cell;
+	}
+
 Le modèle d'agencement en tableau CSS est justifié dans ce cas car il permet d'obtenir le résultat attendu en un nombre très réduit de lignes et sans devoir modifier le balisage HTML à seule fin de présentation.
 
 ## Exercice 6<br />position
+
+	.main figure {
+	  position: relative;
+	}
+	
+	.main figcaption {
+	  position: absolute;
+	  top: 0;
+	  left: 0;  /* Pour satisfaire ces deux déclarations, le navigateur ferra coïncider
+	  right: 0;  * les bords du bloc positionné avec ceux de son conteneur.
+	             */
+	}
+	
+	header {
+	  position: relative;
+	}
+	
+	.last-tweet {
+	  position: absolute;
+	  top: 10px;
+	  right: 140px;
+	  
+	  width: 400px;
+	  padding: 10px;
+	  margin: 0;
+	  
+	  background: #fff;
+	  border-radius: 5px;
+	  
+	  font-size: 0.7em;
+	}
 
 Si le positionnement absolu est indispensable dans certains cas, il est à utiliser avec précaution dés lors que la taille des éléments positionnés peut varier.
 
