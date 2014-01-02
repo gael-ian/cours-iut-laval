@@ -18,42 +18,31 @@ En dehors de quelques cas particuliers, on peut classer les balises du langage H
 
 ### Les balises de type bloc
 
-Ces balises peuvent contenir d'autres balises de type bloc ou des balises en ligne. Elles sont affichées avec un retour à la ligne avant leur ouverture et après leur fermeture.
+Ces balises peuvent contenir d'autres balises de type bloc, des balises en ligne ou du texte[^html-vs-css]. Elles sont affichées avec un retour à la ligne avant leur ouverture et après leur fermeture.
 
-Il s'agit généralement de balises structurantes et permettent d'organiser votre document en blocs.
+Il s'agit généralement de balises structurantes, permettant d'organiser votre document.
 
-Il est possible de définir les dimensions d'une balise de type bloc.
+Un élément de type bloc occupera par défaut toute la largeur disponible dans son conteneur.
 
 ### Les balises en ligne
 
 Ces balises ne peuvent être utilisées qu'à l'intérieur d'une balise de type bloc. Elles sont affichées directement à la suite du contenu, sans saut de ligne.
 
-Sur une balise en ligne, il est possible de contrôler via CSS l'alignement vertical de son contenu (`vertical-align`) mais pas ses dimensions ( *via* les propriétés `width`, `height` et leurs dérivés) ou son espacement vertical ( *via* les propriétés `margin-top`, `margin-bottom`, `padding-top`, `padding-bottom`). Un élément en ligne n'occupera que l'espace minimum nécessaire à son affichage.
+Un élément en ligne n'occupera que l'espace minimum nécessaire à son affichage.
 
 **Exercice 1 :** Types de balises
 
 
 ## La propriété `display`
 
-La propriété CSS `display` permet de contrôler le comportement d'un élément HTML dans le flux. Elle accepte plusieurs valeurs [^display] dont les plus intéressantes sont :
+La propriété CSS `display` permet de contrôler le comportement d'un élément HTML dans le flux. Elle accepte plusieurs valeurs[^display] dont les plus couramment utilisées sont :
 
-### none
+* `none` : Permet de masquer un élément et ses descendants.
+* `block` : Permet de forcer l'affichage d'un élément en tant que bloc.
+* `inline` : Permet de forcer l'affichage en ligne d'un élément.
+* `inline-block` : Permet de forcer l'affichage d'un élément comme un “bloc en ligne”.
 
-Permet de masquer un élément et ses descendants.
-
-### block
-
-Permet de forcer l'affichage d'un élément en tant que bloc.
-
-### inline
-
-Permet de forcer l'affichage en ligne d'un élément.
-
-### inline-block
-
-Permet de créer un élément qui s'affichera en ligne, mais dont il sera possible de contrôler les dimensions et l'espacement vertical.
-
-**Exercice 2 :** Display none/block/inline/inline-block
+**Exercice 2 :** Display
 
 ### table-*
 
@@ -85,6 +74,7 @@ La propriété CSS `float` permet de sortir un élément HTML du flux pour le po
 Elle est complétée par la propriété `clear`, qui permet de forcer un élément à venir se placer après un élément flottant.
 
 **Exercice 4 :** float & clear
+**Exercice 5 :** CSS table layout model
 
 
 ## La propriété `position`
@@ -115,5 +105,5 @@ Un élément positionné de façon fixe est retiré du flux et placé aux coordo
 
 
 
-
+[^html-vs-css]: Il s'agit d'une définition générale selon la norme CSS. Cela ne remet pas en cause les spécificités propres à chaque élément HTML. Par exemple, la balise `p` est un élément de type bloc mais ne peut pas contenir que des balises en ligne, tandis que `form` ne peut accueillir que des éléments de type bloc.<br />Consulter la norme HTML ou [cet article sur Alsacréations](http://www.alsacreations.com/astuce/lire/55-balises-bloc-et-en-line-les-exceptions.html) pour d'autres exemples.
 [^display]: [Display, vous connaissez ?](http://www.alsacreations.com/actu/lire/111-display-vous-connaissez.html), sur Alsacreation.

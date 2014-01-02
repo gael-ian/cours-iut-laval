@@ -1,0 +1,94 @@
+html {
+  background: #ccc;
+  color: #222;
+}
+
+body {
+  font-family: “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: transparent url('../images/dummy.png') right 2px no-repeat;
+  border-bottom: 2px solid #222;
+}
+
+header h1 {
+  color: #FFFFFF;
+  margin: 0.75em 0;
+}
+
+header h1 small {
+  color: #000000;
+  font-size: 0.6em;
+}
+
+nav {
+  color: #EEEEEE;
+  font-size: 0.8em;
+  
+  width: 640px;
+}
+
+nav a {
+  background: #222;
+  color: #fee822;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  
+  display: none;
+  
+  /* Try different values */
+  min-width: 140px;
+  padding: 10px;
+  margin: 5px 5px 0 0;
+  vertical-align: baseline;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Main content */
+.main {
+  background: #EEE;
+}
+
+.main figure {
+  margin: 0 1em 1em 0;
+}
+
+.main figure img {
+  display: block;
+}
+
+.main figcaption {
+  font-size: 0.9em;
+  background: #fee822;
+  padding: 5px;
+}
+
+.main article,
+.main aside {
+  padding: 10px;
+  border-bottom: 2px solid #222;
+}
+
+.main aside {
+  background: #DDD;
+}
+
+/* Footer */
+footer {
+  color: #EEEEEE;
+  font-size: 0.7em;
+  padding: 10px;
+}
