@@ -14,13 +14,12 @@
 
 
 ## Modèles de boite
+Le modèle de boites utilisé pour calculer les dimensions d'un bloc peut désormais être sélectionné parmi plusieurs alternatives grâce à la propriété `box-sizing`.
 
 <figure style="float: right">
   <figcaption>content-box vs border-box</figcaption>
   <img src="assets/box-sizing.png" alt="content-box vs border-box" />
 </figure>
-
-Le modèle de boites utilisé pour calculer les dimensions d'un bloc peut désormais être sélectionné parmi plusieurs alternatives grâce à la propriété `box-sizing`.
 
 ### content-box
 
@@ -34,7 +33,9 @@ Les dimensions d'une boite sont calculées en tenant compte de son espacement in
 
 Les dimensions d'une boite sont calculées en tenant compte de son espacement intérieur (`padding`) et de ses bordures.
 
-*Note : Cette propriété doit pour le moment être préfixée pour être utilisée sous Firefox et sous Webkit.*
+> **Note**
+>
+> Cette propriété doit pour le moment être préfixée pour être utilisée sous Firefox et sous Webkit.
 
 **Exercice 1 :** Modèles de boites
 
@@ -303,9 +304,6 @@ Pour chaque animation définie de cette façon, les paramètres autres que le no
 
 **Exercice 5 :** Animations
 
-## Transformations
-
-// TODO
 
 ## Design adaptatif
 
@@ -369,10 +367,6 @@ Là où CSS2 ne supporte que des conditions sur le type de media dans une règle
 La spécification définie également d'autres critères pour cibler les périphériques en fonction de leur capacité à rendre les couleurs (`color`, `color-index` et `monochrome`) ou de leur méthode d'affichage (`scan` pour les téléviseurs, `grid` pour les affichage à chasse fixe).
 
 **Exercice 6 :** Design adaptatif
-
-## Ressources
-
-* <http://letrainde13h37.fr/17/transitions-et-animations-css/>
 
 [^web-safe-fonts]: [Safe web fonts](http://web.mit.edu/jmorzins/www/fonts.html)
 [^webfont-converter]: [Webfont generator by FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)

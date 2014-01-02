@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -43,7 +43,7 @@ h2 {
   padding: 15px;
   margin: 0 10px;
 
-  width: 268px; /* Why ? */
+  width: 268px;
 
   border: 1px solid #BBB;
   border-radius: 15px;
@@ -103,9 +103,9 @@ footer a {
  * Exercice 1 - Modèles de boite
  */
 .column {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   
   width: 300px;
 }
@@ -127,7 +127,7 @@ footer a {
 }
 
 h1, h2 {
-  font-family: "Sanidana", “Trebuchet MS”, “Lucida Grande”, “Lucida Sans Unicode”, “Lucida Sans”, Tahoma, sans-serif;
+  font-family: "Sanidana", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
 
 
