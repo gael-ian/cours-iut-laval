@@ -56,7 +56,7 @@ Il ne s'agit pas d'une mais de plusieurs valeurs permettant de donner à des él
 * `table-footer-group` pour reproduire le comportement de la balise `<tfoot>`
 * `table-row-group` pour reproduire le comportement de la balise `<tbody>`
 * `table-row` pour reproduire le comportement de la balise `<tr>`
-* `table-cell` pour reproduire le comportement des balises `<td>` et `<tr>`
+* `table-cell` pour reproduire le comportement des balises `<td>` et `<th>`
 
 En terme de sémantique et d'accessibilité, il reste - et restera *a priori* - plus intéressant d'utiliser les balises HTML pour structurer des données tabulaires.
 
