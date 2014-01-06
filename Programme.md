@@ -26,7 +26,7 @@
 * Transformations
 
 
-## Séance 3 - Tour d'horizon des outils CSS
+## Séance 3 - Outils de développement front
 
 **Date :** 16/01/2014 - 9h30 / 12h30
 
@@ -34,6 +34,7 @@
 * Frameworks CSS : Blueprint, Bootstrap, Foundation
 * Pré-processeurs : Less, Sass
 * Post-processeurs
+* Outils d'automatisation : linter, Grunt / Gulp
 
 
 ## Séance 4 - Tour d'horizon des CMS / Framework
