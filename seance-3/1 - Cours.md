@@ -15,7 +15,7 @@
 
 Si la spécification HTML5 précise pour certaines balises les styles qui doivent leur être appliqués par défaut, ces indications n'existaient pas dans les versions précédentes. Pour afficher les documents HTML, chaque navigateur a dû faire le choix d'une mise en forme par défaut.
 
-Plusieurs techniques ont été développées au fil du temps pour harmoniser ces styles.
+Pour simplifier l'intégration d'un site internet, il est indispensable d'harmoniser ces styles.
 
 La technique du `reset` consiste à remettre à 0 un certains nombre de valeurs. Sous sa forme la plus simple, elle s'écrit en quelques lignes :
 
@@ -36,18 +36,45 @@ L'objectif est à chaque fois le même : fournir à l'intégrateur une ardoise v
 
 ## Frameworks CSS
 
-Allant plus loin que les resets CSS, les frameworks fournissent un ensemble de classes utilisables par les intégrateurs pour construire plus rapidement leurs pages.
+Les frameworks CSS vont plus loin que les resets, qu'ils utilisent quasi-systématiquement comme base. En s'appuyant sur un ensemble de bonnes pratiques, ils fournissent un ensemble de classes utilisables par les intégrateurs pour construire leurs pages plus rapidement.
+
+Avec plus ou moins de succès, ils fournissent à l'intégrateur les outils pour rythmer les pages[^rythm] :
+
+* Verticalement, en établissant une base typographique[^vertical-rythm]
+* Horizontalement, en construisant suivant une grille[^css-grid]
+
+Ils incluent généralement des styles de formulaires, éléments omniprésents sur le web et particulièrement difficile à intégrer de façon pertinente.
 
 Exemples "historiques" :
 
-* [Blueprint CSS](http://www.blueprintcss.org/)
-* [960gs](http://960.gs/)
+* [Blueprint CSS](http://www.blueprintcss.org/)  
+  L'un des premiers frameworks CSS à avoir été largement utilisé, il n'est aujourd'hui plus maintenu.
+* [960gs](http://960.gs/)  
+  A connu un fort succès grâce à la flexibilité de ses grilles
 
 Des frameworks plus modernes :
 
-* [KNACSS](http://www.knacss.com/)
 * [Bootstrap](http://getbootstrap.com/)
 * [Foundation](http://foundation.zurb.com/)
+* [KNACSS](http://www.knacss.com/)
+
+Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …
+ et s'accompagnent de librairies JavaScript.
+ 
+### Avantages
+
+* Une bonne base pour démarrer une intégration
+* Un ensemble de bonnes pratiques
+* La compatibilité entre les navigateurs
+* Un langage commun
+
+### Inconvénient
+
+* Des classes peu sémantiques
+* Une structure HTML imposée
+* Du code inutile
+* Des styles par défaut parfois difficiles à oublier / pénibles à surdéfinir
+ 
 
 ## Pré-processeurs CSS
 
@@ -81,3 +108,9 @@ Quelques cas d'utilisation :
 
 * Grunt
 * Gulp
+
+[^rythm]: [La macrotypographie de la page web](http://www.paris-web.fr/2010/programme/macrotypographie-page-web.php), présentation de Anne-Sophie Fradier lors de ParisWeb 2010.
+[^vertical-rythm]: [Compose a vertical rythm](http://24ways.org/2006/compose-to-a-vertical-rhythm/).
+[^css-grid]: [Grids are good](http://www.subtraction.com/pics/0703/grids_are_good.pdf), présentation de Mark Boulton sur l'utilisation d'une grille pour le redesign de Yahoo.
+[framework-css]: [Comparaison des frameworks CSS](http://usablica.github.io/front-end-frameworks/compare.html)
+[^grid-system]: <http://www.thegridsystem.org/>
