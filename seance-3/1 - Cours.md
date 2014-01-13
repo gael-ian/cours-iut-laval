@@ -36,7 +36,7 @@ L'objectif est à chaque fois le même : fournir à l'intégrateur une ardoise v
 
 ## Frameworks CSS
 
-Les frameworks CSS vont plus loin que les resets, qu'ils utilisent quasi-systématiquement comme base. En s'appuyant sur un ensemble de bonnes pratiques, ils fournissent un ensemble de classes utilisables par les intégrateurs pour construire leurs pages plus rapidement.
+Les frameworks CSS vont plus loin que les resets, qu'ils utilisent quasi-systématiquement comme base. En s'appuyant sur un ensemble de bonnes pratiques, ils fournissent des classes utilisables par les intégrateurs pour construire leurs pages plus rapidement.
 
 Avec plus ou moins de succès, ils fournissent à l'intégrateur les outils pour rythmer les pages[^rythm] :
 
@@ -44,6 +44,22 @@ Avec plus ou moins de succès, ils fournissent à l'intégrateur les outils pour
 * Horizontalement, en construisant suivant une grille[^css-grid]
 
 Ils incluent généralement des styles de formulaires, éléments omniprésents sur le web et particulièrement difficile à intégrer de façon pertinente.
+
+<figure>
+  <img src="assets/vertical-rythm.png" alt="Base typographique" />
+  <figcaption>
+    Ryhtme vertical<br />
+    Source: <a href="http://24ways.org/2006/compose-to-a-vertical-rhythm/">24ways.org</a>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/css-grid.png" alt="Grille sur 12 colonnes" />
+  <figcaption>
+    Exemple de grille sur 12 colonnes<br />
+    Source: <a href="http://960.gs/">960.gs</a>
+  </figcaption>
+</figure>
 
 Exemples "historiques" :
 
@@ -58,8 +74,7 @@ Des frameworks plus modernes :
 * [Foundation](http://foundation.zurb.com/)
 * [KNACSS](http://www.knacss.com/)
 
-Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …
- et s'accompagnent de librairies JavaScript.
+Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …) et s'accompagnent de librairies JavaScript.
  
 ### Avantages
 
@@ -68,31 +83,63 @@ Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant
 * La compatibilité entre les navigateurs
 * Un langage commun
 
-### Inconvénient
+### Inconvénients
 
 * Des classes peu sémantiques
 * Une structure HTML imposée
 * Du code inutile
 * Des styles par défaut parfois difficiles à oublier / pénibles à surdéfinir
- 
+
 
 ## Pré-processeurs CSS
 
-Les pré-processeurs CSS fournissent une couche d'abstraction au dessus du langage CSS pour lui ajouter des fonctionnalités qu'il n'intègre pas (encore) :
+Les pré-processeurs CSS sont apparus récemment et tentent de résoudre plusieurs problèmes :
 
-* Variables
-* Boucles
-* Fonctions
-* Héritage
-* …
+* Combler les "manques" du langage CSS  
+  En y ajoutant variables, boucles, fonctions, …
+* Simplifier la maintenance des projets  
+  En autorisant la séparation des styles en fichiers plus petits sans pénaliser les performances
 
-Un des premiers usages a été de gommer les différences d'implémentation entre les navigateurs (préfixes vendeurs, …) à travers des fonctions.
+Ils fournissent pour cela une couche d'abstraction au dessus du langage CSS, sous la forme d'un nouveau langage qui devra être compilé.
 
-Aujourd'hui, certains framework comme Foundation peuvent être utilisés tels quel ou exclusivement au travers de mixins, supprimant ainsi le défaut qui leur est le plus fréquemment reproché.
+* [Sass](http://sass-lang.com/)
+* [Less](http://lesscss.org/)
+
+Exemples d'utilisation :
+
+* Générateur de grilles
+* Réécrire automatiquement les propriétés nécessitant d'être préfixées
+* Réaliser des calculs et des conversions (dimensions, couleurs)
+* Simplifier l'écriture des règles spécifiques aux mobiles (assets @2x)
+
+Des outils supplémentaires, basés sur les pré-processeurs, sont venus s'ajouter à la palette d'outils des intégrateurs :
+
+* Compass fournit une large collection de mixins pour Sass et ajoute la gestion des sprites
+* Certains frameworks écrits intégralement pour un pré-processeur (ex: Foundation et Susy pour Sass, Bootstrap pour Less)
+
+
+### Avantages
+
+* Moins de répétitions dans le code
+* Uniformisation (*via* les variables)
+* Souplesse (variables, fonctions, boucles, …)
+* Maintenance
+
+### Inconvénients
+
+* Langage supplémentaire
+* Compilation nécessaire
+* Vigilance à apporter sur l'utilisaiton de certaines fonctionnalités (sélecteurs imbriqués, héritages non désirés, …)
+
+En résumé, il faut déjà bien connaitre CSS pour bien utiliser un pré-processeur.
+
 
 ## Post-processeurs CSS
 
 A force d'ajouter des fonctionnalités aux pré-processeurs CSS, il est venu à certains l'idée de distinguer ce qui tient lieu de l'abstraction au dessus de CSS des traitements qui doivent être appliqués à une feuille de styles avant sa mise en ligne. Ainsi sont nés les post-processeurs CSS.
+
+* [Rework](https://github.com/reworkcss/rework)
+* [PostCSS](https://github.com/ai/postcss)
 
 Quelques cas d'utilisation :
 
