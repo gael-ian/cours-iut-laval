@@ -12,7 +12,12 @@
 
 ### Principe
 
+Les systèmes de gestion de contenus sont des applications qui peuvent installées sur un serveur web pour servir de base à la construction d'un site web, idéalement sans connaissances préalables.
+
 ### Avantages
+
+* Fournissent d'emblée des solutions à un ensemble de problèmes commun
+* 
 
 ### Inconvénients
 
