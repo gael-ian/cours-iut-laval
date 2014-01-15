@@ -16,10 +16,21 @@ Les systèmes de gestion de contenus sont des applications qui peuvent installé
 
 ### Avantages
 
-* Fournissent d'emblée des solutions à un ensemble de problèmes commun
-* 
+* Fonctionnalités de base déjà en place (parfois avancées selon l'outil. ex: Prestashop)
+* Théoriquement pas nécessaire de savoir coder
+* Simple à l'installation
+* Possibilité de solutions hébergées
 
 ### Inconvénients
+
+* Maintenabilité
+* Trop rigide ou configurable à l'excès
+* Impose le modèle de données
+* Saisie des contenus parfois difficile
+* Rapidement complexe quand les plugins se multiplient
+* Développement des plugins parfois difficile
+* Difficilement déménageable du fait du stockage en base de données
+* Difficulté de mise à l'échelle
 
 ### Quelques exemples
 
@@ -33,11 +44,6 @@ Les systèmes de gestion de contenus sont des applications qui peuvent installé
 * [Radiant CMS](http://radiantcms.org/) (Ruby)
 
 #### WordPress
-
-<figure style="float: right">
-  <img src="assets/wordpress.png" alt="WordPress" />
-  <figcaption><a href="http://wordpress.org/">WordPress</a></figcaption>
-</figure>
 
 Wordpress était à l'origine un moteur de blog.
 Au fil des versions, il a été enrichi pour lui ajouter une gestion des pages et en faire un CMS plus complet.
@@ -60,11 +66,6 @@ Au fil des versions, il a été enrichi pour lui ajouter une gestion des pages e
 
 
 #### Drupal
-
-<figure style="float: right">
-  <img src="assets/drupal.png" alt="Drupal" />
-  <figcaption><a href="https://drupal.org/">Drupal</a></figcaption>
-</figure>
 
 Drupal est un CMS initialement à vocation communautaire.
 
@@ -90,9 +91,23 @@ Drupal est un CMS initialement à vocation communautaire.
 
 ### Principe
 
+Les frameworks sont des boites à outils complètes mises à disposition des développeurs. Plus ou moins évolués, ils fournissent un cadre générique pour le développement d'application.
+
 ### Avantages
 
+* Permettent un développement sur mesure
+* S'appuient sur un ensemble de design pattern et de bonnes pratiques
+* Possibilité de mise à l'échelle
+* Maintenabilité
+* Ecosystème
+
 ### Inconvénients
+
+* Tout est à refaire ou réinventer
+* Courbe d'apprentissage parfois longue
+* Choix des composants parfois imposés
+* Abstraction parfois trop haute (ex: moteurs de template en PHP)
+* Performances
 
 ### Quelques exemples
 
@@ -105,9 +120,19 @@ Drupal est un CMS initialement à vocation communautaire.
 
 ### Principe
 
+Plus petits que les frameworks, les micro-frameworks ne tentent pas de résoudre tous les problèmes rencontrés lors du développement d'une application mais se concentrent sur l'essentiel.
+
 ### Avantages
 
+* Tout les avantages d'un framework
+* Rapidité de prise en main et de développement
+* Légèreté
+* Fun (ex: Camping)
+
 ### Inconvénients
+
+* S'adaptent mal aux gros projets
+* Légèreté parfois seulement théorique
 
 ### Quelques exemples
 
