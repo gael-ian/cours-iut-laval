@@ -377,7 +377,7 @@ Plutôt que de réécrire le code du constructeur de l'objet parent dans le cons
 
 ### Mixins
 
-JavaScript ne supporte pas l'héritage multiple. Pour partager des fonctions entre objets qui n'appartiennent pas à la même chaine de prototypes, il est relativement simple d'écrire un système de mixins pour étendre horizonalement les objets.
+JavaScript ne supporte pas l'héritage multiple. Pour partager des fonctions entre objets qui n'appartiennent pas à la même chaine de prototypes, il est relativement simple d'écrire un système (naïf) de mixins pour étendre horizonalement les objets.
 
     function mixin(target, source) {
       for (var method in source) {
