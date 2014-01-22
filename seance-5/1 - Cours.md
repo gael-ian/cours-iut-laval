@@ -317,21 +317,11 @@ Ce dernier inconvénient peut être contourné simplement :
 
 En JavaScript, l'héritage n'existe pas plus que les classes. Il est cependant possible de reproduire un comportement identique en utilisant le chainage de prototype. C'est exactement ce que propose de faire `Object.create`.
 
-    var SuperHero = Object.create(Person);
+    var SuperHero = Object.create(Person.prototype);
     
     SuperHero.prototype.getSecretIdentity = function() {
       return this.getFullName();
     };
-    
-    var batman = new SuperHero('Bruce', 'Wayne');
-
-`Object.create` accepte un second paramètre optionnel pour étendre directement le prototype du nouvel objet.
-
-    var SuperHero = Object.create(Person, {
-      getSecretIdentity: function() {
-        return this.getFullName();
-      }
-    });
     
     var batman = new SuperHero('Bruce', 'Wayne');
 
@@ -344,15 +334,15 @@ La solution est de définir d'abord le constructeur du nouvel objet puis de red�
       this.lastName  = lastName;
     };
     
-    SuperHero.prototype = Object.create(Person.prototype, {
-      getFullName = function() {
-        return this.name;
-      },
+    SuperHero.prototype = Object.create(Person.prototype);
+    
+    SuperHero.prototype.getFullName = function() {
+      return this.name;
+    };
       
-      getSecretIdentity = function() {
-        return [this.firstName, this.lastName].join(' ');
-      }
-    });
+    SuperHero.prototype.getSecretIdentity = function() {
+      return [this.firstName, this.lastName].join(' ');
+    };
     
     var batman = new SuperHero('Batman', 'Bruce', 'Wayne');
 
@@ -363,15 +353,15 @@ Plutôt que de réécrire le code du constructeur de l'objet parent dans le cons
       this.name      = name;
     };
     
-    SuperHero.prototype = Object.create(Person.prototype, {
-      getFullName = function() {
-        return this.name;
-      },
+    SuperHero.prototype = Object.create(Person.prototype);
+    
+    SuperHero.prototype.getFullName = function() {
+      return this.name;
+    };
       
-      getSecretIdentity = function() {
-        return [this.firstName, this.lastName].join(' ');
-      }
-    });
+    SuperHero.prototype.getSecretIdentity = function() {
+      return [this.firstName, this.lastName].join(' ');
+    };
     
     var batman = new SuperHero('Batman', 'Bruce', 'Wayne');
 

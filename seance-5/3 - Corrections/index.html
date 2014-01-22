@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  
+  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen"  />
+</head>
+<body>
+  
+  <div class="wrapper">
+
+    <h1>Heroes' Race</h1>
+    
+    <form action="" method="post">
+      <p>
+        <label for="race-length">Race length: </label>
+        <input type="text" name="race_length" id="race-length" value="15000" size="5" />
+        <button type="submit">Go&nbsp;!</button>
+      </p>
+    </form>
+
+    <div class="tracks">
+      
+      <div class="track">
+        <h2>Batman</h2>
+        
+        <div class="pilote">
+          <img src="./assets/images/vehicles/batmobile.jpg" />
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="batman-progress"></div>
+        </div>
+      </div>
+      
+      <div class="track">
+        <h2>TMNT</h2>
+        
+        <div class="pilote">
+          <img src="./assets/images/vehicles/turtlevan.jpg" />
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="tmnt-progress"></div>
+        </div>
+      </div>
+      
+      <div class="track">
+        <h2>Fantomette</h2>
+        
+        <div class="pilote">
+          <img src="./assets/images/vehicles/fantomobile.jpg" />
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="fantomette-progress"></div>
+        </div>
+      </div>
+      
+    </div>
+
+    <footer>
+      <p></p>
+    </footer>
+  
+  </div>
+  
+  <script type="text/javascript" charset="utf-8" src="./assets/javascripts/base.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/javascripts/main.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var length_input        = document.getElementById('race-length')
+      , form                = length_input.form
+      , batman_progress      = document.getElementById('batman-progress')
+      , tmnt_progress        = document.getElementById('tmnt-progress')
+      , fantomette_progress  = document.getElementById('fantomette-progress')
+      ;
+    
+    form.addEventListener('submit', function(e) {
+      
+      e.preventDefault();
+      
+      var length      = parseInt(length_input.value, 10)
+        , batman      = new Car({ 'progress': batman_progress })
+        , tmnt        = new Van({ 'progress': tmnt_progress })
+        , fantomette  = new Scooter({ 'progress': fantomette_progress })
+        , race        = new Race(length, [batman, tmnt, fantomette])
+        , loop        = function() {
+            race.opponnents.forEach(function(o) {
+              o.run(race);
+              o.options['progress'].style = "width: " + ((o.getPosition() * 100) / length) + "%;";
+            });
+            
+            if (!race.ended()) {
+              setTimeout(loop, 100);
+            }
+          }
+        ;
+      
+      loop();
+      
+    }, false);
+  </script>
+</body>
+</html>
