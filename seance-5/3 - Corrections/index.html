@@ -85,7 +85,7 @@
         , loop        = function() {
             race.opponnents.forEach(function(o) {
               o.run(race);
-              o.options['progress'].style = "width: " + ((o.getPosition() * 100) / length) + "%;";
+              o.options['progress'].style.width = ((o.getPosition() * 100) / length) + "%";
             });
             
             if (!race.ended()) {
