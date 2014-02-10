@@ -1,0 +1,10 @@
+ html {
+  background: #ccc;
+  color: #222;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}

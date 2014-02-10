@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  
+  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen"  />
+</head>
+<body>
+  <div class="wrapper">
+  
+    <h1>Séance 6 - &lt;canvas&gt;</h1>
+    <h2>Exercice 3 - Polygones</h2>
+    <p><a href="index.html">« Retour à la liste des exercices</a></p>
+    
+    <canvas id="slate" width="960" height="650"></canvas>
+  </div>
+  
+  <script type="text/javascript" charset="utf8">
+  
+    function polarAngle(p, c) {
+      var dx = (p.x - c.x)
+        , dy = (p.y - c.y)
+        ;
+      return Math.atan2(dy, dx);
+    };
+  
+    // Basic setup
+    var slate         = document.getElementById('slate')
+      , context       = slate.getContext('2d')
+      , width         = slate.width
+      , height        = slate.height
+      ;
+    
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, width, height);
+    
+    
+    // Build random color string
+    var color         = {
+          r: Math.floor(Math.random() * 255)
+        , g: Math.floor(Math.random() * 255)
+        , b: Math.floor(Math.random() * 255)
+        }
+      , color_string  = "rgb(" + color.r + ", " + color.g + ", " + color.b + ")"
+      ;
+    
+    context.fillStyle = color_string;
+        
+    // Generate random points
+    var points        = []
+      , nb_points     = 3 + Math.floor(Math.random() * 22)
+      ;
+      
+    for (var i = 0; i < nb_points; i++) {
+      points.push({
+        x: Math.floor(Math.random() * width),
+        y: Math.floor(Math.random() * height),
+      });
+    }
+    
+    // Locate polygon center
+    var center = points.reduce(function(c, p) {
+      c.x += (p.x / nb_points);
+      c.y += (p.y / nb_points);
+      return c;
+    }, { x: 0, y: 0 });
+    
+    // Sort points clockwise around center
+    points.sort(function(a, b) {
+      return (polarAngle(a, center) - polarAngle(b, center));
+    });
+    
+    // Draw polygon
+    context.beginPath();
+    points.forEach(function(point, i) {
+      if (i == 0) {
+        this.moveTo(point.x, point.y);
+      } else {
+        this.lineTo(point.x, point.y);
+      }
+    }, context);
+    context.closePath();
+    
+    context.fill();
+  </script>
+</body>
+</html>
