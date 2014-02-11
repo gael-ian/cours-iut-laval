@@ -9,7 +9,7 @@
   </figure>
   
   <figure>
-    <img src="assets/exercices/mauricius.png" alt="République de Maurice" />
+    <img src="assets/exercices/mauritius.png" alt="République de Maurice" />
     <figcaption>Drapeau de la République de Maurice</figcaption>
   </figure>
 </div>

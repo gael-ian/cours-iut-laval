@@ -64,6 +64,7 @@ L'axe des abscisses s'étire dans le sens de la largeur ; l'axe des ordonnées d
 
 À l'intérieur du canvas, les coordonnées sont exprimées en pixels.
 
+<div style="clear: both;"></div>
 
 ## Dessiner dans un \<canvas\>
 
@@ -160,13 +161,15 @@ La méthode `arc` permet d'ajouter un arc de cercle à un chemin.
     context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
     context.stroke();
 
-<figure syle="float: right">
-  <img src="assets/arc.png" alt="arc method" />
-  <figcaption>
-    Les paramètres de la méthode `arc`<br />
-    Source : <a href="http://www.html5canvastutorials.com/tutorials/html5-canvas-arcs/">html5canvastutorials.com</a>
-  </figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/arc.png" alt="arc method" />
+    <figcaption>
+      Les paramètres de la méthode `arc`<br />
+      Source : <a href="http://www.html5canvastutorials.com/tutorials/html5-canvas-arcs/">html5canvastutorials.com</a>
+    </figcaption>
+  </figure>
+</div>
 
 Correspondance des arguments :
 
@@ -190,50 +193,58 @@ L'exemple ci-contre est obtenu en utilisant :
       );
     context.stroke();
 
-<figure syle="float: right">
-  <img src="assets/arcTo.png" alt="arcTo method" />
-  <figcaption>
-    Fonctionnement de la méthode `arcTo`<br />
-    Source : <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#arcTo%28%29">developer.mozilla.org</a>
-  </figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/arcTo.png" alt="arcTo method" />
+    <figcaption>
+      Fonctionnement de la méthode `arcTo`<br />
+      Source : <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#arcTo%28%29">developer.mozilla.org</a>
+    </figcaption>
+  </figure>
+</div>
 
 La méthode `arcTo` permet d'ajouter un arc de cercle à un chemin, en utilisant cette fois des points de contrôle pour guider la trajectoire.
 
     context.beginPath();
     context.arcTo(xc, yc, xa, ya, radius);
-    // Avec (xc, yc) les coordonnées du point de contrôle
-    // et (xa, ya) les coordonnées du point d'arrivée.
+    // Avec (xc, yc) les coordonnées
+    // du point de contrôle et (xa, ya)
+    // les coordonnées du point d'arrivée.
     
     context.stroke();
 
 L'arc de cercle calculé sera relié au point précédent ainsi qu'au point d'arrivée par des lignes droites. Cette méthode est utiles pour tracers des coins arrondis.
 
-<figure syle="float: right">
-  <img src="assets/quadraticCurveTo.png" alt="quadraticCurve method" />
-  <figcaption>
-    Fonctionnement de la méthode `quadraticCurveTo`<br />
-    Exemple interactif disponible sur <a href="http://www.rgraph.net/blog/2013/january/an-example-of-the-html5-canvas-quadraticcurveto-function.html">www.rgraph.net</a>
-  </figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/quadraticCurveTo.png" alt="quadraticCurve method" />
+    <figcaption>
+      Fonctionnement de la méthode `quadraticCurveTo`<br />
+      Exemple interactif disponible sur <a href="http://www.rgraph.net/blog/2013/january/an-example-of-the-html5-canvas-quadraticcurveto-function.html">www.rgraph.net</a>
+    </figcaption>
+  </figure>
+</div>
 
 Sur le même principe, la méthode `quadraticCurveTo` ajoute un segment au chemin qui sera calculé de façon à être tangent à deux droites, la première partant du point courant vers le point de contrôle et la seconde partant du point de contrôle vers le point d'arrivée.
 
     context.beginPath();
     context.moveTo(x0, y0);
     context.quadraticCurve(xc, yc, xa, ya);
-    // Avec (xc, yc) les coordonnées du point de contrôle
-    // et (xa, ya) les coordonnées du point d'arrivée.
+    // Avec (xc, yc) les coordonnées
+    // du point de contrôle et (xa, ya)
+    // les coordonnées du point d'arrivée.
     
     context.stroke();
 
-<figure syle="float: right">
-  <img src="assets/bezierCurveTo.png" alt="bezierCurve method" />
-  <figcaption>
-    Fonctionnement de la méthode `bezierCurveTo`<br />
-    Exemple interactif disponible sur <a href="http://cubic-bezier.com/">cubic-bezier.com</a>
-  </figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/bezierCurveTo.png" alt="bezierCurve method" />
+    <figcaption>
+      Fonctionnement de la méthode `bezierCurveTo`<br />
+      Exemple interactif disponible sur <a href="http://cubic-bezier.com/">cubic-bezier.com</a>
+    </figcaption>
+  </figure>
+</div>
 
 Enfin, la méthode `bezierCurveTo` crée un nouveau segment de chemin qui suit une courbe de Bézier cubique.
 
@@ -254,11 +265,16 @@ Avec la méthode `clip`, les chemins peuvent également servir à délimiter une
 
 Ceci peut permettre de dessiner le reflet dan un miroir sans sortir de son cadre ou l'image sur une télévision sans sortir de l'écran. Dans certains cas, cela peut également permettre de tracer une forme complexe en la décomposant en une série de formes simples contraintes à l'intérieur d'un espace.
 
-<figure syle="float: right">
-  <img src="assets/clip.png" alt="clip" />
-  <figcaption>Le logo de la campagne de Barack Obama en 2008</figcaption>
-</figure>
 
+<div style="float: right">
+  <figure>
+    <img src="assets/clip.png" alt="clip" />
+    <figcaption>
+      Le logo de la campagne<br />
+      de Barack Obama en 2008
+    </figcaption>
+  </figure>
+</div>
 
     var slate   = document.getElementById('slate')
       , context = slate.getContext('2d')
@@ -272,17 +288,18 @@ Ceci peut permettre de dessiner le reflet dan un miroir sans sortir de son cadre
     // pour pouvoir le restaurer ensuite.
     context.save();
     
-    // Crée un chemin décrivant un cercle au centre du canvas
+    // Crée un chemin décrivant un cercle au centre
     context.beginPath();
     context.arc(x, y, radius, 0, 2 * Math.PI, false);
     
-    // Contraint toutes les opérations suivantes à ne modifier
-    // que l'intérieur de ce chemin
+    // Contraint toutes les opérations suivantes à
+    // ne modifier que l'intérieur de ce chemin
     context.clip();
 
     // Remplie la zone de bleu
     context.fillStyle = 'blue';
-    context.fillRect(x - radius, y - radius, 2 * radius, 2 * radius);
+    context.fillRect(x - radius, y - radius,
+      2 * radius, 2 * radius);
     
     // Dessine le disque blanc
     context.beginPath();
@@ -293,7 +310,14 @@ Ceci peut permettre de dessiner le reflet dan un miroir sans sortir de son cadre
     // Dessine les 5 disques rouge et blanc
     for (var i = 0; i < 5; i++) {
       context.beginPath();
-      context.arc(x + (i * offset * 1.4), y + radius * 3 + (i * offset * 0.8) , radius * 3, 0, 2 * Math.PI, false);
+      context.arc(
+        x + (i * offset * 1.4),
+        y + radius * 3 + (i * offset * 0.8),
+        radius * 3,
+        0,
+        2 * Math.PI,
+        false
+      );
       context.fillStyle = (i % 2 == 0 ? 'red' : 'white');
       context.fill();
     }
@@ -314,10 +338,12 @@ Lorsque l'on dessine sur papier, il est parfois plus facile de tourner la feuill
 * `rotate` permet de faire pivoter les axes des abscisses et des ordonnées d'un angle donné
 * `scale` permet de faire varier l'échelle de chacun des axes
 
-<figure syle="float: right">
-  <img src="assets/transform.png" alt="transform" />
-  <figcaption>Une ellipse obtenue grâce aux méthodes de transformation</figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/transform.png" alt="transform" />
+    <figcaption>Une ellipse obtenue grâce aux<br />méthodes de transformation</figcaption>
+  </figure>
+</div>
 
     var slate   = document.getElementById('slate')
       , context = slate.getContext('2d')
@@ -332,8 +358,8 @@ Lorsque l'on dessine sur papier, il est parfois plus facile de tourner la feuill
     // Fait pivoter le repère d'un 8ème de tour
     context.rotate(Math.PI * 2 / 8);
 
-    // Modifie l'échelle de l'axe des abscisses pour être deux fois
-    // plus grande que celle de l'axe des ordonnées
+    // Modifie l'échelle de l'axe des abscisses pour être
+    // deux fois plus grande que celle de l'axe des ordonnées
     context.scale(2, 1);
     
     // Dessine un cercle
