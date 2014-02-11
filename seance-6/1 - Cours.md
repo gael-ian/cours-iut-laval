@@ -8,6 +8,8 @@
 * La balise \<canvas\>
 * Le contexte bitmap
 * Coordonnées 2D
+* Dessiner dans un \<canvas\>
+* Animer un \<canvas\>
 
 
 ## La balise \<canvas\>
@@ -74,13 +76,13 @@ Deux propriétés du contexte permettent de contrôler la couleur appliquée :
 * `strokeStyle` le style utilisé pour le tracé des lignes et des contours
 * `fillStyle`, le style appliqué pour le remplissage des zones
 
-C'est deux propriétés peuvent prendre comme valeur une chaine de caractère contenant une couleur CSS, mais aussi un dégradé ou un motif (que nous évoquerons plus tard).
+C'est deux propriétés peuvent prendre comme valeur une chaine de caractère contenant une couleur CSS, un dégradé ou un motif.
 
 A la création du canvas, la couleur définie pour ces deux propriétés est le noir.
 
 ### Tailler son crayon
 
-L'épaisseur des lignes et des contours tracés peut être contrôlé en modifiant la valeur de l'attribut `lineWidth`. Par défaut, elle est définie à 1px.
+L'épaisseur des lignes et des contours tracés peut être contrôlés en modifiant la valeur de l'attribut `lineWidth`. Par défaut, elle est définie à 1px.
 
 Les propriétés `lineCap` et `lineJoin` contrôlent respectivement l'allure des lignes lorsqu'elles se terminent et lorsqu'elles s'enchainent.
 
@@ -246,8 +248,183 @@ Enfin, la méthode `bezierCurveTo` crée un nouveau segment de chemin qui suit u
 
 **Exercice 4 :** Courbes
 
+### Sans dépasser
+
+Avec la méthode `clip`, les chemins peuvent également servir à délimiter une zone du canvas à l'intérieur de laquelle on souhaitera pouvoir dessiner sans interférer avec les éléments déjà présents au dehors.
+
+Ceci peut permettre de dessiner le reflet dan un miroir sans sortir de son cadre ou l'image sur une télévision sans sortir de l'écran. Dans certains cas, cela peut également permettre de tracer une forme complexe en la décomposant en une série de formes simples contraintes à l'intérieur d'un espace.
+
+<figure syle="float: right">
+  <img src="assets/clip.png" alt="clip" />
+  <figcaption>Le logo de la campagne de Barack Obama en 2008</figcaption>
+</figure>
+
+
+    var slate   = document.getElementById('slate')
+      , context = slate.getContext('2d')
+      , x       = slate.width / 2
+      , y       = slate.height / 2
+      , radius  = 75
+      , offset  = 15
+      ;
+      
+    // Sauvegarde l'état du canvas
+    // pour pouvoir le restaurer ensuite.
+    context.save();
+    
+    // Crée un chemin décrivant un cercle au centre du canvas
+    context.beginPath();
+    context.arc(x, y, radius, 0, 2 * Math.PI, false);
+    
+    // Contraint toutes les opérations suivantes à ne modifier
+    // que l'intérieur de ce chemin
+    context.clip();
+
+    // Remplie la zone de bleu
+    context.fillStyle = 'blue';
+    context.fillRect(x - radius, y - radius, 2 * radius, 2 * radius);
+    
+    // Dessine le disque blanc
+    context.beginPath();
+    context.arc(x, y, radius * 2/3, 0, 2 * Math.PI, false);
+    context.fillStyle = 'white';
+    context.fill();
+    
+    // Dessine les 5 disques rouge et blanc
+    for (var i = 0; i < 5; i++) {
+      context.beginPath();
+      context.arc(x + (i * offset * 1.4), y + radius * 3 + (i * offset * 0.8) , radius * 3, 0, 2 * Math.PI, false);
+      context.fillStyle = (i % 2 == 0 ? 'red' : 'white');
+      context.fill();
+    }
+
+    // Rétabli l'état du canvas enregistré par `save`
+    // Nous pouvons de nouveau dessiner partout.
+    context.restore();
+
+Les méthodes `save` et `restore` ne mémorisent ou rétablissent pas uniquement la zone de travail. Elles conservent toutes les autres propriétés du contexte (`fillStyle`, `lineWidth`, ...) à l'intérieur d'une pile.
+
+D'autres opérations de composition, plus complexes, sont possibles en utilisant la propriété `globalCompositeOperation`[^globalCompositionOperation] mais celles-ci ne sont pas encore totalement supportées.
+
+### Tordre l'espace
+
+Lorsque l'on dessine sur papier, il est parfois plus facile de tourner la feuille. L'API de dessin 2D de `canvas` va plus loin en fournissant des méthodes pour manipuler le système de coordonnées :
+
+* `translate` permet de décaler le point d'origine
+* `rotate` permet de faire pivoter les axes des abscisses et des ordonnées d'un angle donné
+* `scale` permet de faire varier l'échelle de chacun des axes
+
+<figure syle="float: right">
+  <img src="assets/transform.png" alt="transform" />
+  <figcaption>Une ellipse obtenue grâce aux méthodes de transformation</figcaption>
+</figure>
+
+    var slate   = document.getElementById('slate')
+      , context = slate.getContext('2d')
+      ;
+
+    // Sauvegarde l'état initial du canvas
+    context.save();
+
+    // Décale l'origine du repère vers le centre du canvas
+    context.translate(slate.width / 2, slate.height / 2);
+    
+    // Fait pivoter le repère d'un 8ème de tour
+    context.rotate(Math.PI * 2 / 8);
+
+    // Modifie l'échelle de l'axe des abscisses pour être deux fois
+    // plus grande que celle de l'axe des ordonnées
+    context.scale(2, 1);
+    
+    // Dessine un cercle
+    context.beginPath();
+    context.arc(0, 0, 50, 0, 2 * Math.PI, false);
+    context.fillStyle = 'blue';
+    context.fill();
+
+    // Restaure l'état initial du canvas.
+    context.restore();
+
+En pratique, chaque contexte de dessin 2D est doté d'une matrice de transformation qui est appliquée aux coordonnées passées à chaque fonctions de dessin. Ces 3 méthodes sont des raccourcis pour modifier cette matrice suivant les usages les plus courants mais il est possible de définir sa propre matrice de transformation au moyen des méthodes `transform` et `setTransform`.
+
+**Exercice 5 :** Avec des fleurs
+
+### Recyclage
+
+L'API de dessin 2D prévoit également de pouvoir insérer des images à l'intérieur d'un `canvas`, via la méthode `drawImage`[^draw-image].
+
+Ces images peuvent être obtenues depuis un élément `img`, `video` ou depuis un autre `canvas`. Il n'est pas obligatoire que ces éléments soient présent dans la source HTML de votre page, un élément DOM suffit *- ou un objet de type `Image` dans le cas d'une image -*.
+
+    // Ces trois variables contiennent chacune un objet de type Image
+    var image_from_object   = new Image()
+      , image_from_dom_node = document.createElement('img')
+      , image_from_html     = document.getElementById('image')
+      ;
+    
+    // Dés que l'attribut `src` d'un objet Image est défini,
+    // le navigateur démarre le chargement.
+    image_from_object.src = 'image.jpg';
+    
+    // Une fois l'image chargée, elle devient exploitable
+    image_from_object.onload = function() {
+    
+      // A l'intérieur de cette fonction, `this` fait référence à l'objet courant,
+      // ici image_from_object.
+    
+      // Copie l'image sans la redimensionner au point de coordonnées (50, 50)
+      context.drawImage(this, 50, 50);
+      
+      // Copie l'image au point de coordonnées (100, 100)
+      // en forcant ses dimensions à 200x200
+      context.drawImage(this, 100, 100, 200, 200);
+      
+      // Copie la zone de l'image commencant au point de coordonnées (10, 15)
+      // et mesurant 40x80 pixels vers le canvas, au point de coordonnées (400, 400)
+      // et en forcant ses dimensions à 200x200
+      context.drawImage(this, 400, 400, 200, 200, 10, 15, 40, 80);
+      
+      
+      // On peut également utiliser l'image pour créer un motif...
+      var pattern = context.createPattern(this, 'repeat-x');
+      
+      // ... et utiliser ce motif comme style de remplissage
+      context.fillStyle = pattern;
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+      
+    };
+
+Il est également possible de copier une portion du contenu affiché par un canvas pour la réutiliser, via les méthodes `getImageData` et `putImageData`.
+
+    var canvas = document.getElementById('canvas-1')
+      , buffer = document.createElement('canvas')
+      ;
+      
+    // On dessine quelque chose dans `buffer`
+    // ...
+    
+    // Récupération du contenu du canvas `buffer`
+    var part = buffer.getImageData(0, 0, buffer.canvas.width, buffer.canvas.height);
+    
+    // On peut modifier le contenu de `part` pixel par pixel
+    // si on le souhaite.
+    
+    // On copie le contenu stocké dans `part` vers `canvas`
+    // au point de coordonnées (10, 10)
+    // en forcant ses dimensions à 250x250.
+    canvas.putImageData(part, 10, 10, 250, 250);
+
+La méthode `putImageData` se comporte comme `drawImage`.
+
+**Exercice 6 :** ?
+
+## Animer un \<canvas\>
+
+
+
 [^2D-specification]: <http://www.w3.org/TR/2dcontext/>
 [^webgl-specification]: <https://www.khronos.org/registry/webgl/specs/1.0/>
 [^CanvasRenderingContext2D]: <https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D>
+[^globalCompositionOperation]: <http://www.html5canvastutorials.com/advanced/html5-canvas-global-composite-operations-tutorial/>
+[^draw-image]: <https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#drawImage%28%29>
 
 [^canvas-cheat-sheet]: <http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.pdf>

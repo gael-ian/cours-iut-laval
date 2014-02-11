@@ -86,4 +86,22 @@ Modifiez votre script pour colorer les polygones de façon aléatoire.
 
 ## Exercice 4<br />Courbes
 
-Ajouter une classe `exercice-4` à un canvas de 960x600 pixels et complétez le dessin. Vous devez utiliser au moins une fois chacune des méthodes `arc`, `arcTo`, `quadraticCurveTo` et `bezierCurveTo`.
+Dans un canvas transparent de 960x600 pixels, tracez au milieu une ligne grise de 2px de largeur sur toute la hauteur.
+
+Ajoutez une classe `exercice-4` à un canvas et complétez le dessin en utilisant la droite grise comme axe de symétrie et en inversant les couleurs.  
+Vous devez utiliser au moins une fois chacune des méthodes `arc`, `arcTo`, `quadraticCurveTo` et `bezierCurveTo`.
+
+## Exercice 5<br />Avec des fleurs
+
+Dans un canvas transparent de 960x960 pixels, dessinez une galerie de 9 fleurs de couleurs différentes.
+
+<figure style="float: right">
+  <img src="assets/exercices/flower.png" alt="Fleur" />
+  <figcaption>Exemple de fleur</figcaption>
+</figure>
+
+Chaque fleur doit être composée :
+
+* D'une tige verte
+* D'un pistil doré
+* De huits pétales elliptiques répartis de façon continue autour du pistil, tronqués à leur extrémité extérieure

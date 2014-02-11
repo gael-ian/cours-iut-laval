@@ -17,14 +17,57 @@
   </div>
   
   <script type="text/javascript" charset="utf8">
-    var slate         = document.getElementById('slate')
-      , context       = slate.getContext('2d')
-      , width         = slate.width
-      , height        = slate.height
+    var s = document.getElementById('slate')
+      , c = s.getContext('2d')
+      , w = s.width
+      , h = s.height
       ;
     
-    context.fillStyle = 'white';
-    context.fillRect(width / 2, 0, width, height);
+    c.fillStyle = 'black';
+    c.fillRect(w/2, 0, w, h);
+    
+    c.beginPath();
+    
+    // (480, 200)
+    c.moveTo(480, 200);
+    
+    // (468, 198)
+    c.arc(480, 215, 20, 1.5 * Math.PI, 1.72 * Math.PI, false);
+    
+    // (458, 170)
+    c.lineTo(502, 170);
+    
+    // (435, 223)
+    c.bezierCurveTo(502, 200, 515, 225, 960 - 430, 222);
+    
+    // (350, 185)
+    c.arcTo(605, 210, 610, 185, 30);
+    
+    // (333, 153)
+    c.arcTo(615, 153, 627, 153, 15);
+    
+    // (7, 153)
+    c.lineTo(960 - 7,   153);
+    
+    // (164, 324)
+    c.quadraticCurveTo(750, 240, 786, 324);
+    
+    // (480, 445)
+    c.quadraticCurveTo(545, 300, 480, 441);
+    
+    c.closePath();
+    
+    c.fillStyle = 'white';
+    c.fill();
+
+    
+    c.strokeStyle = 'gray';
+    c.lineWidth = 2;
+    
+    c.beginPath();
+    c.moveTo(479, 0);
+    c.lineTo(479, 600);
+    c.stroke();
     
   </script>
 </body>

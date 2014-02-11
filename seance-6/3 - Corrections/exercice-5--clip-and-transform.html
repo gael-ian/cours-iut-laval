@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  
+  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen"  />
+</head>
+<body>
+  <div class="wrapper">
+  
+    <h1>Séance 6 - &lt;canvas&gt;</h1>
+    <h2>Exercice 5 - Avec des fleurs</h2>
+    <p><a href="index.html">« Retour à la liste des exercices</a></p>
+    
+    <canvas id="slate" width="960" height="960"></canvas>
+  </div>
+  
+  <script type="text/javascript" charset="utf8">
+    var slate   = document.getElementById('slate')
+      , context = slate.getContext('2d')
+      , colors  = [
+          'white',      'red',      'blue'
+        , 'crimson',    'hotpink',  'orange'
+        , 'lightblue',  'yellow',   'darkred'
+        ]
+      , w       = slate.width / 3
+      , h       = slate.height / 3
+      , r       = w / 2
+      ;
+    
+    colors.forEach(function(color, i) {
+    
+      this.save();
+    
+      this.translate( (i % 3) * w, Math.floor(i / 3) * h);
+      this.translate(w / 2, h / 2);
+      
+      // Draw stem
+      this.fillStyle = 'green';
+      this.fillRect(-5, 0, 10, h / 2);
+      
+      this.beginPath();
+      this.arc(0, 0, r * (2/3), 0, 2 * Math.PI, false);
+      this.clip();
+      
+      // Draw petals
+      this.fillStyle = color;
+      this.strokeStyle = 'black';
+      
+      for (var j = 0; j < 8; j++) {
+      
+        this.save();
+        
+        this.rotate(Math.PI * 2 * (j / 8));
+        this.scale(2, 0.4);
+        
+        this.beginPath();
+        this.arc(r / 2, 0, r / 2, 0, 2 * Math.PI, false);
+        this.fill();
+        this.stroke();
+        
+        this.restore();
+      }
+      
+      // Draw pistil
+      this.beginPath();
+      this.arc(0, 0, r / 6, 0, 2 * Math.PI, false);
+      this.fillStyle = 'gold';
+      this.fill();
+      
+      this.restore();
+      
+    }, context);
+    
+  </script>
+</body>
+</html>
