@@ -407,7 +407,7 @@ Ces images peuvent être obtenues depuis un élément `img`, `video` ou depuis u
       // Copie la zone de l'image commencant au point de coordonnées (10, 15)
       // et mesurant 40x80 pixels vers le canvas, au point de coordonnées (400, 400)
       // et en forcant ses dimensions à 200x200
-      context.drawImage(this, 400, 400, 200, 200, 10, 15, 40, 80);
+      context.drawImage(this, 10, 15, 40, 80, 400, 400, 200, 200);
       
       
       // On peut également utiliser l'image pour créer un motif...
@@ -441,16 +441,36 @@ Il est également possible de copier une portion du contenu affiché par un canv
 
 La méthode `putImageData` se comporte comme `drawImage`.
 
-**Exercice 6 :** ?
+**Exercice 6 :** Tuiles
+
+> Vous pouvez retrouver un résumé sur les méthodes de l'API de dessin 2D abordées dans ce cours ainsi que celles qui ont volontairement été omises dans cette [anti-sèche](http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.pdf).
 
 ## Animer un \<canvas\>
 
+De la même façon qu'un dessin animé donne l'illusion du mouvement en affichant en moyenne 25 images légèrement différentes par seconde, animer le contenu d'un canvas revient à le redessiner à intervalle de temps réguliers en décalant légèrement les éléments.
 
+Si JavaScript fournit depuis longtemps les fonctions `setTimeout` et `setInterval` pour déclencher des appels à des méthodes décalés dans le temps, elles ne sont pas réellement adaptées dans ce cas précis.
+
+Pour rythmer plus efficacement les animations, une nouvelle méthode `requestAnimationFrame`[^requestAnimationFrame] a été introduite. Elle permet entre autre au navigateur de synchroniser des opérations qui vont demander un réaffichage de la page et de ne pas exécuter du code officiellement marqué comme destiné à de l'animation lorsque l'onglet concerné n'est pas actif.
+
+
+    var slate   = document.getElementById('slate')
+      , context = slate.getContext('2D')
+      ;
+    
+	function loop(timestamp) {
+	
+      // Votre code…
+
+      requestAnimFrame(animate);
+    }
+    loop();
+
+Le temps étant compé à l'intérieur de la boucle d'animation, toutes les stratégies sont bonnes pour réduire la quantité de calcul et le temps nécessaire, en particulier pour le dessin.
 
 [^2D-specification]: <http://www.w3.org/TR/2dcontext/>
 [^webgl-specification]: <https://www.khronos.org/registry/webgl/specs/1.0/>
 [^CanvasRenderingContext2D]: <https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D>
 [^globalCompositionOperation]: <http://www.html5canvastutorials.com/advanced/html5-canvas-global-composite-operations-tutorial/>
 [^draw-image]: <https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#drawImage%28%29>
-
-[^canvas-cheat-sheet]: <http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.pdf>
+[^requestAnimationFrame]: <https://developer.mozilla.org/fr/docs/Web/API/window.requestAnimationFrame>

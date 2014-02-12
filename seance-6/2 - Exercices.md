@@ -52,7 +52,10 @@ Modifiez à nouveau votre script pour pouvoir afficher aléatoirement n'importe 
 <div style="float: right">
   <figure>
     <img src="assets/exercices/piet-mondrain--composition.png" alt="République d'Arménie" />
-    <figcaption><a href="http://fr.wikipedia.org/wiki/Piet_Mondrian">Piet Mondrain</a> - Composition II in Red, Blue and Yellow</figcaption>
+    <figcaption>
+      Composition II in Red, Blue and Yellow<br />
+      <a href="http://fr.wikipedia.org/wiki/Piet_Mondrian">Piet Mondrain</a>
+    </figcaption>
   </figure>
 </div>
 
@@ -95,13 +98,26 @@ Vous devez utiliser au moins une fois chacune des méthodes `arc`, `arcTo`, `qua
 
 Dans un canvas transparent de 960x960 pixels, dessinez une galerie de 9 fleurs de couleurs différentes.
 
-<figure style="float: right">
-  <img src="assets/exercices/flower.png" alt="Fleur" />
-  <figcaption>Exemple de fleur</figcaption>
-</figure>
+<div style="float: right">
+  <figure>
+    <img src="assets/exercices/flower.png" alt="Fleur" />
+    <figcaption>Exemple de fleur</figcaption>
+  </figure>
+</div>
 
 Chaque fleur doit être composée :
 
 * D'une tige verte
 * D'un pistil doré
 * De huits pétales elliptiques répartis de façon continue autour du pistil, tronqués à leur extrémité extérieure
+
+<div style="clear: both;"></div>
+
+## Exercice 6<br />Tuiles
+
+Dans un canvas de 320x160pixels, reproduisez la scène ci-dessous en utilisant les images disponibles dans le répertoire `2 - Exercices/assets/images/tiles/`.
+
+<img src="assets/exercices/tiles.png" alt="Tiles" style="display: block; margin: auto;" />
+
+Modifiez votre script pour faire en sorte que la même scène puisse être affichée avec un zoom aléatoire compris entre 1 et 3.
+
