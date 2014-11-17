@@ -1,7 +1,5 @@
 # Séance 1 - Positionnement CSS
 
-**Date :** 08/01/2014 - 9h30 / 12h30
-
 ## Sommaire
 
 * Positionnement dans le flux

@@ -135,9 +135,10 @@ C'est cette dernière méthode qui est appliquée d'emblée dans le cas de la `f
 ## Exercice 5<br />CSS table layout model
 
 	/*
-	 * Facultatif : comme dans le cas d'un tableau HTML, la spécification CSS prévoit
-	 * que le navigateur se charge d'ajouter automatiquement un conteneur de type `table-row`
-	 * pour englober les cellules si aucun n'est déclaré (ou `table` pour englober les lignes, …)
+	 * Facultatif : comme dans le cas d'un tableau HTML, la spécification
+	 * CSS prévoit que le navigateur se charge d'ajouter automatiquement un
+	 * conteneur de type `table-row` pour englober les cellules si aucun
+	 * n'est déclaré (ou `table` pour englober les lignes, …)
 	 *
 	 * Il n'est bien sûr pas recommandé de se reposer sur ce comportement.
 	 */
@@ -161,8 +162,9 @@ Le modèle d'agencement en tableau CSS est justifié dans ce cas car il permet d
 	.main figcaption {
 	  position: absolute;
 	  top: 0;
-	  left: 0;  /* Pour satisfaire ces deux déclarations, le navigateur ferra coïncider
-	  right: 0;  * les bords du bloc positionné avec ceux de son conteneur.
+	  left: 0;  /* Pour satisfaire ces deux déclarations, le 
+	  right: 0;  * navigateur ferra coïncider les bords du 
+	             * bloc positionné avec ceux de son conteneur.
 	             */
 	}
 	
