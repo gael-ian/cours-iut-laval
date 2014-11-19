@@ -103,10 +103,7 @@ footer a {
  * Exercice 1 - Modèles de boite
  */
 .column {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  
   width: 300px;
 }
 

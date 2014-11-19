@@ -18,6 +18,10 @@ Modifiez les styles des titres `h1` et `h2` pour utiliser la police "Sanidana".
 Ajoutez une ombre noire sur le texte du titre `h1`.  
 Les couleurs de l'ombre et du texte doivent s'inverser à l'intérieur de la balise small.
 
+<figure style="float: right">
+  <img src="assets/exercices/text-shadow-1.png" alt="text-shadow" />
+</figure>
+
 Que se passe-t-il si vous ne précisez pas de couleurs ?
 Que se passe-t-il si vous indiquez un décalagage horizontal négatif ?
 Que se passe-t-il si vous indiquez un décalagage vertical négatif ?
@@ -26,9 +30,17 @@ Comment obtenir une ombre qui englobe l'ensemble du texte ?
 
 Ajoutez une seconde ombre jaune (#f6dd00) sur le texte du titre `h1`.
 
+<figure style="float: right">
+  <img src="assets/exercices/text-shadow-2.png" alt="text-shadow" />
+</figure>
+
 ### box-shadow
 
 Ajoutez une ombre au survol sous les liens vers Twitter, Github et DevianART.
+
+<figure style="float: right">
+  <img src="assets/exercices/box-shadow.png" alt="box-shadow" />
+</figure>
 
 Que se passe-t-il si vous indiquez un rayon de flou différent de 0 ?
 Que se passe-t-il si vous indiquez une distance de propagation différente de 0 ?

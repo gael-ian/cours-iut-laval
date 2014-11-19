@@ -1,7 +1,5 @@
 # Séance 2 - Nouveautés CSS3
 
-**Date :** 08/01/2014 - 13h30 / 16h30
-
 ## Sommaire
 
 * Modèles de boite
@@ -14,6 +12,7 @@
 
 
 ## Modèles de boite
+
 Le modèle de boites utilisé pour calculer les dimensions d'un bloc peut désormais être sélectionné parmi plusieurs alternatives grâce à la propriété `box-sizing`.
 
 <figure style="float: right">
@@ -32,10 +31,6 @@ Les dimensions d'une boite sont calculées en tenant compte de son espacement in
 ### border-box
 
 Les dimensions d'une boite sont calculées en tenant compte de son espacement intérieur (`padding`) et de ses bordures.
-
-> **Note**
->
-> Cette propriété doit pour le moment être préfixée pour être utilisée sous Firefox et sous Webkit.
 
 **Exercice 1 :** Modèles de boites
 
@@ -57,58 +52,58 @@ Une police étant rarement fournie dans chacun de ces formats, elle devra être 
 
 Actuellement, la méthode recommandée pour déclarer une police web [^bulletproof-webfont] est la suivante :
 
-	/*
-	  Version commentée
-	*/
-	@font-face {
-	
-	  /* Nom de la police
-	     Tel qu'il sera utilisé ensuite dans les déclarations `font` / `font-family` */
-	  font-family: "Open Sans";
-	  
-	   /* Internet Explorer 9 ne comprend pas la déclaration complète
-	      lorsqu'utilisé avec le mode de compatibilité */
-	  src: url("/fonts/opensans.eot");
-	  
-	  src: 
-	       /* Version EOT pour Internet Explorer <= 8
-	          Le "?" permet de contourner un bug du parser CSS.
-	          
-	          Le vrai nom du format des polices EOT est "embedded-opentype" mais
-	          préciser un mauvais format force IE 9+ à utiliser le format WOFF */
-	       url("/fonts/opensans.eot?") format("eot"),
-	       
-	       /* Version WOFF pour les navigateurs récents */
-	       url("/fonts/opensans.woff") format("woff"),
-	       
-	       /* Version TrueType pour les navigateurs ne supportant pas le format WOFF */
-	       url("/fonts/opensans.ttf") format("truetype"),
-	       
-	       /* Version SVG pour navigateurs mobiles anciens
-	          L'ancre est obligatoire pour indiquer à Safari iOS où trouver
-	          la déclaration de la police à l'intérieur du fichier SVG. */
-	       url("/fonts/opensans.svg#open_sans") format("svg")
-	       	       
-	       ;
-	  
-	  /* Précision de la variante de la police (pour compatibilité avec Webkit) */
-	  font-weight: normal;
-	  font-style: normal;
-	  font-variant: normal;
-	}
-	
-	/* Version courte */
-	@font-face {
-	  font-family: "Open Sans";
-	  src: url("/fonts/opensans.eot");
-	  src: url("/fonts/opensans.eot?") format("eot"),
-	       url("/fonts/opensans.woff") format("woff"),
-	       url("/fonts/opensans.ttf") format("truetype"),
-	       url("/fonts/opensans.svg#open_sans") format("svg");
-	  font-weight: normal;
-	  font-style: normal;
-	  font-variant: normal;
-	}
+    /*
+      Version commentée
+    */
+    @font-face {
+    
+      /* Nom de la police
+         Tel qu'il sera utilisé ensuite dans les déclarations `font` / `font-family` */
+      font-family: "Open Sans";
+      
+       /* Internet Explorer 9 ne comprend pas la déclaration complète
+          lorsqu'utilisé avec le mode de compatibilité */
+      src: url("/fonts/opensans.eot");
+      
+      src: 
+           /* Version EOT pour Internet Explorer <= 8
+              Le "?" permet de contourner un bug du parser CSS.
+              
+              Le vrai nom du format des polices EOT est "embedded-opentype" mais
+              préciser un mauvais format force IE 9+ à utiliser le format WOFF */
+           url("/fonts/opensans.eot?#iefix") format("eot"),
+           
+           /* Version WOFF pour les navigateurs récents */
+           url("/fonts/opensans.woff") format("woff"),
+           
+           /* Version TrueType pour les navigateurs ne supportant pas le format WOFF */
+           url("/fonts/opensans.ttf") format("truetype"),
+           
+           /* Version SVG pour navigateurs mobiles anciens
+              L'ancre est obligatoire pour indiquer à Safari iOS où trouver
+              la déclaration de la police à l'intérieur du fichier SVG. */
+           url("/fonts/opensans.svg#open_sans") format("svg")
+                      
+           ;
+      
+      /* Précision de la variante de la police (pour compatibilité avec Webkit) */
+      font-weight: normal;
+      font-style: normal;
+      font-variant: normal;
+    }
+    
+    /* Version courte */
+    @font-face {
+      font-family: "Open Sans";
+      src: url("/fonts/opensans.eot");
+      src: url("/fonts/opensans.eot?#iefix") format("eot"),
+           url("/fonts/opensans.woff") format("woff"),
+           url("/fonts/opensans.ttf") format("truetype"),
+           url("/fonts/opensans.svg#open_sans") format("svg");
+      font-weight: normal;
+      font-style: normal;
+      font-variant: normal;
+    }
 
 ### Licences
 
@@ -134,7 +129,7 @@ La spécification CSS3 prévoit d'appliquer des ombres aux blocs et aux textes d
 
 ### text-shadow
 
-	text-shadow: (horizontal-offset vertical-offset (blur radius)? color?)*;
+    text-shadow: (horizontal-offset vertical-offset (blur radius)? color?)*;
 
 L'ombre d'un texte est définie par :
 
@@ -147,7 +142,7 @@ Le rayon de flou détermine la distance en pixels sur laquelle la couleur de l'o
 
 ### box-shadow
 
-	box-shadow: (horizontal-offset vertical-offset (blur radius (spread distance))? color? inset?)*;
+    box-shadow: (horizontal-offset vertical-offset (blur radius (spread distance))? color? inset?)*;
 
 L'ombre d'une boite est définie par les mêmes propriétés que l'ombre d'un texte, auxquelles s'ajoutent :
 
@@ -174,46 +169,46 @@ Une transition se défini à travers plusieurs propriétés :
 
 Ces quatres propriétés peuvent également être utilisées avec des valeurs multiples, séparées par des virgules. L'animation se fera dans ce cas en appliquant à chaque propriété listée pour `transition-property` la durée, le delai et la fonction d'animation présente au même indice dans les listes passées à `transition-duration`, `transition-delay` et `transition-timing-function`.
 
-	h1 {
-	  font-size: 16px;
-	  line-height: 1.5;
-	  text-indent: 0;
-	}
-	
-	h1.heavy {
-	  font-size: 22px;
-	  line-height: 2;
-	  text-indent: 20px;
-	  
-	  /*
-	    Lorsqu'un élément `h1` recevra la classe .heavy, il sera animé comme suit :
-	    
-	    - Après un delai de 0s, la taille de la police passera en 1s de 16px à 22px
-	    - Après un délai de 0.5s, la hauteur de ligne passera en 0.5s de 1.5 à 2
-	    - Après un délai de 1.5s, l'indentation du texte passera en 2s de 0 à 20px
-	    
-	    L'animation complète sera étalée sur 3.5s.
-	  */
-	  transition-property: font-size, line-height, text-indent;
-	  transition-duration: 1s, 0.5s, 2s;
-	  transition-delay: 0s, 0.5s, 1.5s;
-	}
+    h1 {
+      font-size: 16px;
+      line-height: 1.5;
+      text-indent: 0;
+    }
+    
+    h1.heavy {
+      font-size: 22px;
+      line-height: 2;
+      text-indent: 20px;
+      
+      /*
+        Lorsqu'un élément `h1` recevra la classe .heavy, il sera animé comme suit :
+        
+        - Après un delai de 0s, la taille de la police passera en 1s de 16px à 22px
+        - Après un délai de 0.5s, la hauteur de ligne passera en 0.5s de 1.5 à 2
+        - Après un délai de 1.5s, l'indentation du texte passera en 2s de 0 à 20px
+        
+        L'animation complète sera étalée sur 3.5s.
+      */
+      transition-property: font-size, line-height, text-indent;
+      transition-duration: 1s, 0.5s, 2s;
+      transition-delay: 0s, 0.5s, 1.5s;
+    }
 
 Un raccourci `transition` est disponible pour définir une animation en une fois. Comme les autres, cette propriété accepte les valeurs multiples.
 
-	h1.heavy {
-	  […]
-	  /* Équivalent utilisant la notation raccourcie */
-	  transition: font-size 1s 0s,
-	  			  line-height 0.5s 0.5s,
-	  			  text-indent 2s 1.5s;
-	}
+    h1.heavy {
+      […]
+      /* Équivalent utilisant la notation raccourcie */
+      transition: font-size 1s 0s,
+                    line-height 0.5s 0.5s,
+                    text-indent 2s 1.5s;
+    }
 
 Pour chaque transition définie de cette façon, les paramètres autres que le nom de la propriété animée sont tous facultatifs. Leur ordre importe peu mais la première durée rencontrée sera toujours considérée comme correspondant à `transition-duration`.
 
 ### Fonctions d'interpolation
 
-L'évolution de la valeur d'une propriété au cours d'une transition n'est pas obligatoirement linéaire. Dans la plupart des cas, l'effet produit ne serait d'ailleurs pas naturel ou approprié. Pour répondre à ce problème, les outils d'animation empruntent aux mathématiques des fonctions d'interpolations [^easing-functions]
+L'évolution de la valeur d'une propriété au cours d'une transition n'est pas obligatoirement linéaire. Dans la plupart des cas, l'effet produit ne serait d'ailleurs pas naturel ou approprié. Pour répondre à ce problème, les outils d'animation empruntent aux mathématiques des fonctions d'interpolations [^easing-functions].
 
 La spécification CSS prévoit 2 fonctions d'interpolation paramétrables :
 
@@ -245,33 +240,33 @@ Ces deux fonctions sont détaillées et illustrées dans [la spécification de l
 
 Une animation CSS se défini comme une succession de transitions *via* la propriété `@keyframes`.
 
-	@keyframes zorro {
-	  from {
-	    top: 0;
-	    left: 0;
-	  }
+    @keyframes zorro {
+      from {
+        top: 0;
+        left: 0;
+      }
 
-	  33% {
-	    top: 0;
-	    left: 100%;
-	  }
-
-	  66% {
-	    top: 100%;
-	    left: 0;
-	  }
-
-	  to {
-	    top: 100%;
-	    left: 100%;
-	  }
-	}
+      33% {
+        top: 0;
+        left: 100%;
+      }
+    
+      66% {
+        top: 100%;
+        left: 0;
+      }
+    
+      to {
+        top: 100%;
+        left: 100%;
+      }
+    }
 
 L'animation peut ensuite être appliquée à un élément *via* la propriété `animation-name` :
 
-	h1 {
-	  animation-name: zorro;
-	}
+    h1 {
+      animation-name: zorro;
+    }
 
 Il est également possible de contrôler le comportement de l'animation pour chaque élément sur laquelle elle est appliquée *via* les propriétés :
 
@@ -295,10 +290,10 @@ Comme pour les transitions, ces 7 propriétés peuvent également être utilisé
 
 Un raccourci `animation` est disponible pour définir une animation en une fois. Comme les autres, cette propriété accepte les valeurs multiples.
 
-	h1 {
-	  […]
-	  animation: zorro 3s ease 2s infinite alternate both running;
-	}
+    h1 {
+      […]
+      animation: zorro 3s ease 2s infinite alternate both running;
+    }
 
 Pour chaque animation définie de cette façon, les paramètres autres que le nom de l'animation appliquée sont tous facultatifs. Leur ordre importe peu mais la première durée rencontrée sera toujours considérée comme correspondant à `animation-duration`.
 
@@ -331,9 +326,7 @@ Le contenu de la balise `<meta name="viewport" />` peut accueillir plusieurs pro
 
 Étant donnés la très grande variété des tailles et des résolutions d'écrans mobiles[^screensizes] et le fait que les navigateurs mobiles mentent régulièrement sur leurs capacités[^les-mobiles-mentent], la balise `<meta name="viewport" />` est courament écrite sous cette forme :
 
-	<meta name="viewport"
-	      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
-	      />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
 * `width=device-width` défini la largeur du viewport à celle de l'appareil. La page utilisera tout l'espace disponible quelque soient les dimensions de l'écran.
 * `initial-scale=1` rétabli le niveau de zoomau chargement de la page à 1.
@@ -343,7 +336,7 @@ Le contenu de la balise `<meta name="viewport" />` peut accueillir plusieurs pro
 
 Les règles `@media` sont apparues en CSS2 et permettent de cibler les supports auxquels doivent s'appliquer les styles qu'elles contiennent. Elles ont depuis longtemps été utilisées *via* l'attribut `media` de la balise `link` pour déclarer les feuilles de styles spécifiques à l'impression par exemple.
 
-	<link rel="stylesheet" type="text/css" href="/assets/stylesshets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/stylesshets/style.css" />
     <link rel="stylesheet" type="text/css" href="/assets/stylesshets/print.css" media="print" />
 
 Là où CSS2 ne supporte que des conditions sur le type de media dans une règle `@media`, CSS3 permet de distinguer plus finement les appareils en enrichissant les critères disponibles avec notamment :
@@ -355,14 +348,14 @@ Là où CSS2 ne supporte que des conditions sur le type de media dans une règle
 
 À l'exception de `orientation` pour lequel cela n'aurait pas de sens, tous ces critères peuvent être préfixés de `min-` ou `max-` pour écrire les conditions d'une requête media.
 
-	@media screen and (min-device-width: 960px) and (max-resolution: 124dpi) {
-	  /* Les styles décrits à l'intérieur de cette règle @media ne seront appliqués :
-	   * 
-	   * - que sur écrans
-	   * - uniquement si la largeur de l'écran est supérieure ou égale à 960px
-	   * - uniquement si la résolution de l'écran est inférieure ou égale à 124dpi
-	   */
-	}
+    @media screen and (min-device-width: 960px) and (max-resolution: 124dpi) {
+      /* Les styles décrits à l'intérieur de cette règle @media ne seront appliqués :
+       * 
+       * - que sur écrans
+       * - uniquement si la largeur de l'écran est supérieure ou égale à 960px
+       * - uniquement si la résolution de l'écran est inférieure ou égale à 124dpi
+       */
+    }
 
 La spécification définie également d'autres critères pour cibler les périphériques en fonction de leur capacité à rendre les couleurs (`color`, `color-index` et `monochrome`) ou de leur méthode d'affichage (`scan` pour les téléviseurs, `grid` pour les affichage à chasse fixe).
 
@@ -373,4 +366,4 @@ La spécification définie également d'autres critères pour cibler les périph
 [^bulletproof-webfont]: [Further Hardening of the Bulletproof Syntax](http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax)
 [^easing-functions]: [Fonctions d'interpolation fréquentes](http://easings.net/fr)
 [^screensizes]: <http://screensiz.es/>
-[^les-mobiles-mentent]: [Les mobiles nous mentent !](http://blog.goetter.fr/post/16969052702/les-mobiles-nous-mentent), par Raphaël Goetter
+[^les-mobiles-mentent]: [Les mobiles nous mentent !](http://blog.goetter.fr/articles/les-mobiles-nous-mentent/), par Raphaël Goetter
