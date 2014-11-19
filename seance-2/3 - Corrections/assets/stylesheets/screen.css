@@ -114,7 +114,8 @@ footer a {
 @font-face {
   font-family: "Sanidana";
   src: url("../fonts/sanidana.eot");
-  src: url("../fonts/sanidana.eot?") format("eot"),
+  src: url("../fonts/sanidana.eot?#iefix") format("eot"),
+       url("../fonts/sanidana.woff2") format("woff2"),
        url("../fonts/sanidana.woff") format("woff"),
        url("../fonts/sanidana.ttf") format("truetype"),
        url("../fonts/sanidana.svg#sinadana") format("svg");

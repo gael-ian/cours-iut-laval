@@ -73,7 +73,10 @@ Actuellement, la méthode recommandée pour déclarer une police web [^bulletpro
               préciser un mauvais format force IE 9+ à utiliser le format WOFF */
            url("/fonts/opensans.eot?#iefix") format("eot"),
            
-           /* Version WOFF pour les navigateurs récents */
+           /* Version WOFF 2 pour les navigateurs récents */
+           url("/fonts/opensans.woff2") format("woff2"),
+           
+           /* Version WOFF pour les navigateurs un peu moins récents */
            url("/fonts/opensans.woff") format("woff"),
            
            /* Version TrueType pour les navigateurs ne supportant pas le format WOFF */
@@ -97,6 +100,7 @@ Actuellement, la méthode recommandée pour déclarer une police web [^bulletpro
       font-family: "Open Sans";
       src: url("/fonts/opensans.eot");
       src: url("/fonts/opensans.eot?#iefix") format("eot"),
+           url("/fonts/opensans.woff2") format("woff2"),
            url("/fonts/opensans.woff") format("woff"),
            url("/fonts/opensans.ttf") format("truetype"),
            url("/fonts/opensans.svg#open_sans") format("svg");
