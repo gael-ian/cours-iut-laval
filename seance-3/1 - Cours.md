@@ -1,7 +1,5 @@
 # Séance 3 - Outils de développement front
 
-**Date :** 16/01/2014 - 9h30 / 12h30
-
 ## Sommaire
 
 * Harmonisation des styles entre navigateurs
@@ -15,6 +13,12 @@
 
 Si la spécification HTML5 précise pour certaines balises les styles qui doivent leur être appliqués par défaut, ces indications n'existaient pas dans les versions précédentes. Pour afficher les documents HTML, chaque navigateur a dû faire le choix d'une mise en forme par défaut.
 
+*Exemples :*
+
+* IE10 signale l'état actif d'un lien par une couleur de fond grise
+* Firefox 4+, Safari et Chrome applique une graisse plus prononcée aux éléments `<b>` et `<strong>`
+* Chaque navigateur ou presque a sa propre définition de la taille de police à appliquer à un `<small>`
+
 Pour simplifier l'intégration d'un site internet, il est indispensable d'harmoniser ces styles.
 
 La technique du `reset` consiste à remettre à 0 un certains nombre de valeurs. Sous sa forme la plus simple, elle s'écrit en quelques lignes :
@@ -24,7 +28,7 @@ La technique du `reset` consiste à remettre à 0 un certains nombre de valeurs.
 	  padding: 0;
 	}
 
-En plus d'être très gourmande en ressource à cause de l'utilisation du sélecteur universel `*`, cette technique supprime également des styles que l'on peut souhaiter conserver, comme ceux des formulaires.
+En plus d'être très gourmande en ressource à cause de l'utilisation du sélecteur universel `*`, cette technique est incomplète (elle ne corrige pas les différences de valeur de la propriété `display` par exemple) et supprime des styles que l'on peut souhaiter conserver (styles des formulaires, état :focus ou :active des liens…).  
 
 Des resets plus évolués existent aujourd'hui, qui gomment en partie ces défauts :
 
@@ -66,15 +70,16 @@ Exemples "historiques" :
 * [Blueprint CSS](http://www.blueprintcss.org/)  
   L'un des premiers frameworks CSS à avoir été largement utilisé, il n'est aujourd'hui plus maintenu.
 * [960gs](http://960.gs/)  
-  A connu un fort succès grâce à la flexibilité de ses grilles
+  A connu un fort succès grâce à la flexibilité de ses grilles.
+  Son successeur, [unsemantic](http://unsemantic.com/), propose une approche similaire pour des designs responsives.
 
 Des frameworks plus modernes :
 
-* [Bootstrap](http://getbootstrap.com/)
-* [Foundation](http://foundation.zurb.com/)
-* [KNACSS](http://www.knacss.com/)
+* [Bootstrap](http://getbootstrap.com/) (basé sur normalize.css)
+* [Foundation](http://foundation.zurb.com/) (basé sur normalize.css)
+* [KNACSS](http://www.knacss.com/) (basé sur un autre reset, plus minimaliste)
 
-Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …) et s'accompagnent de librairies JavaScript.
+Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …) et s'accompagnent souvent de librairies JavaScript.
  
 ### Avantages
 
@@ -85,7 +90,7 @@ Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant
 
 ### Inconvénients
 
-* Des classes peu sémantiques
+* Des classes peu sémantiques (en opposition avec les micro-formats)
 * Une structure HTML imposée
 * Du code inutile
 * Des styles par défaut parfois difficiles à oublier / pénibles à surdéfinir
@@ -108,7 +113,6 @@ Ils fournissent pour cela une couche d'abstraction au dessus du langage CSS, sou
 Exemples d'utilisation :
 
 * Générateur de grilles
-* Réécrire automatiquement les propriétés nécessitant d'être préfixées
 * Réaliser des calculs et des conversions (dimensions, couleurs)
 * Simplifier l'écriture des règles spécifiques aux mobiles (assets @2x)
 
@@ -129,7 +133,7 @@ Des outils supplémentaires, basés sur les pré-processeurs, sont venus s'ajout
 
 * Langage supplémentaire
 * Compilation nécessaire
-* Vigilance à apporter sur l'utilisaiton de certaines fonctionnalités (sélecteurs imbriqués, héritages non désirés, …)
+* Vigilance à apporter sur l'utilisation de certaines fonctionnalités (sélecteurs imbriqués, héritages non désirés, …)
 
 En résumé, il faut déjà bien connaitre CSS pour bien utiliser un pré-processeur.
 
