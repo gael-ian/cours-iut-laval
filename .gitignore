@@ -11,11 +11,12 @@
 
 ### Editors meta-data
 
-# Kate
-# Swap Files #
+# IntelliJ
+.idea
+
+# Kate swap files
 .*.kate-swp
 .swp.*
-
 
 # vim swap files
 [._]*.s[a-w][a-z]
