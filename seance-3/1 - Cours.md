@@ -162,6 +162,6 @@ Quelques cas d'utilisation :
 
 [^rythm]: [La macrotypographie de la page web](http://www.paris-web.fr/2010/programme/macrotypographie-page-web.php), présentation de Anne-Sophie Fradier lors de ParisWeb 2010.
 [^vertical-rythm]: [Compose a vertical rythm](http://24ways.org/2006/compose-to-a-vertical-rhythm/).
-[^css-grid]: [Grids are good](http://www.subtraction.com/pics/0703/grids_are_good.pdf), présentation de Mark Boulton sur l'utilisation d'une grille pour le redesign de Yahoo.
+[^css-grid]: [Grids are good](assets/grids_are_good.pdf), présentation de Mark Boulton sur l'utilisation d'une grille pour le redesign de Yahoo.
 [framework-css]: [Comparaison des frameworks CSS](http://usablica.github.io/front-end-frameworks/compare.html)
 [^grid-system]: <http://www.thegridsystem.org/>
