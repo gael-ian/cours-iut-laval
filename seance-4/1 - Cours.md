@@ -1,7 +1,5 @@
 # Séance 4 - Tour d'horizon des CMS / Framework
 
-**Date :** 16/01/2014 - 13h30 / 16h30
-
 ## Sommaire
 
 * Systèmes de gestion de contenus
@@ -50,7 +48,7 @@ Au fil des versions, il a été enrichi pour lui ajouter une gestion des pages e
 
 * Langage : PHP
 * Date de création : 2003
-* Version courante : 3.8
+* Version courante : 4.0.1
 * Particularités : loop, action / filter
 
 ##### Points forts
@@ -71,7 +69,7 @@ Drupal est un CMS initialement à vocation communautaire.
 
 * Langage : PHP
 * Date de création : 2001
-* Version courante : 7.25
+* Version courante : 7.34
 * Particularités : gestion des contenus par noeuds, affichage par bloc, hooks par conventions de nommage
 
 
