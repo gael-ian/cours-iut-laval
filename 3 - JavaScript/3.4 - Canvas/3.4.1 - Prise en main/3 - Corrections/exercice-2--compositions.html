@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>&lt;canvas&gt; - Prise en main | Exercice 2 - Compositions</title>
+  
+  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen"  />
+</head>
+<body>
+  <div class="wrapper">
+  
+    <h1>&lt;canvas&gt; - Prise en main</h1>
+    <h2>Exercice 2 - Compositions</h2>
+    <p><a href="index.html">« Retour à la liste des exercices</a></p>
+    
+    <canvas id="slate" width="500" height="600"></canvas>
+  </div>
+  
+  <script type="text/javascript" charset="utf8">
+    var slate         = document.getElementById('slate')
+      , width         = 400 + Math.floor(Math.random() * 200)
+      , height        = 500 + Math.floor(Math.random() * 200)
+      , context       = slate.getContext('2d')
+      ;
+      
+    // Set canvas size
+    slate.width  = width;
+    slate.height = height;
+    
+    // Fill the canvas with white background
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, width, height);
+    
+    context.strokeStyle = 'black';
+    context.lineWidth = 5;
+
+    // Draw a red rectangle filling 80% of the canvas in the top right corner
+    context.fillStyle = 'red';
+    context.fillRect((0.2 * width), 0, (0.8 * width), (0.8 * height));
+    context.strokeRect((0.2 * width), 0, (0.8 * width), (0.8 * height));
+    
+    // Draw a blue rectangle filling 20% of the canvas in the bottom left corner
+    context.fillStyle = 'blue';
+    context.fillRect(0, (0.8 * height), (0.2 * width), (0.2 * height));
+    context.strokeRect(0, (0.8 * height), (0.2 * width), (0.2 * height));
+    
+    // Draw a yellow rectangle filling 10% of the width and 15% of the height in the bottom right corner
+    context.fillStyle = 'yellow';
+    context.fillRect((0.9 * width), (0.85 * height), (0.1 * width), (0.15 * height));
+    context.strokeRect((0.9 * width), (0.85 * height), (0.1 * width), (0.15 * height));
+    
+    // Link the top left corner of the yellow rectangle to the bottom of the red one
+    context.beginPath();
+    context.moveTo((0.9 * width), (0.85 * height));
+    context.lineTo((0.9 * width), (0.8 * height));
+    
+    context.stroke();
+    
+    context.lineWidth = 10;
+    
+    // Draw a fat horizontal line at 15% of the height
+    context.beginPath();
+    context.moveTo(0, (0.15 * height));
+    context.lineTo((0.2 * width), (0.15 * height));
+    
+    context.stroke();
+    
+    // Draw borders
+    context.strokeRect(0, 0, width, height);
+    
+  </script>
+</body>
+</html>

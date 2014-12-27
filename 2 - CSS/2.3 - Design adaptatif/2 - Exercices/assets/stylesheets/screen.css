@@ -1,0 +1,100 @@
+html {
+  background: #ccc;
+  color: #222;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Main content */
+.main {
+  padding: 10px;
+  background: transparent url(../images/dummy.png) 700px center no-repeat;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 53px;
+  margin: 2em 0;
+}
+
+h1 small {
+  color: #000000;
+  font-size: 0.6em;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.column {
+  display: block;
+  float: left;
+
+  padding: 15px;
+  margin: 0 10px;
+
+  width: 268px;
+
+  border: 1px solid #BBB;
+  border-radius: 15px;
+
+  background: #f6dd00;
+}
+
+.clear {
+	clear: both;
+}
+
+.social {
+  min-height: 300px;
+}
+
+.social a,
+.social a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.social a:hover {
+  min-height: 250px;
+  background-position: center 120px;
+  background-repeat: no-repeat;
+}
+
+.twitter:hover {
+  background-color: #55ACEE;
+  background-image: url(../images/twitter.png);
+}
+
+.github:hover {
+  background-color: #FFFFFF;
+  background-image: url(../images/github.png);
+}
+
+.deviantart:hover {
+  background-color: #d4dfd0;
+  background-image: url(../images/deviantart.png);
+}
+
+/* Footer */
+footer {
+  color: #EEEEEE;
+  font-size: 0.7em;
+
+  padding: 0 10px;
+}
+
+footer a {
+  color: #eeeeee;
+  text-decoration: underline;
+}
