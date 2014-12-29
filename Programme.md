@@ -1,69 +1,117 @@
 # Programme
 
 
-## Séance 1 - Positionnement CSS
+## HTML
 
-**Date :** 08/01/2014 - 9h30 / 12h30
+_3h_
+
+* Sémantique
+* Accessibilité
+* Reférencement
+
+
+## CSS
+
+### Positionnement
+
+_3h_
 
 * Positionnement dans le flux
-* position
-* float & clear
 * display block|inline|inline-block
+* float & clear
+* position
 
+### Nouveautés CSS3
 
-## Séance 2 - Nouveautés CSS3
+_3h_
 
-**Date :** 08/01/2014 - 13h30 / 16h30
-
-* Media queries
-* Table display
-* Box-sizing
-* Transitions
-* Ombrage
-* Dégradés
+* Modèles de boite
 * Webfonts
+* Ombrages
+* Transitions
 * Animations
-* Transformations
+
+### Design adaptatif
+
+_3h_
+
+* Viewport
+* Media queries
+* S'adapter au contexte
 
 
-## Séance 3 - Outils de développement front
+## JavaScript
 
-**Date :** 16/01/2014 - 9h30 / 12h30
+### Bases
 
-* reset/normalize
+_3h_
+
+* Variables
+* Fonctions
+* Structures natives
+* Boucles
+
+### Évènements
+
+_3h_
+
+* Fonction de callback
+* Gestionnaires d'évènements
+* Timing
+* Animations
+
+### Programmation objet
+
+_3h_
+
+* Prototype
+* Héritage
+* Mixins
+
+### \<canvas\>
+
+#### Prise en main
+
+_3h_
+
+* La balise \<canvas\>
+* Le contexte bitmap
+* Coordonnées 2D
+* Dessiner dans un \<canvas\>
+
+#### Fonctions de dessin avancées
+
+_3h_
+
+* Tracer une courbe
+* Sans dépasser
+* Tordre l'espace
+* Insérer une image
+
+### Stockage
+
+_3h_
+
+* Cookies
+* Bases de données côté client
+
+
+## Outils de développement
+
+### Outils de développement front
+
+_3h_
+
+* Harmonisation des styles entre navigateurs
 * Frameworks CSS : Blueprint, Bootstrap, Foundation
 * Pré-processeurs : Less, Sass
 * Post-processeurs
-* Outils d'automatisation : linter, Grunt / Gulp
+* Outils d'automatisation : Grunt / Gulp
 
+### Tour d'horizon des CMS / Framework
 
-## Séance 4 - Tour d'horizon des CMS / Framework
+_3h_
 
-**Date :** 16/01/2014 - 13h30 / 16h30
-
-* CMS : Wordpress (PHP), Drupal (PHP), Joomla (PHP), CMS made simple (PHP), ezPublish (PHP), Spip (PHP), Plone (Python), Django CMS (Python), Radiant CMS (Ruby), …
-* Framework web : Symphony (PHP), Zend Framework (PHP), Rails (Ruby), Django (Python)
-* Micro-framework : Silex (PHP), Limonade (PHP), Sinatra (Ruby)
-
-
-## Séance 5 - Programmation objet en JavaScript
-
-**Date :** 22/01/2014 - 13h30 / 16h30
-
-* Portée des variables
-* Fonctions anonymes
-* Prototype & Héritage
-
-
-## Séance 6 - \<canvas\> 2D
-
-**Date :** 12/02/2014 - 9h30 / 12h30
-
-* Bases en natif (ex horloge)
-
-
-## Séance 7 - \<canvas\> 3D
-
-**Date :** 12/02/2014 - 13h30 / 16h30
-
-* Bibliothèques (processing.js / easel.js / à déterminer)
+* Systèmes de gestion de contenus
+* Frameworks
+* Micro-frameworks
