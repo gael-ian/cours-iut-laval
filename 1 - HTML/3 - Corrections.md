@@ -55,12 +55,28 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
       <h1>Le Grand Secret</h1>
       <ul>
         <li>Publié en <time>1973</time></li>
-        <li>Écrit par René Barjavel ( <time datetime="1911-01-24">1911</time> - <time datetime="1985-11-24">1985</time> )</li>
+        <li>
+          Écrit par René Barjavel
+          (
+          <time datetime="1911-01-24">1911</time>
+          -
+          <time datetime="1985-11-24">1985</time>
+          )
+        </li>
         <li>ISBN 2-266-02304-7</li>
         <li>376 pages</li>
       </ul>
       <img src="assets/le-grand-secret.gif" alt="Couverture du livre Le grand secret" />
-      <p>"Le Grand Secret", c'est l'histoire d'un couple séparé par un extraordinaire évènement, puis réuni dans des circonstances telles que jamais un homme et une femme n'en ont connu de pareilles. C'est aussi l'histoire d'un mystère qui, depuis 1955, a réuni, à l'insu de tous, dans une angoisse commune, par-dessus les oppositions des idéologies et des impérialismes, les chefs des plus grandes nations. C'est ce "grand secret" qui a mis fin à la guerre froide, qui a été la cause de l'assassinnat de Kennedy, qui rend compréhensible le comportement de De Gaulle en mai 1968, qui a rendu indispensables les voyages de Nixon à Moscou et à Pekin. Il n'a rien à voir avec la guerre ou la bombe H. C'est le secret de la plus grande peur et du plus grand espoir du monde. Il ne faut pas oublier que c'est un roman. Mais si c'était vrai ?</p>
+      <p>"Le Grand Secret", c'est l'histoire d'un couple séparé par un extraordinaire évènement,
+      puis réuni dans des circonstances telles que jamais un homme et une femme n'en ont connu
+      de pareilles. C'est aussi l'histoire d'un mystère qui, depuis 1955, a réuni, à l'insu de
+      tous, dans une angoisse commune, par-dessus les oppositions des idéologies et des
+      impérialismes, les chefs des plus grandes nations. C'est ce "grand secret" qui a mis fin à
+      la guerre froide, qui a été la cause de l'assassinnat de Kennedy, qui rend compréhensible
+      le comportement de De Gaulle en mai 1968, qui a rendu indispensables les voyages de Nixon
+      à Moscou et à Pekin. Il n'a rien à voir avec la guerre ou la bombe H. C'est le secret de
+      la plus grande peur et du plus grand espoir du monde. Il ne faut pas oublier que c'est un
+      roman. Mais si c'était vrai ?…</p>
     </article>
 
 ## Exercice 3<br />Microdonnées
@@ -87,5 +103,14 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
         <li><span itemprop="numberOfPages">376</span> pages</li>
       </ul>
       <img itemprop="image" src="assets/le-grand-secret.gif" alt="Couverture du livre Le grand secret" />
-      <p itemprop="description">"Le Grand Secret", c'est l'histoire d'un couple séparé par un extraordinaire évènement, puis réuni dans des circonstances telles que jamais un homme et une femme n'en ont connu de pareilles. C'est aussi l'histoire d'un mystère qui, depuis 1955, a réuni, à l'insu de tous, dans une angoisse commune, par-dessus les oppositions des idéologies et des impérialismes, les chefs des plus grandes nations. C'est ce "grand secret" qui a mis fin à la guerre froide, qui a été la cause de l'assassinnat de Kennedy, qui rend compréhensible le comportement de De Gaulle en mai 1968, qui a rendu indispensables les voyages de Nixon à Moscou et à Pekin. Il n'a rien à voir avec la guerre ou la bombe H. C'est le secret de la plus grande peur et du plus grand espoir du monde. Il ne faut pas oublier que c'est un roman. Mais si c'était vrai ?</p>
+      <p itemprop="description">"Le Grand Secret", c'est l'histoire d'un couple séparé par un extraordinaire
+      évènement, puis réuni dans des circonstances telles que jamais un homme et une femme n'en ont connu de
+      pareilles. C'est aussi l'histoire d'un mystère qui, depuis 1955, a réuni, à l'insu de tous, dans une
+      angoisse commune, par-dessus les oppositions des idéologies et des impérialismes, les chefs des plus
+      grandes nations. C'est ce "grand secret" qui a mis fin à la guerre froide, qui a été la cause de
+      l'assassinnat de Kennedy, qui rend compréhensible le comportement de De Gaulle en mai 1968, qui a rendu
+      indispensables les voyages de Nixon à Moscou et à Pekin. Il n'a rien à voir avec la guerre ou la bombe H.
+      C'est le secret de la plus grande peur et du plus grand espoir du monde. Il ne faut pas oublier que c'est
+      un roman. Mais si c'était vrai ?…</p>
     </article>
+

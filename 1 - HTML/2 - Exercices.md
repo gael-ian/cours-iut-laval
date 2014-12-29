@@ -23,11 +23,11 @@ Transformer le code HTML suivant pour utiliser un balisage sémantique.
 
     <div class="book">
       <div class="book-title">Le Grand Secret</div>
-      <div class="book-info">
-        <span class="book-date">• Publié en 1973</span><br />
-        <span class="book-author">• Écrit par René Barjavel ( <span title="24 janvier 1911">1911</span> - <span title="24 novembre 1985">1985</span> )</span><br />
-        <span class="book-author">• ISBN 2-266-02304-7</span><br />
-        <span class="book-author">• 376 pages</span>
+      <div class="book-infos">
+        <span class="book-info">• Publié en 1973</span><br />
+        <span class="book-info">• Écrit par René Barjavel ( <span title="24 janvier 1911">1911</span> - <span title="24 novembre 1985">1985</span> )</span><br />
+        <span class="book-info">• ISBN 2-266-02304-7</span><br />
+        <span class="book-info">• 376 pages</span>
       </div>
       <div class="book-cover">
         <img src="assets/le-grand-secret.gif" alt="Couverture du livre Le grand secret" />
