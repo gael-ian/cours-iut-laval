@@ -1,0 +1,118 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>La boutique Crash test Dummy</title>
+
+  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen" />
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+    
+      <p><strong>Crash Test Dummy<small>.shop</small></strong> La boutique Crash test Dummy</p>
+      
+      <nav class="user-menu">
+        <ul>
+          <li><a class="user" href="#">Votre compte</a></li>
+          <li><a class="basket" href="#">Votre panier (0)</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Sets</a></li>
+          <li><a href="#">Figurines</a></li>
+          <li><a href="#">Media</a></li>
+        </ul>
+      </nav>
+      
+    </header>
+
+    <main>
+    
+      <div class="page">
+        <h1>Media</h1>
+        <p>La vie de notre grande famille n'est jamais ennuyeuse et a inspiré de nombreux artistes et chroniqueurs.</p>
+      </div>
+      
+      <div class="brick" itemscope itemtype="http://schema.org/Movie">
+        <h2 itemprop="name">La Grande Aventure LEGO®</h2>
+        <img itemprop="image" src="assets/images/movie.jpg" />
+        <ul>
+          <li>Date de sortie : <time itemprop="dateCreated" datetime="2014-02-19">19 février 2014</time></li>
+          <li>Réalisé par 
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                <span itemprop="givenName">Phil</span>
+                <span itemprop="familyName">Lord</span>
+              </span>
+            </span>
+            et
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                <span itemprop="givenName">Christopher</span>
+                <span itemprop="familyName">Miller</span>
+              </span>
+            </span>
+          </li>
+          <li itemprop="duration">1H40</li>
+        </ul>
+        <p itemprop="description">Emmet est un petit personnage banal et conventionnel que l'on prend par erreur pour un être extraordinaire, capable de sauver le monde. Il se retrouve entraîné, parmi d'autres, dans un périple des plus mouvementés, dans le but de mettre hors d'état de nuire un redoutable despote. Mais le pauvre Emmet n'est absolument pas prêt à relever un tel défi !</p>
+        
+        <form itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <p><strong class="price"><span itemprop="price" content="14.99">14.99</span><span itemprop="priceCurrency" content="EUR">€</span></strong></p>
+          
+          <h3>Cette oeuvre vous intéresse ?</h3>
+          <div>
+            <input type="number" name="quantity" value="1" />
+            <input type="submit" value="Ajouter au panier" />
+          </div>
+        </form>
+      </div>
+      
+      <div class="brick" itemscope itemtype="http://schema.org/Book">
+        <h2 itemprop="name">Les figurines LEGO® au fil du temps</h2>
+        <img itemprop="image" src="assets/images/book.jpg" />
+        <ul>
+          <li>Date de sortie : <time itemprop="dateCreated" datetime="2014-11-01">1 novembre 2014</time></li>
+          <li>Écrit par
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                <span itemprop="givenName">Daniel</span>
+                <span itemprop="familyName">Lipkowitz</span>
+              </span>
+            </span>
+            et
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                <span itemprop="givenName">Gregory</span>
+                <span itemprop="familyName">Farshtey</span>
+              </span>
+            </span>
+          </li>
+          <li>ISBN <span itemprop="isbn">978-2810413287</span></li>
+          <li><span itemprop="numberOfPages">256</span> pages</li>
+        </ul>
+        <p itemprop="description">Ce livre retrace l'histoire complète des figurines LEGO®. Les collections sont présentées de manière chronologique et thématique. Parfaite pour tous les fans de LEGO®, cette chronique visuelle présente 2000 des figurines les plus importantes, avec toutes les photos et des informations sur les modèles phares : quel matériau a été utilisé, à combien d'exemplaires ils ont été fabriqués, etc.</p>
+        
+        <form itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <p><strong class="price"><span itemprop="price" content="39.00">39.00</span><span itemprop="priceCurrency" content="EUR">€</span></strong></p>
+          
+          <h3>Cette oeuvre vous intéresse ?</h3>
+          <div>
+            <input type="number" name="quantity" value="1" />
+            <input type="submit" value="Ajouter au panier" />
+          </div>
+        </form>
+      </div>
+      
+    </main>
+
+    <footer>
+      <p>Crash Test Dummy and its copies are freely expandable.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

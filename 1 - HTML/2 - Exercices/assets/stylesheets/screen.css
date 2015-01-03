@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;} blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+/* End of reset */
+
+html {
+  background: #ccc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  border-bottom: 2px solid #222;
+}
+
+.sitename {
+  padding: 0.5em 0 1.5em;
+  line-height: 1;
+}
+
+.header .title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.header .title .smaller {
+  color: #000000;
+  font-size: 0.6em;
+}
+
+.header ul {
+  display: inline;
+}
+
+.header li {
+  list-style-type: none;
+  display: inline;
+  margin-left: -5px; 
+}
+
+.header a {
+  display: inline-block;
+  padding: 5px 10px;
+  
+  background: #222;
+  color: #fee822;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 45px;
+}
+
+.menu {
+  margin: 0 5px;
+}
+
+.menu a {
+  font-size: 1.2em;
+  min-width: 120px;
+  margin-right: 5px;
+}
+
+.user-menu {
+  float: right;
+}
+
+a.user {
+  background: #222 url('../images/dummy.png') -75px 2px no-repeat;
+  padding-left: 65px;
+  border-radius: 20px 0 0 0;
+}
+
+a.basket {
+  background: #fee822;
+  color: #222;
+  border-radius: 0 20px 0 0;
+}
+
+/* Main content */
+.main {
+  display: inline-block;
+  background: #EEE;
+  padding: 1em;
+}
+
+.page {
+  padding: 0.75em 0;
+  font-size: 1.1em;
+}
+
+.page .title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  color: #555;
+  font-size: 0.7em;
+  padding: 10px;
+}
+
+/*
+ * Briques
+ */
+
+.brick {
+  padding: 1em 0;
+  display: inline-block;
+}
+
+.brick .title {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
+.cover {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.infos {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border-left: 1px solid #222;
+}
+
+form {
+  margin: 1em 0;
+  padding: 2em 1em;
+  background: #fff;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.brick form .title {
+  font-size: 1.05em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.input {
+  width: 40px;
+  height: 20px;
+}
+
+.button {
+  background: #fee822;
+  color: #222;
+  font-weight: bold;
+  line-height: 20px;
+  
+  border-radius: 10px;
+  border: 1px solid #222;
+}
