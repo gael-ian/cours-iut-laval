@@ -22,7 +22,7 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
 
 ### `<dfn>`
 
-`<dfn>` représente le terme défini par une définition. La définition du terme doit être donnée par l'élément <p>, ou <section> parent ou par un groupe de liste de définitions (généralement une paire <dt>, <dd>).
+`<dfn>` représente le terme défini par une définition. La définition du terme doit être donnée par l'élément `<p>`, ou `<section>` parent ou par un groupe de liste de définitions (généralement une paire `<dt>`, `<dd>`).
 
 ### `<main>`
 
@@ -53,7 +53,14 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
 
 Se reporter au fichier `3 - Corrections/exercice-2.html`.
 
-## Exercice 3<br />Microdonnées
+## Exercice 4<br />Validité
 
-Se reporter au fichier `3 - Corrections/exercice-3.html`.
+Se reporter au fichier `3 - Corrections/exercice-4.html`.
 
+## Exercice 5<br />Recommandations d'accessibilité
+
+Se reporter au fichier `3 - Corrections/exercice-5.html`.
+
+## Exercice 6<br />Microdonnées
+
+Se reporter au fichier `3 - Corrections/exercice-6.html`.

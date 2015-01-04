@@ -17,16 +17,16 @@
       
       <div class="user-menu">
         <ul>
-          <li><a class="user" href="#">Votre compte</a></li>
-          <li><a class="basket" href="#">Votre panier (0)</a></li>
+          <li><a class="user" href="#user" target="_blank"><img src="assets/images/dummy-head.png" alt="" /></a></li>
+          <li><a class="basket" href="#basket" target="_blank">Votre panier (0)</a></li>
         </ul>
       </div>
       
       <div class="menu">
         <ul>
-          <li><a href="#">Sets</a></li>
-          <li><a href="#">Figurines</a></li>
-          <li><a href="#">Media</a></li>
+          <li><a href="#sets">S e t s</a></li>
+          <li><a href="#figurines">F i g u r i n e s</a></li>
+          <li><a href="#media">M e d i a</a></li>
         </ul>
       </div>
       
@@ -41,7 +41,7 @@
       <div class="brick">
         <div class="title">La Grande Aventure LEGO®</div>
         <div class="cover">
-          <img src="assets/images/movie.jpg" />
+          <img src="assets/images/movie.jpg" alt="Brick picture" />
         </div>
         <div class="infos">
           <span class="info">• Date de sortie : 19 février 2014</span><br />
@@ -50,14 +50,16 @@
         </div>
         <div class="description">Emmet est un petit personnage banal et conventionnel que l'on prend par erreur pour un être extraordinaire, capable de sauver le monde. Il se retrouve entraîné, parmi d'autres, dans un périple des plus mouvementés, dans le but de mettre hors d'état de nuire un redoutable despote. Mais le pauvre Emmet n'est absolument pas prêt à relever un tel défi !</div>
         
-        <form>
+        <form action="#buy-movie" method="post">
           <div class="price">14.99€</div>
           <div class="title">Cette oeuvre vous intéresse ?</div>
           <input class="input" type="text" name="quantity" value="1" />
           <input class="button" type="submit" value="Ajouter au panier" />
         </form>
       </div>
-      
+
+      <center><img src="assets/images/brick.png" alt="spacer" class="spacer" /></center>
+
       <div class="brick">
         <div class="title">Les figurines LEGO® au fil du temps</div>
         <div class="cover">
@@ -70,13 +72,17 @@
           <span class="info">• 256 pages</span>
         </div>
         <div class="description">Ce livre retrace l'histoire complète des figurines LEGO®. Les collections sont présentées de manière chronologique et thématique. Parfaite pour tous les fans de LEGO®, cette chronique visuelle présente 2000 des figurines les plus importantes, avec toutes les photos et des informations sur les modèles phares : quel matériau a été utilisé, à combien d'exemplaires ils ont été fabriqués, etc.</div>
-        
-        <form>
+
+        <form action="#buy-book" method="post">
           <div class="price">39.00€</div>
           <div class="title">Cette oeuvre vous intéresse ?</div>
           <input class="input" type="text" name="quantity" value="1" />
           <input class="button" type="submit" value="Ajouter au panier" />
         </form>
+      </div>
+
+      <div class="pagination">
+        <a href="#">&lt;</a> | <a href="#">&gt;</a>
       </div>
       
     </div>

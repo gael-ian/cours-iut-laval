@@ -1,67 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>La boutique Crash test Dummy</title>
+  <title>La boutique Crash test Dummy | Catégorie Media</title>
 
-  <link rel="stylesheet" type="text/css" charset="utf-8" href="./assets/stylesheets/screen.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/screen.css" media="screen" />
 </head>
 <body>
   <div class="wrapper">
 
     <header>
-    
+
       <p><strong>Crash Test Dummy<small>.shop</small></strong> La boutique Crash test Dummy</p>
-      
+
       <nav class="user-menu">
         <ul>
-          <li><a class="user" href="#user" target="_blank"><img src="assets/images/dummy-head.png" alt="" /></a></li>
+          <li><a class="user" href="#user" target="_blank"><img src="assets/images/dummy-head.png" alt="" /> Votre compte</a></li>
           <li><a class="basket" href="#basket" target="_blank">Votre panier (0)</a></li>
         </ul>
       </nav>
-      
+
       <nav class="menu">
         <ul>
-          <li><a href="#sets">S e t s</a></li>
-          <li><a href="#figurines">F i g u r i n e s</a></li>
-          <li><a href="#media">M e d i a</a></li>
+          <li><a href="#sets">Sets</a></li>
+          <li><a href="#figurines">Figurines</a></li>
+          <li><a href="#media">Media</a></li>
         </ul>
       </nav>
-      
+
     </header>
 
     <main>
-    
+
       <div class="page">
         <h1>Media</h1>
         <p>La vie de notre grande famille n'est jamais ennuyeuse et a inspiré de nombreux artistes et chroniqueurs.</p>
       </div>
-      
+
       <div class="brick">
         <h2>La Grande Aventure LEGO®</h2>
-        <img src="assets/images/movie.jpg" alt="Brick picture" />
+        <img src="assets/images/movie.jpg" alt="Affiche du film La Grande Aventure LEGO®" />
         <ul>
           <li>Date de sortie : <time datetime="2014-02-19">19 février 2014</time></li>
           <li>Réalisé par Phil Lord et Christopher Miller</li>
           <li>1h40</li>
         </ul>
         <p>Emmet est un petit personnage banal et conventionnel que l'on prend par erreur pour un être extraordinaire, capable de sauver le monde. Il se retrouve entraîné, parmi d'autres, dans un périple des plus mouvementés, dans le but de mettre hors d'état de nuire un redoutable despote. Mais le pauvre Emmet n'est absolument pas prêt à relever un tel défi !</p>
-        
+
         <form action="#buy-movie" method="post">
           <p><strong class="price">14.99€</strong></p>
-          
+
           <h3>Cette oeuvre vous intéresse ?</h3>
           <div>
-            <input type="number" name="quantity" value="1" />
+            <label for="quantity-movie">Quantité</label>
+            <input id="quantity-movie" type="number" name="quantity" value="1" />
             <input type="submit" value="Ajouter au panier" />
           </div>
         </form>
       </div>
 
-      <center><img src="assets/images/brick.png" alt="spacer" class="spacer" /></center>
-      
+      <img src="assets/images/brick.png" alt="" role="presentation" class="spacer" />
+
       <div class="brick">
         <h2>Les figurines LEGO® au fil du temps</h2>
-        <img src="assets/images/book.jpg" />
+        <img src="assets/images/book.jpg"alt="Couverture du livre Les figurines LEGO® au fil du temps" />
         <ul>
           <li>Date de sortie : <time datetime="2014-11-01">1 novembre 2014</time></li>
           <li>Écrit par Daniel Lipkowitz et Gregory Farshtey</li>
@@ -69,22 +71,23 @@
           <li>256 pages</li>
         </ul>
         <p>Ce livre retrace l'histoire complète des figurines LEGO®. Les collections sont présentées de manière chronologique et thématique. Parfaite pour tous les fans de LEGO®, cette chronique visuelle présente 2000 des figurines les plus importantes, avec toutes les photos et des informations sur les modèles phares : quel matériau a été utilisé, à combien d'exemplaires ils ont été fabriqués, etc.</p>
-        
+
         <form action="#buy-book" method="post">
           <p><strong class="price">39.00€</strong></p>
-          
+
           <h3>Cette oeuvre vous intéresse ?</h3>
           <div>
-            <input type="number" name="quantity" value="1" />
+            <label for="quantity-book">Quantité</label>
+            <input id="quantity-book" type="number" name="quantity" value="1" />
             <input type="submit" value="Ajouter au panier" />
           </div>
         </form>
       </div>
 
       <div class="pagination">
-        <a href="#">&lt;</a> | <a href="#">&gt;</a>
+        <a href="#prev" rel="prev" title="Page précédente">&lt;</a> | <a href="#next" rel="next" title="Page suivante">&gt;</a>
       </div>
-      
+
     </main>
 
     <footer>
