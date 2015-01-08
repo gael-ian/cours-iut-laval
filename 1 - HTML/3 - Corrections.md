@@ -50,8 +50,3 @@ Se reporter au fichier `3 - Corrections/exercice-4.html`.
 ## Exercice 5<br />Recommandations d'accessibilité
 
 Se reporter au fichier `3 - Corrections/exercice-5.html`.
-
-
-## Exercice 6<br />Microdonnées
-
-Se reporter au fichier `3 - Corrections/exercice-6.html`.

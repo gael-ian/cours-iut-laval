@@ -40,9 +40,4 @@ Modifiez le code HTML obtenu aux exercices précédents pour suivre obtenir une 
 
 ## Exercice 5<br />Recommandations d'accessibilité
 
-Modifiez le code HTML obtenu aux exercices précédents pour suivre toutes les recommandations d'accessibilité permettant de répondre au niveau A d'exigences des [WCAG](http://www.w3.org/TR/WCAG20/).
-
-
-## Exercice 6<br />Microdonnées
-
-Modifiez le code HTML obtenu aux exercices précédents pour y signaler le rôle d'un maximum de propriété en utilisant les schemas Book, Movie, Person et Offer décrits sur schema.org.
+Modifiez le code HTML obtenu aux exercices précédents pour suivre toutes les recommandations d'accessibilité permettant de répondre au niveau AA d'exigences des [WCAG](http://www.w3.org/TR/WCAG20/).

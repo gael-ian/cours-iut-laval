@@ -7,7 +7,6 @@ _3h_
 
 * Sémantique
 * Accessibilité
-* Reférencement
 
 
 ## CSS
