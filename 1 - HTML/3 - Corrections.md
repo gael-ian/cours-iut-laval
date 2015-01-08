@@ -20,17 +20,9 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
 
 `<nav>` représente une section d'une page ayant des liens vers d'autres pages ou des fragments de cette page.
 
-### `<dfn>`
-
-`<dfn>` représente le terme défini par une définition. La définition du terme doit être donnée par l'élément `<p>`, ou `<section>` parent ou par un groupe de liste de définitions (généralement une paire `<dt>`, `<dd>`).
-
 ### `<main>`
 
 `<main>` représente le contenu principal d'un document, unique au sein du site ou de l'application.
-
-### `<section>`
-
-`<section>` représente une section générique d'un document, c'est à dire un groupement thématique de contenu, généralement avec un en-tête.
 
 ### `<acronym>`
 
@@ -39,10 +31,6 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
 ### `<article>`
 
 `<article>` représente un contenu autonome dans un document, prévu pour être distribué ou réutiliser indépendamment (par exemple dans un flux de syndication).
-
-### `<optgroup>`
-
-`<optgroup>` permet de regrouper des options au sein d'un élément `<select>`.
 
 ### `<aside>`
 

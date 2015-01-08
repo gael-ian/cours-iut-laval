@@ -2,17 +2,33 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;} blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
 /* End of reset */
 
-html {
-  background: #ccc;
-  color: #222;
-  margin: 0;
-  padding: 0;
-}
 
+/*
+ * Basic typography
+ */
 body {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 0.6em;
+}
+
+
+/*
+ * Layout
+ */
+html {
+  background: #ccc;
+  color: #222;
   margin: 0;
   padding: 0;
 }
@@ -38,9 +54,8 @@ body {
   color: #FFFFFF;
 }
 
-.header .title .smaller {
+.header small {
   color: #000000;
-  font-size: 0.6em;
 }
 
 .header ul {
@@ -141,7 +156,7 @@ html[lang=fr] .footer {
   margin-bottom: 0.75em;
 }
 
-.cover {
+.brick img {
   float: right;
   margin: 0 0 1em 1em;
 }
@@ -163,7 +178,6 @@ form {
 }
 
 .price {
-  font-weight: bold;
   font-size: 1.5em;
 }
 
