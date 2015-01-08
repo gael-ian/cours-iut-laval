@@ -41,13 +41,16 @@ Il peut être accompagné d'un élément `legend`, placé comme premier enfant, 
 
 Se reporter au fichier `3 - Corrections/exercice-2.html`.
 
+
 ## Exercice 4<br />Validité
 
 Se reporter au fichier `3 - Corrections/exercice-4.html`.
 
+
 ## Exercice 5<br />Recommandations d'accessibilité
 
 Se reporter au fichier `3 - Corrections/exercice-5.html`.
+
 
 ## Exercice 6<br />Microdonnées
 

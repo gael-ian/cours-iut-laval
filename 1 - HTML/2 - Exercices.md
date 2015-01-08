@@ -18,6 +18,7 @@ Précisez le sens de chacune des balises suivantes :
 
 Transformez les fichier index.html et screen.css pour utiliser un balisage sémantique.
 
+
 ## Exercice 3<br />Lecteurs d'écran
 
 Selon les autorisations dont vous disposez sur votre machine, testez un ou plusieurs lecteurs d'écran parmi :
@@ -31,13 +32,16 @@ Selon les autorisations dont vous disposez sur votre machine, testez un ou plusi
 * [Thunder](http://screenreader.net)  
   Un lecteur d'écran gratuit pour Windows.
 
+
 ## Exercice 4<br />Validité
 
 Modifiez le code HTML obtenu aux exercices précédents pour suivre obtenir une page valide selon le [service de validation de balisage du w3C](http://validator.w3.org/).
 
+
 ## Exercice 5<br />Recommandations d'accessibilité
 
 Modifiez le code HTML obtenu aux exercices précédents pour suivre toutes les recommandations d'accessibilité permettant de répondre au niveau A d'exigences des [WCAG](http://www.w3.org/TR/WCAG20/).
+
 
 ## Exercice 6<br />Microdonnées
 
