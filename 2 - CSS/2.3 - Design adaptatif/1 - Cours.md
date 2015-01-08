@@ -5,6 +5,7 @@
 * `@viewport`
 * `@media`
 
+
 ## `@viewport`
 
 Si on oublie quelques tentatives plus ou moins réussies comme le WAP, le web n'est apparu sur mobile que très récemment et alors qu'il existait déjà des milliers de sites, tous construits pour s'afficher sur un écran d'ordinateur.
@@ -34,6 +35,7 @@ Le contenu de la balise `<meta name="viewport" />` peut accueillir plusieurs pro
 * `width=device-width` défini la largeur du viewport à celle de l'appareil. La page utilisera tout l'espace disponible quelque soient les dimensions de l'écran.
 * `initial-scale=1` rétabli le niveau de zoomau chargement de la page à 1.
 * `user-scalable=no` indique qu'il n'est pas possible à l'utilisateur de zoomer. `maximum-scale=1` est utilisé en complément, pour les navigateurs ne supportant pas `user-scalable`.
+
 
 ## `@media`
 
