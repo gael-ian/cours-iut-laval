@@ -30,13 +30,17 @@ _3h_
 * Transitions
 * Animations
 
-### Design adaptatif
+### Gabarits de pages
 
 _3h_
 
-* Viewport
-* Media queries
-* S'adapter au contexte
+* Gabarit statique
+* Gabarit liquide
+* `@viewport`
+* `@media`
+* Gabarit adaptatif
+* Gabarit responsive
+* L'approche "mobile first"
 
 
 ## JavaScript

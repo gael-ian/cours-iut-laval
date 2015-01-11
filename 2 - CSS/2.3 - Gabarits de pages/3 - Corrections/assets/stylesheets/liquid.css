@@ -1,0 +1,369 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;} blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+/* End of reset */
+
+
+/* Box sizing easing */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+/*
+ * Utility
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+
+/*
+ * Typography
+ */
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 16px 0 24px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px 0;
+  
+  text-transform: capitalize;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+time {
+  color: #a9a9a9;
+  font-style: oblique;
+}
+
+a,
+a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  vertical-align: baseline;
+}
+
+
+/*
+ * Layout
+ */
+html {
+  background: #ccc;
+  color: #222;
+}
+
+.wrapper {
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+nav {
+  width: 25%;
+  margin-top: 16px;
+  padding: 16px;
+  
+  float: left;
+  padding-left: 0;
+}
+
+main {
+  width: 75%;
+  float: left;
+}
+
+/* Header */
+header {
+  font-size: 40px;
+  color: #f6dd00;
+}
+
+header strong {
+  color: #5890ff;
+}
+
+header em {
+  color: #ff110a;
+}
+
+/* Footer */
+footer {
+  color: #EEEEEE;
+  font-size: 11px;
+
+  padding: 0 16px;
+  margin-left: 25%;
+}
+
+footer a {
+  color: #eeeeee;
+  text-decoration: underline;
+}
+
+
+/*
+ * Navigation
+ */
+nav a {
+  text-decoration: none;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  
+  display: block;
+  padding: 16px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+}
+
+nav .primary a:hover {
+  background: #f6dd00;
+}
+
+nav .secondary a:hover {
+  background: #5890ff;
+}
+
+nav .ternary a:hover {
+  background: #ff110a;
+}
+
+
+/*
+ * Modules
+ */
+
+/* Brick header */
+.brick-header {
+  border-top: 16px dashed #ccc;
+  height: 112px;
+}
+
+.brick-header img {
+  float: right;
+  margin: 16px;
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+}
+
+.brick-header p {
+  padding: 16px;
+}
+
+.brick-header time {
+  display: block;
+}
+
+/* Form */
+.form-field,
+.form-action {
+  padding-bottom: 16px;
+}
+
+.form-action {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.form-field label {
+  width: 33%;
+  padding: 16px;
+  line-height: 24px;
+  float: left;
+}
+
+.form-field label abbr {
+  float: right;
+  color: #ff110a;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.form-input {
+  width: 67%;
+  padding: 0 16px;
+
+  float: left;
+}
+
+.form-input input[type=text],
+.form-input textarea {
+  width: 100%;
+  padding: 16px;
+  line-height: 24px;
+  border: 1px solid #ccc;
+}
+
+.form-field textarea {
+  min-height: 160px;
+}
+
+.form-action input[type=button] {
+  background: #5890ff;
+  color: #fff;
+  font-weight: bold;
+  font-size: inherit;
+  border: 1px solid #ccc;
+
+  padding: 8px 16px;
+  float: right;
+}
+
+
+/*
+ * Main content
+ */
+.feed-entry {
+  margin: 0 0 32px 0;
+  background: #ffffff;
+}
+
+/* Publish form */
+.publish-header {
+  background: #5890ff;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.publish-header h1 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+/* Entry abstract */
+.feed-entry-abstract {
+  position: relative;
+}
+
+.feed-entry-abstract .abstract-content:after {
+  content: " ";
+  display: block;
+  height: 96px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Article abstract */
+.abstract-article .abstract-content {
+  padding: 16px;
+  padding-top: 0;
+}
+
+/* Galery abstract */
+.feed-entry-abstract h2 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.abstract-galery li {
+  float: left;
+  margin: 0 0 16px 16px;
+  padding: 2px;
+  border: 1px solid #ddd;
+}
+
+.abstract-galery img {
+  display: block;
+  width: 211px;
+  height: 211px;
+}
+
+/* Comments */
+.feed-entry-abstract.feed-entry-with-comments {
+  padding-right: 0;
+}
+
+.feed-entry-with-comments .abstract-content {
+  width: 67%;
+  float: left;
+}
+
+.feed-entry .comments {
+  width: 33%;
+  float: right;
+  
+  font-size: 0.8em;
+}
+
+.feed-entry .comment {
+  margin: 0 0 24px 16px;
+}
+
+.feed-entry .comment-content {
+  margin: 16px 8px;
+}
+
+/* Entry actions */
+.feed-entry-actions {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ddd;
+}
+
+.feed-entry-actions li {
+  display: inline;
+}
+
+.feed-entry-actions a {
+  color: #a9a9a9;
+  padding: 8px;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  
+  text-decoration: none;
+}
+
+/* Author */
+.author {
+  background: #f6dd00;
+  overflow: hidden;
+}
+
+/* Comments */
+.comment .brick-header {
+  height: 64px;
+  border-color: #ffffff;
+  border-width: 8px;
+}
+
+.comment .brick-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.comment .brick-header p {
+  padding: 8px 16px;
+}
