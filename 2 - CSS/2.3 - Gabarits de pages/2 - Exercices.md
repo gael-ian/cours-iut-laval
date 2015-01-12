@@ -11,7 +11,18 @@ Observez les limites de cette solution en redimensionnant la fenêtre de votre n
 
 # Exercice 2<br />Unités de longueur relatives
 
-?
+Dupliquez la feuille de styles `static.css` pour créer une feuille de styles `static-relative.css`.
+Modifiez cette feuille de styles pour définir en une seule fois :
+
+* Les espacements internes appliqués aux listes d'actions sur les contenus.
+* La taille des bordures appliquées aux blocs `.brick-header`
+* Le rayon des bordures appliquées aux avatars
+* Les marges appliquées au contenu (p) des blocs `.brick-header`
+* Les marges appliquées aux paragraphes
+* Les marges appliquées aux articles
+
+Modifiez la déclaration des styles des titres pour que l'échelle typographique soit conservées si la taille de police de base du document venait à être modifiée.
+Testez le résultat en utilisant le zoom de votre navigateur.
 
 
 # Exercice 3<br />Media queries

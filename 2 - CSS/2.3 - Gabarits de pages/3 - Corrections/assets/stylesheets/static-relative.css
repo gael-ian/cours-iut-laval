@@ -32,21 +32,21 @@ body {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
-  margin: 16px 0 24px;
+  margin: 1rem 0 1.5rem;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 16px 0;
+  margin: 1rem 0;
   
   text-transform: capitalize;
 }
 
 p {
-  margin-bottom: 8px;
+  margin-bottom: 0.5em;
 }
 
 strong {
@@ -79,12 +79,13 @@ html {
 }
 
 .wrapper {
+  width: 980px;
   padding: 0 10px;
   margin: 0 auto;
 }
 
 nav {
-  width: 25%;
+  width: 240px;
   margin-top: 16px;
   padding: 16px;
   
@@ -93,7 +94,7 @@ nav {
 }
 
 main {
-  width: 75%;
+  width: 720px;
   float: left;
 }
 
@@ -117,7 +118,7 @@ footer {
   font-size: 11px;
 
   padding: 0 16px;
-  margin-left: 25%;
+  margin-left: 240px;
 }
 
 footer a {
@@ -162,7 +163,7 @@ nav .ternary a:hover {
 
 /* Brick header */
 .brick-header {
-  border-top: 11px dashed #ccc;
+  border-top: 0.7em dashed #ccc;
   height: 112px;
 }
 
@@ -171,11 +172,11 @@ nav .ternary a:hover {
   margin: 16px;
   width: 120px;
   height: 120px;
-  border-radius: 16px;
+  border-radius: 1em;
 }
 
 .brick-header p {
-  padding: 16px;
+  padding: 1em 1rem;
 }
 
 .brick-header time {
@@ -194,7 +195,7 @@ nav .ternary a:hover {
 }
 
 .form-field label {
-  width: 33%;
+  width: 240px;
   padding: 16px;
   line-height: 24px;
   float: left;
@@ -208,7 +209,7 @@ nav .ternary a:hover {
 }
 
 .form-input {
-  width: 67%;
+  width: 480px;
   padding: 0 16px;
 
   float: left;
@@ -241,8 +242,9 @@ nav .ternary a:hover {
 /*
  * Main content
  */
-.feed-entry {
-  margin: 0 0 32px 0;
+.feed-entry,
+article {
+  margin: 0 0 2em 0;
   background: #ffffff;
 }
 
@@ -279,7 +281,7 @@ nav .ternary a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  
+
   pointer-events: none;
 }
 
@@ -310,8 +312,6 @@ nav .ternary a:hover {
 
 /* Entry actions */
 .feed-entry-actions {
-  margin: 0;
-  padding: 0;
   border-top: 1px solid #ddd;
 }
 
@@ -321,11 +321,15 @@ nav .ternary a:hover {
 
 .feed-entry-actions a {
   color: #a9a9a9;
-  padding: 8px;
+  padding: 0.5em;
   display: inline-block;
   border-right: 1px solid #ddd;
-
+  
   text-decoration: none;
+}
+
+.feed-entry-actions a:hover {
+  color: #222;
 }
 
 /* Comments */
@@ -334,20 +338,16 @@ nav .ternary a:hover {
 }
 
 .feed-entry-with-comments .abstract-content {
-  width: 67%;
+  width: 480px;
   float: left;
 }
 
 .feed-entry .comments {
-  width: 33%;
-  padding-left: 16px;
+  width: 240px;
   float: right;
-  
-  font-size: 12px;
-}
+  padding-left: 16px;
 
-.feed-entry .comment {
-  margin: 0 0 24px;
+  font-size: 0.75em;
 }
 
 .comment .comment-content {
@@ -355,31 +355,18 @@ nav .ternary a:hover {
   border-left: 1px solid #ccc;
 }
 
-.comment .comment-content p {
-  margin-bottom: 6px;
-}
-
+/* Comments */
 .comment .brick-header {
-  height: 60px;
+  height: 64px;
   border-color: #ffffff;
-  border-width: 8px;
 }
 
 .comment .brick-header img {
   width: 50px;
   height: 50px;
-  border-radius: 12px;
-}
-
-.comment .brick-header p {
-  padding: 12px 16px;
 }
 
 .comment .feed-entry-actions {
   border: 1px solid #ddd;
   border-right: none;
-}
-
-.comment .feed-entry-actions a {
-  padding: 6px;
 }

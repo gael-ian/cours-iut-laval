@@ -163,7 +163,7 @@ nav .ternary a:hover {
 
 /* Brick header */
 .brick-header {
-  border-top: 16px dashed #ccc;
+  border-top: 11px dashed #ccc;
   height: 112px;
 }
 
@@ -172,7 +172,7 @@ nav .ternary a:hover {
   margin: 16px;
   width: 120px;
   height: 120px;
-  border-radius: 24px;
+  border-radius: 16px;
 }
 
 .brick-header p {
@@ -259,6 +259,12 @@ nav .ternary a:hover {
   margin-right: 16px;
 }
 
+/* Author */
+.author {
+  background: #f6dd00;
+  overflow: hidden;
+}
+
 /* Entry abstract */
 .feed-entry-abstract {
   position: relative;
@@ -274,6 +280,13 @@ nav .ternary a:hover {
   bottom: 0;
   left: 0;
   right: 0;
+
+  pointer-events: none;
+}
+
+.feed-entry-abstract h2 {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 /* Article abstract */
@@ -283,11 +296,6 @@ nav .ternary a:hover {
 }
 
 /* Galery abstract */
-.feed-entry-abstract h2 {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
 .abstract-galery li {
   float: left;
   margin: 0 0 16px 16px;
@@ -299,6 +307,28 @@ nav .ternary a:hover {
   display: block;
   width: 211px;
   height: 211px;
+}
+
+/* Entry actions */
+.feed-entry-actions {
+  border-top: 1px solid #ddd;
+}
+
+.feed-entry-actions li {
+  display: inline;
+}
+
+.feed-entry-actions a {
+  color: #a9a9a9;
+  padding: 8px;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+
+  text-decoration: none;
+}
+
+.feed-entry-actions a:hover {
+  color: #222;
 }
 
 /* Comments */
@@ -313,46 +343,25 @@ nav .ternary a:hover {
 
 .feed-entry .comments {
   width: 240px;
+  padding-left: 16px;
   float: right;
   
-  font-size: 0.8em;
+  font-size: 12px;
 }
 
 .feed-entry .comment {
-  margin: 0 0 24px 16px;
+  margin: 0 0 24px;
 }
 
-.feed-entry .comment-content {
-  margin: 16px 8px;
-}
-
-/* Entry actions */
-.feed-entry-actions {
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid #ddd;
-}
-
-.feed-entry-actions li {
-  display: inline;
-}
-
-.feed-entry-actions a {
-  color: #a9a9a9;
+.comment .comment-content {
   padding: 8px;
-  display: inline-block;
-  border-right: 1px solid #ddd;
-  
-  text-decoration: none;
+  border-left: 1px solid #ccc;
 }
 
-/* Author */
-.author {
-  background: #f6dd00;
-  overflow: hidden;
+.comment .comment-content p {
+  margin-bottom: 6px;
 }
 
-/* Comments */
 .comment .brick-header {
   height: 64px;
   border-color: #ffffff;
@@ -362,9 +371,18 @@ nav .ternary a:hover {
 .comment .brick-header img {
   width: 50px;
   height: 50px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .comment .brick-header p {
-  padding: 8px 16px;
+  padding: 12px 16px;
+}
+
+.comment .feed-entry-actions {
+  border: 1px solid #ddd;
+  border-right: none;
+}
+
+.comment .feed-entry-actions a {
+  padding: 6px;
 }
