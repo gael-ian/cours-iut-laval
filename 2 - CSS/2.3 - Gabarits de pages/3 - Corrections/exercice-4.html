@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bricks of us</title>
+
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/adaptative.css" media="screen" />
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+      <p><strong>Bricks</strong>-of<em>.us</em></p>
+    </header>
+
+    <nav>
+      <ul>
+        <li class="primary"><a href="#feed">Activités</a></li>
+        <li class="secondary"><a href="#messages">Messages</a></li>
+        <li class="ternary"><a href="#preferences">Préférences</a></li>
+      </ul>
+    </nav>
+    
+    <main class="feed">
+      
+      <div class="feed-entry publish">
+        <div class="brick-header publish-header">
+          <img src="assets/images/dummy.jpg" alt="Crash Test Dummy" />
+          <h1>Quoi de neuf ?</h1>
+        </div>
+        
+        <form class="form publish-form clearfix" action="#publish" method="post">
+          
+          <div class="form-field clearfix">
+            <label for="entry-title">Titre <abbr title=""required">*</abbr></label>
+            <div class="form-input">
+              <input type="text" name="entry[title]" id="entry-title" />  
+            </div>
+          </div>
+          
+          <div class="form-field clearfix">
+            <label for="entry-content">Contenu <abbr title=""required">*</abbr></label>
+            <div class="form-input">
+              <textarea name="entry[content]" id="entry-content"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-action clearfix">
+            <input type="button" name="search-submit" id="search-submit" value="Publier" />
+          </div>
+          
+        </form>
+
+        <ul class="feed-entry-actions">
+          <li><a href="#publish-photo">Publier des photos</a></li>
+          <li><a href="#publish-video">Publier une vidéo</a></li>
+        </ul>
+      </div>
+
+      <article class="feed-entry">
+        <aside class="author brick-header">
+          <a href="#butch"><img src="assets/images/butch.jpg" alt="Butch" /></a>
+          <p>
+            <a href="#"><strong>Butch</strong></a> a publié un article
+            <time datetime="2015-01-07 14:31">il y a 5mn</time>
+          </p>
+        </aside>
+        
+        <div class="feed-entry-abstract abstract-article clearfix">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+
+          <div class="abstract-content">
+            <p>Nam varius finibus nunc. Aliquam erat volutpat. Integer ante risus, consectetur vel finibus et, elementum a mi. Vivamus venenatis ipsum rutrum ante porttitor, vitae consectetur est laoreet. Phasellus mollis, diam vitae accumsan scelerisque, neque lacus tincidunt metus, ac sodales mauris dolor vel purus. Donec odio lorem, vulputate nec ante non, posuere lacinia nibh. Nunc interdum tortor lorem, a feugiat lectus ornare eget. In felis purus, luctus at mollis id, feugiat et diam. Sed vel pharetra turpis, varius blandit eros. Nulla dapibus, ex a euismod cursus, felis magna sollicitudin metus, pulvinar accumsan felis erat sed mauris. Praesent semper quam sed urna dignissim interdum.</p>
+          </div>
+          
+        </div>
+
+        <ul class="feed-entry-actions">
+          <li><a href="#more">Lire la suite</a></li>
+          <li><a href="#comment">Commenter</a></li>
+          <li><a href="#share">Partager</a></li>
+        </ul>
+      </article>
+
+      <article class="feed-entry">
+        <aside class="author brick-header">
+          <a href="#sandy"><img src="assets/images/sandy.jpg" alt="Sandy" /></a>
+          <p>
+            <a href="#sandy"><strong>Sandy</strong></a> a publié un album photo
+            <time datetime="2015-01-07 14:22">il y a 14mn</time>
+          </p>
+        </aside>
+
+        <div class="feed-entry-abstract abstract-galery clearfix">
+          <h2>Donec gravida nisi eu nunc porta</h2>
+
+          <div class="abstract-content">
+            <ul class="clearfix">
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=1" alt="Placeholder image" /></a></li>
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=2" alt="Placeholder image" /></a></li>
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=3" alt="Placeholder image" /></a></li>
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=4" alt="Placeholder image" /></a></li>
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=5" alt="Placeholder image" /></a></li>
+              <li><a href="#"><img src="https://placeimg.com/240/240/nature?t=6" alt="Placeholder image" /></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="feed-entry-actions">
+          <li><a href="#more">Voir toutes les photos (12)</a></li>
+          <li><a href="#comment">Commenter</a></li>
+          <li><a href="#share">Partager</a></li>
+        </ul>
+      </article>
+
+      <article class="feed-entry">
+        <aside class="author brick-header">
+          <a href="#peter"><img src="assets/images/peter.jpg" alt="Peter" /></a>
+          <p>
+            <a href="#"><strong>Peter</strong></a> a publié un article
+            <time datetime="2015-01-07 12:14">il y a 2h</time>
+          </p>
+        </aside>
+
+        <div class="feed-entry-abstract abstract-article feed-entry-with-comments clearfix">
+          
+          <h2>Nunc vitae consectetur nunc</h2>
+
+          <div class="abstract-content">         
+            <p>Etiam dictum ligula tincidunt accumsan auctor. Aenean non sodales nisl, nec tincidunt libero. Integer tincidunt quam vitae nisi auctor, et semper justo porttitor. Maecenas condimentum a leo et porta. Curabitur elementum diam eget magna rhoncus, vel eleifend mauris semper. Nullam vel congue leo. Vivamus mollis est in porta sagittis. Phasellus vel commodo sem, at tempor diam. Ut pharetra erat sit amet scelerisque dapibus.</p>
+
+            <p>Nam nisi quam, ultricies et sem id, lacinia sagittis leo. Sed sit amet quam risus. Vivamus gravida dolor sed metus egestas, in porttitor tortor auctor.</p>
+            
+            <p>Curabitur porta, velit in tempor vehicula, enim erat accumsan eros, sit amet congue urna quam sed lacus. Curabitur convallis elit eu urna ornare vehicula. Praesent ac nisi id justo tempor ornare eu a nulla. Curabitur porta mauris nec mauris ultrices maximus.</p>
+          </div>
+
+          <aside class="comments">
+
+            <article class="comment">
+              <aside class="author brick-header">
+                <a href="#winston"><img src="assets/images/winston.jpg" alt="Winston" /></a>
+                <p>
+                  <a href="#"><strong>Winston</strong></a>
+                  <time datetime="2015-01-07 14:31">il y a 1h30</time>
+                </p>
+              </aside>
+
+              <div class="comment-content clearfix">
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean accumsan nisl ac faucibus tincidunt.</p>
+              </div>
+              
+              <ul class="feed-entry-actions">
+                <li><a href="#respond">Répondre</a></li>
+              </ul>
+            </article>
+
+            <article class="comment">
+              <aside class="author brick-header">
+                <a href="#scarecrow"><img src="assets/images/scarecrow.jpg" alt="Scarecrow" /></a>
+                <p>
+                  <a href="#"><strong>L'épouvantail</strong></a>
+                  <time datetime="2015-01-07 14:41">il y a 1h20</time>
+                </p>
+              </aside>
+
+              <div class="comment-content clearfix">
+                <p>Donec ex augue, volutpat id accumsan nec, hendrerit sed dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus metus quam, bibendum vitae lacus sit amet, interdum suscipit augue.</p>
+              </div>
+
+              <ul class="feed-entry-actions">
+                <li><a href="#respond">Répondre</a></li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+
+        <ul class="feed-entry-actions">
+          <li><a href="#more">Lire la suite</a></li>
+          <li><a href="#more-comments">Voir tous les commentaires (2)</a></li>
+          <li><a href="#comment">Commenter</a></li>
+          <li><a href="#share">Partager</a></li>
+        </ul>
+      </article>
+
+    </main>
+
+    <footer>
+      <p>Crash Test Dummy et ses reproductions sont librement jetables.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
