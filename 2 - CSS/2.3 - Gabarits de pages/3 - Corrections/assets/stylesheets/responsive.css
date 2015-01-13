@@ -41,7 +41,7 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1rem 0;
-  
+
   text-transform: capitalize;
 }
 
@@ -88,7 +88,7 @@ nav {
   width: 240px;
   margin-top: 16px;
   padding: 16px;
-  
+
   float: left;
   padding-left: 0;
 }
@@ -134,7 +134,7 @@ nav a {
   text-decoration: none;
   background: #fff;
   border-bottom: 1px solid #ccc;
-  
+
   display: block;
   padding: 16px;
 }
@@ -308,13 +308,10 @@ article {
   border: 1px solid #ddd;
 
   width: 218px;
-  padding-bottom: 218px;
-  overflow:hidden;
-  position:relative;
+  height: 218px;
 }
 
 .abstract-galery img {
-  position: absolute;
   display: block;
   width: 100%;
 }
@@ -333,7 +330,7 @@ article {
   padding: 0.5em;
   display: inline-block;
   border-right: 1px solid #ddd;
-  
+
   text-decoration: none;
 }
 
@@ -378,4 +375,143 @@ article {
 .comment .feed-entry-actions {
   border: 1px solid #ddd;
   border-right: none;
+}
+
+/* Small screens */
+@media only screen and (max-width : 1000px) {
+
+  .wrapper {
+    width: 100%;
+  }
+
+  nav {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  nav a {
+    border: none;
+    display: inline-block;
+    padding: 16px;
+    width: 30vw;
+  }
+
+  nav a:hover {
+    border: none;
+  }
+
+  main {
+    width: 100%;
+    float: none;
+  }
+
+  footer {
+    margin: 0 auto;
+  }
+
+  .form-field label {
+    width: 33%;
+  }
+
+  .form-input {
+    width: 67%;
+  }
+  
+  .abstract-galery li {
+    width: calc(33.33333% - 16px);
+    padding-bottom: calc(33.33333% - 16px);
+  }
+
+  .feed-entry-with-comments .abstract-content {
+    width: 67%;
+  }
+  
+  .feed-entry .comments {
+    width: 33%;
+  }
+}
+
+/* Tablets */
+@media only screen and (max-width : 800px) {
+
+  .form-field label,
+  .form-input {
+    width: 100%;
+    float: none;
+  }
+
+  .form-field label abbr {
+    float: none;
+  }
+
+  .abstract-galery li {
+    width: calc(50% - 16px);
+    padding-bottom: calc(50% - 16px);
+  }
+
+  .feed-entry-with-comments .abstract-content,
+  .feed-entry .comments {
+    width: 100%;
+    float: none;
+  }
+}
+
+/* Small Tablets */
+@media only screen and (max-width : 600px) {
+
+  .publish-header {
+    height: 90px;
+    margin-bottom: 16px;
+  }
+
+  .publish-header img {
+    display: none;
+  }
+
+  .form-action input[type=button] {
+    width: 100%;
+    float: none;
+  }
+
+  .feed-entry-actions {
+    border-top: 1px solid #ddd;
+  }
+
+  .feed-entry-actions li {
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .feed-entry-actions a {
+    display: block;
+    border: none;
+    width: 100%;
+  }
+
+  .abstract-galery li {
+    width: calc(100% - 16px);
+    padding-bottom: calc(100% - 16px);
+  }
+
+  .comment .feed-entry-actions {
+    border-bottom: none;
+  }
+}
+
+/* Phones */
+@media only screen and (max-width : 400px) {
+
+  nav,
+  .brick-header img,
+  .publish .feed-entry-actions {
+    display: none;
+  }
 }

@@ -30,9 +30,22 @@ Testez le résultat en utilisant le zoom de votre navigateur.
 Pour chacune des règles `@media` suivantes, explicitez les conditions dans lesquelles les règles qu'elles contiennent seront appliquées et déterminez le type de terminal ciblé.
 
     @media only screen and (max-width : 480px) {}
+    
     @media only screen and (min-width : 481px) and (max-width : 960px) {}
-    @media only screen and (min-width : 600px) and (max-width : 960px) and (orientation : landscape) {}
-    @media only screen and (min-width: 640px) and (max-width: 960px) and (min-resolution: 96dpi) {}
+    
+    @media only screen  and (min-width : 600px)
+                        and (max-width : 960px)
+                        and (orientation : landscape) {}
+                        
+    @media only screen  and (min-width: 640px)
+                        and (max-width: 960px)
+                        and (min-resolution: 96dpi) {}
+                        
+    @media only screen  and (min-device-pixel-ratio:2.0)
+                        and (max-height:600px)
+                        and (max-width:640px)
+                        and (device-aspect-ratio: 16/9)
+                        and (orientation:landscape) {}
 
 
 # Exercice 4<br />Design adaptatif
@@ -84,6 +97,7 @@ Observez les limites de cette solution en redimensionnant la fenêtre de votre n
 
 Dupliquez la feuille de styles `adaptative.css` pour créer une feuille de styles `responsive.css`.
 Modifiez cette feuille de styles pour transformer le gabarit adaptatif obtenu à l'exercice précédent du site en un gabarit responsive.
+On considérera que dans sa version la plus grande, le gabarit reste statique.
 
 Observez les limites de cette solution en redimensionnant la fenêtre de votre navigateur.
 

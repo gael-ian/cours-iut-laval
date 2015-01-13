@@ -296,17 +296,26 @@ nav .ternary a:hover {
 }
 
 /* Galery abstract */
+.abstract-galery ul {
+  padding-right: 16px;
+}
+
 .abstract-galery li {
   float: left;
   margin: 0 0 16px 16px;
   padding: 2px;
   border: 1px solid #ddd;
+
+  width: 218px;
+  padding-bottom: 218px;
+  overflow:hidden;
+  position:relative;
 }
 
 .abstract-galery img {
+  position: absolute;
   display: block;
-  width: 211px;
-  height: 211px;
+  width: 100%;
 }
 
 /* Entry actions */

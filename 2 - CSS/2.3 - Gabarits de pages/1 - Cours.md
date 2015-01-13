@@ -136,6 +136,11 @@ Cette solution est actuellement la plus adaptée pour afficher un site dans les 
 
 ## L'approche "mobile first"
 
+Lorsqu'il s'agit d'adapter un gabarit de page déjà existant pour ordinateur de bureau vers le mobile, la solution la moins coûteuse, en temps et en effort, est de fonctionner par dégradation progressive. C'est ce que nous avons fait jusqu'à maintenant lors des exercices.
+
+Cette approche présente cependant le gros défaut de donner le plus dur travail aux terminaux qui en ont théoriquement le moins les capacités. En définissant d'abord les styles appliqués sur de grands écrans avant de les réduire pour s'adapter aux plus petits, on oblige en effet les mobiles (par exemple) à interpréter l'ensemble des styles avant de pouvoir déterminer lesquels s'appliquent dans leur situation.
+
+Pour ne pas pénaliser inutilement les terminaux mobiles et améliorer sensiblement les performances de rendu d'un site sur ce type d'appareils, une approche de plus en plus répandue est de déclarer d'abord les styles qui s'y appliquent avant d'utiliser les règles `@media` pour ajouter les styles supplémentaires applicables sur des terminaux plus grands. En procédant de cette façon, le rendu d'un site est calculé par amélioration progressive, en fonction des capacités du terminal.
 
 
 [^screensizes]: <http://screensiz.es/>
