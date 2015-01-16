@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Approfondissement HTML-CSS - Examen pratique</title>
+
+  <style type="text/css">
+    /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;} blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+    /* End of reset */
+
+    /* Box sizing easing */
+    *, *:before, *:after { box-sizing: border-box; }
+    
+    /* Base styles */
+    html {
+      font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      
+      color: #0c0c0c;
+      background: #c2c6d8;
+    }
+    
+    form {
+      font-size: 3em;
+      line-height: 3em;
+      
+      min-width: 500px;
+      max-width: 800px;
+      width: 75%;
+      
+      margin: 5em auto;
+      padding: 1em;
+    }
+
+    label,
+    input[type=search],
+    input[type=button] {
+      font-size: inherit;
+      line-height: inherit;
+      text-align: center;
+      color: #0c0c0c;
+      background-color: #c2c6d8;
+      border: 0;
+      padding: 0.25em 0;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    input[type=search] {
+      border-bottom: 5px solid #0c0c0c;
+    }
+    
+    /*
+     * Question 1 :
+     * Utilisez la propriété `float` pour placer les éléments `.form-field` et `.form-action` côte à côte.
+     * Vous ferez en sorte que `.form-field` occupe les 9/10ème de l'espace disponible et `.form-action` le 1/10ème restant.
+     */
+    form:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+    
+    .form-field {
+      float: left;
+      width: 90%;
+    }
+
+    .form-action {
+      float: right;
+      width: 10%;
+    }
+
+    /*
+     * Question 2 :
+     * Positionnez le champ de recherche et son étiquette de sorte à ce qu'ils se superposent.
+     * Sans modifier les couleurs de fond, vous ferrez en sorte que l'étiquette reste visible malgré ce positionnement.
+     */
+    .form-field {
+      position: relative;
+    }
+
+    label,
+    input[type=search] {
+      position: absolute;
+    }
+    
+    label {
+      z-index: 2;
+    }
+    
+    input[type=search] {
+      z-index: 1;
+    }
+
+    /*
+     * Question 3 :
+     * Ajoutez une bordure au formulaire.
+     * Vous devez obtenir le résultat visible sur la figure 1.
+     * La couleur de la bordure est `#f3f2f0` et son épaisseur est de 8px.
+     */
+    form {
+      border-style: solid;
+      border-color: #f3f2f0;
+      border-radius: 10%;
+      border-width: 0 8px;
+    }
+
+    /*
+     * Question 4 :
+     * Ajoutez une ombre au formulaire.
+     * Vous devez obtenir le résultat visible sur la figure 2.
+     * L'ombre est de couleur `#0c0c0c`. Elle est décalée du formulaire de 30px vers le bas et s'atténue sur une distance de 80px.
+     */
+    form {
+      box-shadow: 0 30px 80px -55px #0c0c0c;
+    }
+
+    /*
+     * Question 5 :
+     * Au chargement de la page, le formulaire porte une classe `close`.
+     * Au clic sur l'étiquette du champ de recherche, il perd cette classe et prend une classe `open`.
+     * Quand l'utilisateur quitte le champ de recherche, la situation initiale est restaurée.
+     * 
+     * Utilisez les propriétés `opacity` et `z-index` pour faire en que :
+     *
+     * * Lorsque le formulaire porte la classe `close`, l'étiquette du champ de recherche soit visible et cliquable mais pas le champ de recherche.
+     * * Lorsque le formulaire porte la classe `open`, le champ de recherche soit visible et cliquable mais pas son étiquette
+     */
+    .close label              { opacity: 1; z-index: 2; }
+    .close input[type=search] { opacity: 0; z-index: 1; }
+    .open  label              { opacity: 0; z-index: 1; }
+    .open  input[type=search] { opacity: 1; z-index: 2; }
+    
+    /*
+     * Question 6 :
+     * Ajoutez une transition sur le champ de recherche et son étiquette pour que le passage entre les états `open` et `close` du formulaire se fasse en douceur.
+     * La transition devra démarrer immédiatement et durer 7/10ème de seconde. Vous utiliserez la fonction d'interpolation `ease-in-out`.
+     */
+    label,
+    input[type=search] {
+      transition-property: opacity, z-index;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.7s;
+      transition-delay: 0s;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <form action="#search" method="post" class="close">
+    <div class="form-field">
+      <label for="search-query">Une question</label>
+      <input type="search" name="search[query]" id="search-query" />
+    </div>
+    <div class="form-action">
+      <input type="button" name="submit" value="?" />
+    </div>
+  </form>
+
+  <script type="text/javascript">
+    var form  = document.querySelector("form")
+      , label = document.querySelector("label[for=search-query]")
+      , input = document.querySelector("#search-query")
+      ;
+
+    label.addEventListener('click', toggle);
+    input.addEventListener('blur', toggle);
+
+    function toggle() {
+      form.classList.toggle('close');
+      form.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
