@@ -50,9 +50,9 @@ _3h_
 _3h_
 
 * Variables
-* Fonctions
-* Structures natives
+* Types et structures natives
 * Boucles
+* Fonctions
 
 ### Évènements
 
