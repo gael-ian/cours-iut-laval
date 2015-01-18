@@ -68,22 +68,53 @@ Pour chacun des exemples de code suivants, précisez ce que retournent les ligne
     console.log(a); // ?
     sample();
 
+### 8
+
+    function sample() {
+      function specimen() {
+        return 'a';
+      }
+      specimen(); // ?
+    }
+    sample();
+    specimen(); // ?
+
+### 9
+
+    console.log(sample()); // ?
+    
+    function sample() {
+      return 'a';
+    }
+    
+    console.log(sample()); // ?
+
+### 10
+
+    console.log(sample()); // ?
+    
+    var sample = function() {
+      return 'a';
+    }
+    
+    console.log(sample()); // ?
+
 
 ## Exercice 2<br />Fonctions
 
-?
 
 
-## Exercice 2<br />Couleurs héxadécimales vers RGB
+
+## Exercice 2<br />Couleurs hexadécimales vers RGB
 
 Parmis les système de notation des couleurs en CSS, on trouve :
 
-* La notation héxadécimale : `#c2c6d8`
+* La notation hexadécimale : `#c2c6d8`
 * La notation RGB : `rgb(194, 198, 216);`
 
-Écrivez un script permettant de passer de la notation héxadécimale à la notation RGB et d'afficher le résultat dans la console. 
-Votre script devra fonctionner pour n'importe quelle couleur.
-
+Écrivez une fonction `colorHexaToRgb` qui prend en paramètre une couleur selon la notation hexadécimale et retourne la notation RGB correspondante.
+ 
+Vous testerez votre fonction avec plusieurs couleurs.
 Exemples :
 
 * `#c2c6d8` => `rgb(194, 198, 216)`
@@ -97,11 +128,39 @@ Exemples :
 > * [parseInt](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/parseInt)
 
 
-## Exercice 3<br />Couleurs RGB vers héxadécimales
+## Exercice 3<br />Couleurs RGB vers hexadécimales
 
-Écrivez un script permettant de passer de la notation RGB à la notation héxadécimale et d'afficher le résultat dans la console.
-Votre script devra fonctionner avec tous les exemples donnés à l'exercice 2.
+Écrivez une fonction `colorRgbToHexa` qui prend en paramètre une couleur selon la notation RGB et retourne la notation hexadécimale correspondante.
+
+Vous testerez votre fonction avec au moins tous les exemples donnés à l'exercice 2.
 
 > Fonctions JavaScript utiles :
 >
 > * [String.split](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/split)
+
+
+## Exercice 4<br />Compteurs de mots
+
+Écrivez une fonction `wordCount` qui prend en paramètre une chaîne de caractère et retourne le nombre de mots qu'elle contient.
+
+Vous complèterez cette exercice en écrivant un script qui demande à l'utilisateur de saisir une chaîne de caractères et affiche ensuite le nombre de mots dans cette phrase et sa longueur totale.
+La communication avec l'utilisateur se ferra au travers des boites de dialogue du navigateur.
+
+> Fonctions JavaScript utiles :
+>
+> * [Window.prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window.prompt)
+> * [Window.alert](https://developer.mozilla.org/en-US/docs/Web/API/window.alert)
+
+
+## Exercice 5<br />Compteurs de mots
+
+Écrivez une fonction `wordCount` qui prend en paramètre une chaîne de caractère et retourne le nombre de mots qu'elle contient.
+
+Vous complèterez cette exercice en écrivant un script qui demande à l'utilisateur de saisir une chaîne de caractères et affiche ensuite le nombre de mots dans cette phrase et sa longueur totale.
+La communication avec l'utilisateur se ferra au travers des boites de dialogue du navigateur.
+
+> Fonctions JavaScript utiles :
+>
+> * [Window.prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window.prompt)
+> * [Window.alert](https://developer.mozilla.org/en-US/docs/Web/API/window.alert)
+

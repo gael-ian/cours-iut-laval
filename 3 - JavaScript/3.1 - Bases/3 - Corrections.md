@@ -82,33 +82,89 @@ Bien que déclarée dans la fonction `sample`, `a` est définie comme une variab
 
 La variable globale `a` n'existe pas avant le premier appel de la fonction `sample`.
 
+### 8
 
-## Exercice 2<br />Couleurs héxadécimales vers RGB
+    function sample() {
+      function specimen() {
+        return 'a';
+      }
+      specimen(); // 'a'
+    }
+    sample();
+    specimen(); // ReferenceError
 
-    var hexa = '#c2c6d8';
+La fonction `specimen` n'existe pas en dehors du contexte de la fonction `sample`.
+
+### 9
+
+    console.log(sample()); // 'a'
     
-    // Décomposition de la notation héxadécimale en composante de couleur
-    var red = parseInt(hexa.slice(1, 2), 16);
-    var green = parseInt(hexa.slice(3, 4), 16);
-    var blue = parseInt(hexa.slice(5, 6), 16);
+    function sample() {
+      return 'a';
+    }
     
-    // Construction de la notation RGB par concaténation
-    var rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+    console.log(sample()); // 'a'
+
+Les deux appels à la fonction `sample` retourne le même résultat. Même si elle n'apparait qu'après le premier appel dans le code source, la déclaration de la fonction `sample` est remontée par l'interpréteur lors de l'analyse du contexte.
+
+### 10
+
+    console.log(sample()); // ReferenceError
     
-    console.log(rgb);
+    var sample = function() {
+      return 'a';
+    }
+    
+    console.log(sample()); // 'a'
+
+Contrairement aux déclarations de fonctions, les fonctions anonymes restent indéfinies dans les portions de code qui précèdent leur construction;
 
 
-## Exercice 3<br />Couleurs RGB vers héxadécimales
 
-    var rgb = 'rgb(100, 50, 170)';
+## Exercice 2<br />Couleurs hexadécimales vers RGB
+
+    function colorHexaToRgb(hexa) {
+      
+      // Décomposition de la notation héxadécimale en composante de couleur
+      var red = parseInt(hexa.slice(1, 3), 16);
+      var green = parseInt(hexa.slice(3, 5), 16);
+      var blue = parseInt(hexa.slice(5, 7), 16);
+      
+      // Construction de la notation RGB par concaténation
+      var rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+      
+      return rgb;
+    }
     
-    // Extraction des composantes de couleurs
-    var colorString = rgb.slice(4, -1);
-    var colors = colorString.split(', ');
+    console.log(colorHexaToRgb('#c2c6d8'));
+
+
+## Exercice 3<br />Couleurs RGB vers hexadécimales
+
+    function colorRgbToHexa(rgb) {
     
-    var red = parseInt(colors[0], 10).toString(16);
-    var green = parseInt(colors[1], 10).toString(16);
-    var blue = parseInt(colors[2], 10).toString(16);
+      // Extraction des composantes de couleurs
+      var colorString = rgb.slice(4, -1);
+      var colors = colorString.split(', ');
     
-    var hexa = '#' + red + green + blue; 
-    console.log(hexa);
+      var red = parseInt(colors[0], 10).toString(16);
+      var green = parseInt(colors[1], 10).toString(16);
+      var blue = parseInt(colors[2], 10).toString(16);
+      
+      var hexa = '#' + red + green + blue; 
+      
+      return hexa;
+    }
+    
+    console.log(colorRgbToHexa('rgb(194, 198, 216)'));
+
+
+## Exercice 4<br />Compteur de mots
+
+    function wordCount(string) {
+      var words = string.split(' ');
+      return words.length;
+    }
+    
+    var string = window.prompt("Veuillez saisir une phrase.");
+    window.alert("Votre phrase comporte " + wordCount(string) + " mots pour " + string.length + " caractères.");

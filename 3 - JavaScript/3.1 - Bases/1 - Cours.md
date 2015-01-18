@@ -5,9 +5,11 @@
 * Variables
 * Constantes
 * Fonctions
-* Objets
-* Types et structures natives
-* Boucles
+* Portée des variables et des fonctions
+* Types primitifs
+* Objets natifs
+* Structures conditionnelles
+* Itérations
 
 
 ## Variables
@@ -48,10 +50,10 @@ JavaScript permet également de créer des fonctions anonymes, qui pourront êtr
     
     add(1, 2); // return 3
 
-Il est possible de déclarer une fonction anynome partout où il est possible d'écrire une expression.
+Il est possible de déclarer une fonction anonyme partout où il est possible d'écrire une expression.
 
 
-## Portée des variables
+## Portée des variables et des fonctions
 
 JavaScript supporte deux types de variables :
 
@@ -63,13 +65,13 @@ L'interpréteur JavaScript déclarera un nouveau contexte d'exécution à l'int�
 
 Lorsque le mot-clé `var` est omis, la variable est systématiquement déclarée comme globale, sans tenir compte du contexte dans lequelle elle est définie.
 
-Les constantes suivent les mêmes règles de portées que les variables.
+Les constantes suivent les mêmes règles de visibilité que les variables.
 Le mot-clé `const` étant obligatoire, il est impossible de définir par mégarde une constante globale.
 
-**Exercice :** Portée des variables
+Les fonctions suivent elles aussi les mêmes règles de visibilité que les variables.
+Ainsi une fonction définie à l'intérieure d'une autre ne pourra pas être utilisée en dehors de celle-ci.
 
-
-## Remontée des variables et des fonctions
+### Remontée des variables et des fonctions
 
 Le fonctionnement de l'interpréteur JavaScript peut parfois sembler étrange. Ainsi en JavaScript, il est possible de faire référence à une variable avant que celle-ci ne soit déclarée. Ce concept est appelé « remontée » (hoisting en anglais) car, en quelque sorte, l'interpréteur « remonte » les déclarations de variables utilisant le mot-clé `var` en tête du contexte où elles sont faites.
 
@@ -119,7 +121,8 @@ Seule la déclaration est remontée et non l'initialisation. Ainsi, les variable
     console.log(c);
     console.log(b);
 
-Les déclarations de fonctions (de la forme `function name() {}`) subissent également le même sort. Ainsi ces fonctions sont-elles accessibles dans l'ensemble du contexte où elles sont déclarées, contrairement aux fonctions anonymes, qui sont créées au cours de l'exécution du script.
+Les déclarations de fonctions (de la forme `function name() {}`) subissent également le même sort.
+Ainsi ces fonctions sont-elles accessibles dans l'ensemble du contexte où elles sont déclarées, contrairement aux fonctions anonymes, qui sont créées au cours de l'exécution du script.
 
     /*
      * Ce que vous écrivez
@@ -160,26 +163,14 @@ Les déclarations de fonctions (de la forme `function name() {}`) subissent éga
     add(1, 2);
     times(2, 2);
 
-Les fonctions déclarées sous la forme `function name() {}` sont accessibles dans l'ensemble du contexte où elles sont déclarées.
-
-    // Création d'une fonction anonyme
-    add(1, 2);         // TypeError : add is not a function
-    
-    var add = function(a, b) {
-      return a + b;
-    };
-    
-    add(1, 2);         // return 3
-
+**Exercice :** Portée des variables et des fonctions.
 
 **Pour simplifier les choses, il est recommandé** de toujours déclarer une variable en utilisant le mot-clé `var` et de regrouper les déclarations de variables et de fonctions au début d'un contexte.
-
-**Exercice :** Fonctions
 
 
 ## Types primitifs et objets natifs
 
-JavaScript dispose d'un typage faible et dynamique. Cela signifie qu'il n'est pas nécessaire de définir à l'avance le type d'une variable et que celle-ci pourra avoir différents types au cours de son existence (soit parce qu'une valeur d'un type différent lui aura été assigné, soit parce qu'elle aura été convertie).
+JavaScript dispose d'un typage faible et dynamique. Cela signifie qu'il n'est pas nécessaire de définir à l'avance le type d'une variable et que celle-ci pourra avoir différents types au cours de son existence (soit parce qu'une valeur d'un type différent lui aura été assignée, soit parce qu'elle aura été convertie).
 
 ### Types primitifs
 
@@ -191,6 +182,13 @@ La valeur `undefined` est utilisée partout où aucune valeur n'a été affecté
 
     var a;
     console.log(a === undefined); // true
+
+Si une fonction ne définit aucune instruction `return`, la valeur retournée par cette fonction sera `undefined`.
+
+    function add(a, b) {
+      var result = a + b;
+    }
+    console.log(add(1, 2)); // undefined
 
 #### Nul
 
@@ -210,13 +208,13 @@ Un booléen peut avoir deux valeurs : `true` et `false`.
 JavaScript ne possède qu'un seul type pour représenter les nombres, entiers comme décimaux.
 
     // Nombre entiers
-    var entier_base_10 = 42;
-    var entier_base_16 = 0x2A;
-    var entier_base_8  = 052;  // Cette notation ne fait plus partie des spécifications
+    var entierBase10 = 42;
+    var entierBase16 = 0x2A;
+    var entierBase8  = 052;  // Cette notation ne fait plus partie des spécifications
                                // du langage mais reste supportée.
-    console.log(entier_base_10 === entier_base_8);  // true
-    console.log(entier_base_10 === entier_base_16); // true
-    console.log(entier_base_16 === entier_base_8);  // true
+    console.log(entierBase10 === entierBase8);  // true
+    console.log(entierBase10 === entierBase16); // true
+    console.log(entierBase16 === entierBase8);  // true
     
     // Nombre décimaux
     var decimal = 314.159;
@@ -227,15 +225,15 @@ JavaScript ne possède qu'un seul type pour représenter les nombres, entiers co
 
 Contrairement à d'autres langages de programmation, les chaînes de caractères sont immuables en JavaScript.
 
-    var chaine_a = "Une chaîne de caractères";
-    var chaine_b = 'Une chaîne de caractères';
-    console.log(chaine_a === chaine_b);  // true
+    var chaineA = "Une chaîne de caractères";
+    var chaineB = 'Une chaîne de caractères';
+    console.log(chaineA === chaineB);  // true
     
-    var chaine_c = "L'hymne à la Joie fut composée par Ludwig van Beethoven.";
-    var chaine_d = 'L\'hymne à la Joie fut composée par Ludwig van Beethoven.';
-    console.log(chaine_c === chaine_d);  // true
+    var chaineC = "L'hymne à la Joie fut composée par Ludwig van Beethoven.";
+    var chaineD = 'L\'hymne à la Joie fut composée par Ludwig van Beethoven.';
+    console.log(chaineC === chaineD);  // true
     
-    var chaine_e = "L'hymne à la Joie\nComposée par Ludwig van Beethoven.";
+    var chaineE = "L'hymne à la Joie\nComposée par Ludwig van Beethoven.";
 
 
 ## Objets natifs
@@ -264,12 +262,12 @@ Bien qu'ils soient considérés comme des types primitifs, les booléens, les no
     console.log( 3.14159.toFixed(2) ); // 3.14
     console.log( "alphabet".toUpperCase() ); // ALPHABET
 
-**Exercice :** Couleurs héxadécimales vers RGB
+**Exercice :** Couleurs hexadécimales vers RGB
 
 ### Tableaux
 
-En JavaScript, un tableau est une liste de valeurs, manipulable comme un tout.
-Il existe plusieurs façons de créer un tableau :
+En JavaScript, un `Array` est une liste de valeurs, manipulable comme un tout.
+Il existe plusieurs façons de créer un `Array` :
 
     // En passant les valeurs à inclure dans la liste au constructeur.
     var mousquetaires = new Array("Athos", "Portos", "Aramis");
@@ -286,9 +284,10 @@ Il existe plusieurs façons de créer un tableau :
 
 Un tableau peut contenir n'importe quel type de valeurs et toutes les valeurs d'un tableau n'ont pas obligatoirement à être du même type.
 
-    var tableau = [ 'e', 'i', 3.14159, -1 ];
+    var euler = [ 'e', 'i', 3.14159, -1 ];
 
-Les tableaux sont indicés à partir de 0. Il est possible d'accéder directement à un élément d'un tableau en utilisant les crochets `[]`.
+À l'intérieur d'un tableau, les éléments sont ordonnées. Les positions sont numérotées à partir de 0.
+Il est possible d'accéder directement à un élément d'un tableau en utilisant les crochets `[]`.
 
     var nains = ['Prof', 'Atchoum', 'Dormeur', 'Grincheux', 'Joyeux', 'Timide', 'Simplet'];
     
@@ -303,22 +302,142 @@ La taille d'un tableau est accessible à travers sa propriété `length`.
 
 À noter que les crochets et la propriété `length` fonctionnent de la même façon sur une chaîne de caractères.
 
-**Exercice :** Tableaux
+**Exercice :** Couleurs RGB vers hexadécimales  
+**Exercice :** Compteurs de mots
 
-### Objects
+### Objets JSON
+
+Bien que ce ne soit pas leur seul rôle dans le langage, les `Object`s de JavaScript permettent de stocker simplement des ensembles de clés et de valeurs.
+Il existe plusieurs façons de créer un `Object` :
+
+    // En utilisant le constructeur `Object` avant d'assigner les valeurs aux clés.
+    var point = new Object();
+    point.x = 12;
+    point.y = 24;
+    
+    // En utilisant la notation littérale des objets
+    var coordinates = { latitude: 48.0858628, longitude: -0.7586913 };
+
+Les clés d'une table d'association doivent obligatoirement des chaines de caractères ou des symboles valides (comme ceux utilisés pour les noms de variables).
+Les valeurs peuvent être de n'importe quel type et toutes n'ont pas obligatoirement à être du même type.
+
+    var options = {
+      container: "#galery",
+      title: "Les compagnes du 10ème Docteur"
+      legends: [ "Rose Tyler", "Martha Jones", "Donna Noble" ],
+      maxWidth: 200,
+      displayControls: true
+    };
+
+Ils peuvent être utilisé dans de nombreux contextes :
+
+* Comme des tables d'associations, pour stocker une valeur et un nom qui lui est associé.
+* Comme des structures, pour stocker des informations structurées sans aller jusqu'à définir un nouveau type de données.
+* Comme des modules, pour regrouper des valeurs et des fonctions relatives à une même problématique.  
+  C'est le cas par exemple du [module JavaScript `Math`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math), qui regroupe toutes les fonctions et constantes mathématiques du langage.
 
 
+    /*
+     * Exemple d'utilisation d'un Object en tant que table d'association.
+     *
+     * La clé est le nom du film et la valeur le nombre d'entrées réalisées
+     * en France en 2014.
+     */
+    var top5BoxOffice2014 = {
+      "Qu'est-ce qu'on a fait au Bon Dieu ?": 12237274,
+      "Supercondriaque":                       5268599,
+      "Lucy":                                  5201019,
+      "Le Hobbit : La bataille des 5 armées":  4685341,
+      "La Famille Bélier":                     3983184
+    }
+    
+    /*
+     * Exemple d'utilisation d'un Object en tant que structure.
+     *
+     * Chaque clé est une propriété de la structure.
+     * Plusieurs films structurés selon le même modèle pourront ainsi être comparés
+     * plus facilement ou manipulés ensemble.
+     */
+    var film = {
+      name: "Interstellar",
+      director: "Christopher Nolan",
+      releaseYear: 2014,
+      casting: [ "Matthew McConaughey", "Anne Hathaway", "Michael Caine" ]
+    };
+    
+    /*
+     * Exemple d'utilisation d'un Object en tant que module.
+     */
+    var StringInflector = {
+      MAX_LENGTH: 255,
+      
+      shorten: function(string) {
+        return string.slice(0, StringInflector.MAX_LENGTH).trim();
+      },
+      
+      lower: function(string) {
+        return string.toLowerCase();
+      },
+             
+      parameterize: function(string) {
+        var lower  = StringInflector.lower(string);
+        var short  = StringInflector.shorten(lower);
+        return short.split(' ').join('-');
+      }
+    };
 
 
+## Structures conditionnelles
 
-JavaScript supporte nativement plusieurs types d'objets, notamment :
+JavaScript supporte les structures conditionnelles que l'on rencontre habituellement dans presque tous les langages de programmation :
 
-* `Boolean` pour des valeurs booléennes
-* `Number` pour des nombres (entiers comme décimaux)
-* `String` pour des chaines de caractères
-* `Date` pour des dates 
-* `Array` pour des listes de valeurs
-* `Object`, utilisable pour stocker des associations clé-valeur. 
+* `if … else …` pour les combinaisons de conditions simples
+* `switch` pour simplifier l'écriture de combinaisons de conditions plus complexes 
+
+Leur écriture est la même que dans tous les langages dont la syntaxe est inspirée du langage C :
+
+    if (condition) {
+      // Ce code ne sera exécuté que si la condition est évaluée à true.
+    }
+    
+    if (condition) {
+      // Ce code ne sera exécuté que si la condition est évaluée à true.
+    } else {
+      // Ce code ne sera exécuté que si la condition est évaluée à false.
+    }
+    
+    if (condition 1) {
+      // Ce code ne sera exécuté que si la condition 1 est évaluée à true.
+    } else if (condition 2) {
+       // Ce code ne sera exécuté que si la condition 2 est évaluée à true.
+    } else {
+      // Ce code ne sera exécuté que si ni la condition 1 ni la condition 2
+      // n'ont été évaluée à true.
+    }
+    
+    switch (expression) {
+      case value 1:
+        // Ce code ne sera exécuté que si l'expression vaut "value 1".
+        break;
+        
+      case value 2:
+        // Ce code ne sera exécuté que si l'expression vaut "value 2".
+        break;
+        
+      case value 3:
+        // Ce code ne sera exécuté que si l'expression vaut "value 3".
+        break;
+        
+      default:
+        // Ce code sera exécuté dans tous les autres cas.
+        break;
+    }
+
+**Exercice :** 
+
+## Itérations
+
+
 
 
 [^objets-natifs]: <https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux>
