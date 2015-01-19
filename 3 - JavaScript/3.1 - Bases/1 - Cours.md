@@ -248,10 +248,10 @@ Les informations, propres à une instance, sont accessibles via les propriétés
 Les mécanismes, commun à toutes les instances d'une même classe, sont applicables à une instance via ses méthodes.
 
 Nous reviendrons plus tard sur cette notion et son implémentation en JavaScript.
-Sachez cependant que les propriétés et les méthodes d'un objet sont accessibles en JavaScript à travers l'opérateur `.`.
+Sachez cependant que les propriétés et les méthodes d'un objet sont accessibles en JavaScript à travers l'opérateur `.` (ou avec les crochets`[]`, mais cet usage est plus rare).
 
-    unObjet.property
-    unObjet.method(params)
+    unObjet.property        <=>   unObjet['property']
+    unObjet.method(params)  <=>   unObjet['method'](params)
 
 JavaScript est un langage orienté objet. Cela signifie que toutes les valeurs sont représentées dans l'interpréteur sous forme d'objets dont la classe définit le type. Si la liste des types d'objets nativement disponibles en Javascript[^objets-natifs] est relativement longue, nous ne nous intéresserons aujourd'hui qu'à quelqu'uns d'entre eux, très régulièrement utilisés. 
 
@@ -386,6 +386,8 @@ Ils peuvent être utilisé dans de nombreux contextes :
       }
     };
 
+**Exercice :** Devises
+
 
 ## Structures conditionnelles
 
@@ -433,9 +435,75 @@ Leur écriture est la même que dans tous les langages dont la syntaxe est inspi
         break;
     }
 
-**Exercice :** 
+**Exercice :** Devises (suite)
+
 
 ## Itérations
+
+### Boucle `for`
+
+> Pour {compteur} allant de {valeur initiale} à {valeur finale} par pas de {increment}
+
+Une boucle `for` doit être employée à chaque fois que l'on connait à l'avance le nombre d'itérations.
+
+    var i;
+    for (i = 0; i < 10; i = i + 1) {
+      /*
+       * La variable `i` est utilisé comme compteur.
+       * `i = 0` déclare la valeur initiale du compteur.
+       * `i < 10` est une condition qui doit être vraie tant que le compteur
+       * n'a pas atteint la valeur finale
+       * `i++` est l'instruction exécutée à la fin de chaque itération pour
+       * faire évoluer la valeur du compteur.
+    }
+    
+    // Cette boucle `for` peut être abrégée en :
+    for (var i = 0; i < 10; i++) {
+    }
+
+Les instructions placées à l'intérieur d'une boucle `for` ne doivent pas modifier la valeur du compteur !
+Cela pourrait amener la boucle à se terminer prématuremment ou, pire, à ne jamais se terminer.
+
+**Exercice :** Boucles `for`
+
+### Boucle `while`
+
+> Tant que {condition} faire
+
+Une boucle `while` doit être employée lorsqu'on ne connaît pas à l'avance le nombre d'itérations.
+
+    while (condition) {
+      // Ce code sera exécuté tant que la condition est vérifiée. 
+    }
+
+Contrairement à une boucle `for` où cela est déconseillé, les instructions à l'intérieur d'une boucle `while` doivent permettre de sortir de la boucle en invalidant la condition.
+
+    var i = 0;
+    while (i < 10) {
+      i++;  // Sans incrémentation de `i` à l'intérieur de la boucle la condition
+            // `i < 10` reste toujours vérifiée. La boucle est alors infinie. 
+    }
+
+**Exercice :** Boucles `while`
+
+### Boucle `do… while`
+
+> Répéter … tant que {condition}
+
+Une boucle `do… while` doit être employée lorsqu'on ne connaît pas à l'avance le nombre d'itérations mais que l'on sait que les instructions qu'elle contient devront être exécutées au moins une fois.
+
+    do {
+      // Ce code sera exécuté une fois
+      // puis répété tant que la condition est vérifiée.
+    } while (condition)
+
+Bien qu'utile en théorie, en pratique la boucle `do… while` est rarement utilisée.
+
+### Parcourir toutes les propriétés d'un `Object`
+
+
+### Parcourir un `Array`
+
 
 
 

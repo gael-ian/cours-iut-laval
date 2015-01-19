@@ -168,3 +168,124 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     
     var string = window.prompt("Veuillez saisir une phrase.");
     window.alert("Votre phrase comporte " + wordCount(string) + " mots pour " + string.length + " caractères.");
+
+
+## Exercice 5<br />Devises
+
+    function motto(family) {
+      var houses = {
+        "Targaryen":  "Fire and Blood",
+        "Stark":      "Winter is Coming",
+        "Bolton":     "Our Blades Are Sharp",
+        "Greyjoy":    "We Do Not Sow",
+        "Tully":      "Family, Duty, Honor",
+        "Arryn":      "As High as Honor",
+        "Lannister":  "Hear Me Roar!",
+        "Tyrell":     "Growing Strong",
+        "Baratheon":  "Ours is the Fury",
+        "Martell":    "Unbowed, Unbent, Unbroken"
+      };
+      
+      return houses[family];
+    }
+    
+    console.log(motto('Stark'));
+
+
+## Exercice 6<br />Devises (suite)
+
+    function motto(family) {
+      var houses = {
+        "Targaryen":  "Fire and Blood",
+        "Stark":      "Winter is Coming",
+        "Bolton":     "Our Blades Are Sharp",
+        "Greyjoy":    "We Do Not Sow",
+        "Tully":      "Family, Duty, Honor",
+        "Arryn":      "As High as Honor",
+        "Lannister":  "Hear Me Roar!",
+        "Tyrell":     "Growing Strong",
+        "Baratheon":  "Ours is the Fury",
+        "Martell":    "Unbowed, Unbent, Unbroken"
+      };
+      
+      if (!houses.hasOwnProperty(family) {
+        return '';
+      }
+      
+      return houses[family];
+    }
+    
+    console.log(motto('Mormont'));
+
+
+## Exercice 7<br />Boucles `for`
+
+### Série entière
+
+    function integersSeries(start, end) {
+      var integers = [];
+      
+      if (start > end) {
+        var swap = start;
+        start = end;
+        end = swap;
+      }
+      
+      for (var i = start; i <= end; i++) {
+        integers.push(i);
+      }
+      return integers;
+    }
+    
+    console.log(integersSeries(15, 7));
+
+### Série entière paire
+
+    function evenIntegersSeries(start, end) {
+      var integers = [];
+      
+      if (start > end) {
+        var swap = start;
+        start = end;
+        end = swap;
+      }
+      
+      for (var i = start + (start % 2); i <= end; i = i + 2) {
+        integers.push(i);
+      }
+      return integers;
+    }
+    
+    console.log(evenIntegersSeries(7, 21));
+
+### Série entière décroissante
+
+    function decreasingIntegersSeries(start, end) {
+      var integers = [];
+      
+      if (start > end) {
+        var swap = start;
+        start = end;
+        end = swap;
+      }
+      
+      for (var i = end; i >= start; i--) {
+        integers.push(i);
+      }
+      return integers;
+    }
+    
+    console.log(decreasingIntegersSeries(7, 21));
+
+
+## Exercice 8<br />Boucles `while`
+
+    function sum(array) {
+      var sum = 0;
+      while (0 != array.length) {
+        sum += array.shift();
+      }
+      return sum;
+    }
+    
+    console.log(sum([2, 3, 5, 7, 11, 13, 17, 19]));
