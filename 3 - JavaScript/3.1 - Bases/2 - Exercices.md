@@ -164,3 +164,78 @@ La communication avec l'utilisateur se ferra au travers des boites de dialogue d
 > * [Window.prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window.prompt)
 > * [Window.alert](https://developer.mozilla.org/en-US/docs/Web/API/window.alert)
 
+
+
+-------------------
+
+var houses = [
+  {name: "Targaryen", motto: "Fire and Blood"},
+  {name: "Stark",     motto: "Winter is Coming"},
+  {name: "Bolton",    motto: "Our Blades Are Sharp"},
+  {name: "Greyjoy",   motto: "We Do Not Sow"},
+  {name: "Tully",     motto: "Family, Duty, Honor"},
+  {name: "Arryn",     motto: "As High as Honor"},
+  {name: "Lannister", motto: "Hear Me Roar!"},
+  {name: "Tyrell",    motto: "Growing Strong"},
+  {name: "Baratheon", motto: "Ours is the Fury"},
+  {name: "Martell",   motto: "Unbowed, Unbent, Unbroken"}
+];
+
+Ecrire une fonction qui retourne la devise associée à la famille qu'elle recoit en parametre.
+Un nom de famille invalide doit retourner une chaine vide.
+
+-------------------
+
+Faire la somme de la diagnolae d'une matrice
+
+---
+
+Manipuler les paramètres d'une url
+
+---
+
+Trouver l'élément manquant dans une liste
+
+---
+
+Compte à rebour à partir d'un tableau non trié
+
+---
+
+Jeu de tir à la corde par équipe
+
+---
+
+Réimplémenter in_array(needle, haystack)
+
+---
+
+Nombres Harshad / Niven, Nombres premiers, ...
+
+---
+
+Détection de palindrome
+
+---
+
+Inversion de chaine (par caractère, par mot)
+
+---
+
+Compacter un tableau
+
+---
+
+Fonctions de recherche dans un tableau : all, any, none
+
+---
+
+Compter le nombre d'occurence dans un tableau
+
+---
+
+Tri d'objet
+
+---
+
+Système de like
