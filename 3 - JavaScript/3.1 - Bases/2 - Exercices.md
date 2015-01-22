@@ -161,10 +161,6 @@ Si un nom de famille inconnu est passé en paramêtre, la fonction retourne une 
   </thead>
   <tbody>
     <tr>
-      <td>Targaryen</td>
-      <td>Fire and Blood</td>
-    </tr>
-    <tr>
       <td>Stark</td>
       <td>Winter is Coming</td>
     </tr>
@@ -173,38 +169,67 @@ Si un nom de famille inconnu est passé en paramêtre, la fonction retourne une 
       <td>Our Blades Are Sharp</td>
     </tr>
     <tr>
-      <td>Greyjoy</td>
-      <td>We Do Not Sow</td>
+      <td>Karstark</td>
+      <td>The Sun of Winter</td>
     </tr>
     <tr>
-      <td>Tully</td>
-      <td>Family, Duty, Honor</td>
+      <td>Mormont</td>
+      <td>Here We Stand</td>
     </tr>
     <tr>
-      <td>Arryn</td>
-      <td>As High as Honor</td>
+      <td>Corbois</td>
+      <td>Righteous in Wrath</td>
     </tr>
     <tr>
       <td>Lannister</td>
       <td>Hear Me Roar!</td>
     </tr>
     <tr>
-      <td>Tyrell</td>
-      <td>Growing Strong</td>
+      <td>Sarwyck</td>
+      <td>Family is hope, protect it always</td>
+    </tr>
+    <tr>
+      <td>Crakehall</td>
+      <td>None So Fierce</td>
+    </tr>
+    <tr>
+      <td>Marpheux</td>
+      <td>Burning Bright</td>
     </tr>
     <tr>
       <td>Baratheon</td>
       <td>Ours is the Fury</td>
     </tr>
     <tr>
-      <td>Martell</td>
-      <td>Unbowed, Unbent, Unbroken</td>
+      <td>Caron</td>
+      <td>No Song So Sweet</td>
     </tr>
+    <tr>
+      <td>Grandison</td>
+      <td>Rouse Me Not</td>
+    </tr>
+    <tr>
+      <td>Penrose</td>
+      <td>Set Down Our Deeds</td>
+    </tr>
+    <tr>
+      <td>Lonbec</td>
+      <td>The Choice Is Yours</td>
+    </tr>
+    <tr>
+      <td>Greyjoy</td>
+      <td>We Do Not Sow</td>
+    </tr>
+    <tr>
+      <td>Morru</td>
+      <td>Though All Men Do Despise Us</td>
+    </tr>
+    
   </tbody>
 </table>
 
 
-## Exercice 6<br />Devises (suite)
+## Exercice 6<br />Devises (II)
 
 Si la fonction précédente est appelée avec le nom d'une famille inconnue, elle retourne `undefined`.
 Modifiez la fonction pour qu'elle retourne une chaîne vide si un nom de famille inconnu est passé en paramêtre.
@@ -214,7 +239,7 @@ Modifiez la fonction pour qu'elle retourne une chaîne vide si un nom de famille
 > * [Object.hasOwnProperty](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/hasOwnProperty)
 
 
-## Exercice 7<br />Boucles `for`
+## Exercice 7<br />Boucle `for`
 
 ### Série entière 
 
@@ -239,14 +264,102 @@ Si `end` est inférieur à `start`, vous inverserez les bornes avant de construi
 Écrivez une seconde fonction `decreasingIntegersSeries` qui retourne les nombres entiers compris entre les deux bornes passées en paramêtres par ordre décroissant.
 
 
-## Exercice 8<br />Boucles `while`
+## Exercice 8<br />Boucle `while`
 
-Écrivez une fonction `sum` qui prend en argument un tableau de nombres (entiers ou non).
+Écrivez une fonction `arraySum` qui prend en argument un tableau de nombres (entiers ou non).
 Cette fonction retourne la somme des nombres présents dans le tableau.
 
 > Fonctions JavaScript utiles :
 >
 > * [Array.shift](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/shift)
+
+
+## Exercice 9<br />Devise (III)
+
+Complétez la table d'association construite à l'exercice 6 pour associer à chaque famille une mention de sa maison suzeraine.
+Écrivez une fonction `toArms` qui prend en argument le nom d'une famille sous forme de chaîne de caractères. Cette fonction retournera un tableau constitué de sa devise et de celles de tous ses vassaux.
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Famille</th>
+      <th>Suzerain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stark</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bolton</td>
+      <td>Stark</td>
+    </tr>
+    <tr>
+      <td>Karstark</td>
+      <td>Stark</td>
+    </tr>
+    <tr>
+      <td>Mormont</td>
+      <td>Stark</td>
+    </tr>
+    <tr>
+      <td>Corbois</td>
+      <td>Stark</td>
+    </tr>
+    <tr>
+      <td>Lannister</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sarwyck</td>
+      <td>Lannister</td>
+    </tr>
+    <tr>
+      <td>Crakehall</td>
+      <td>Lannister</td>
+    </tr>
+    <tr>
+      <td>Marpheux</td>
+      <td>Lannister</td>
+    </tr>
+    <tr>
+      <td>Baratheon</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Caron</td>
+      <td>Baratheon</td>
+    </tr>
+    <tr>
+      <td>Grandison</td>
+      <td>Baratheon</td>
+    </tr>
+    <tr>
+      <td>Penrose</td>
+      <td>Baratheon</td>
+    </tr>
+    <tr>
+      <td>Lonbec</td>
+      <td>Baratheon</td>
+    </tr>
+    <tr>
+      <td>Greyjoy</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Morru</td>
+      <td>Greyjoy</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exercice 10<br />Somme de la diagonale d'une matrice
+
+Écrivez une fonction `matrixDiagonalSum` qui prend en argument une matrice de nombres (entiers ou non).
+Cette fonction retourne la somme des nombres présents sur la diagonale de la matrice.
+
 
 -------------------
 

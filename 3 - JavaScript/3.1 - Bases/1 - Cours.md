@@ -435,7 +435,7 @@ Leur écriture est la même que dans tous les langages dont la syntaxe est inspi
         break;
     }
 
-**Exercice :** Devises (suite)
+**Exercice :** Devises (II)
 
 
 ## Itérations
@@ -464,7 +464,7 @@ Une boucle `for` doit être employée à chaque fois que l'on connait à l'avanc
 Les instructions placées à l'intérieur d'une boucle `for` ne doivent pas modifier la valeur du compteur !
 Cela pourrait amener la boucle à se terminer prématuremment ou, pire, à ne jamais se terminer.
 
-**Exercice :** Boucles `for`
+**Exercice :** Séries
 
 ### Boucle `while`
 
@@ -484,7 +484,7 @@ Contrairement à une boucle `for` où cela est déconseillé, les instructions �
             // `i < 10` reste toujours vérifiée. La boucle est alors infinie. 
     }
 
-**Exercice :** Boucles `while`
+**Exercice :** Sommes
 
 ### Boucle `do… while`
 
@@ -499,13 +499,49 @@ Une boucle `do… while` doit être employée lorsqu'on ne connaît pas à l'ava
 
 Bien qu'utile en théorie, en pratique la boucle `do… while` est rarement utilisée.
 
-### Parcourir toutes les propriétés d'un `Object`
 
+En plus de trois structures itératives classiques, JavaScript fournit également des outils pour boucler sur l'ensemble des propriétés d'un `Object` ou d'un tableau.
+
+### Parcourir un `Object`
+
+Une boucle `for … in …` peut être utilisée pour parcourir toutes les propriétés d'un `Object`.
+
+    for (property in object) {
+      // A chaque itération de cette boucle, la variable `property` prend le nom
+      // d'une des propriétés de `object`.
+      
+      // Ce parcours est fait sans ordre particulier et se termine quand toutes
+      // les propriétés ont été parcourues.
+    }
+
+**Exercice :** Devises (III)
 
 ### Parcourir un `Array`
 
+Le moyen le plus simple pour parcourir les éléments d'un `Array` est d'utiliser une boucle `for` et la notation par crochets `[]` pour accéder successivement à tous les éléments.
 
+**Exercice :** Somme de la diagonale d'une matrice
 
+Cette méthode a cependant le défaut de ne fonctionner que sur des `Array` dont les indices sont continus, ce qui n'est pas systématiquement le cas.
+L'objet `Array` fournit une autre méthode pour parcourir son contenu via la méthode `Array.forEach`.
 
+    var planets = ["Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia", "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"];
+    
+    // La méthode `Array.forEach` prend une fonction en argument.
+    // Cette fonction sera appelée successivement pour chaque élément.
+    planets.forEach(function(value, index, array) {
+      /*
+       * La fonction reçoit 3 arguments :
+       * - La valeur courante du tableau
+       * - L'indice courant
+       * - Le tableau
+       */
+    });
+
+**Exercice :** ?
+
+D'autres méthodes de l'objet `Array` permettent de transformer une liste en appliquant une même fonction à chacun de ses membres (`map`), de la filtrer (`filter`), de la trier (`sort`), de tester la valeur de ses éléments (`every`, `some`) ou de la réduire (`reduce`).
+
+**Exercice :** ?
 
 [^objets-natifs]: <https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux>

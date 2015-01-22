@@ -40,6 +40,14 @@ L'objectif est à chaque fois le même : fournir à l'intégrateur une ardoise v
 
 ## Frameworks CSS
 
+<figure style="float: right">
+  <img src="assets/vertical-rythm.png" alt="Base typographique" width="300" />
+  <figcaption>
+    Ryhtme vertical<br />
+    Source: <a href="http://24ways.org/2006/compose-to-a-vertical-rhythm/">24ways.org</a>
+  </figcaption>
+</figure>
+
 Les frameworks CSS vont plus loin que les resets, qu'ils utilisent quasi-systématiquement comme base. En s'appuyant sur un ensemble de bonnes pratiques, ils fournissent des classes utilisables par les intégrateurs pour construire leurs pages plus rapidement.
 
 Avec plus ou moins de succès, ils fournissent à l'intégrateur les outils pour rythmer les pages[^rythm] :
@@ -49,21 +57,6 @@ Avec plus ou moins de succès, ils fournissent à l'intégrateur les outils pour
 
 Ils incluent généralement des styles de formulaires, éléments omniprésents sur le web et particulièrement difficile à intégrer de façon pertinente.
 
-<figure>
-  <img src="assets/vertical-rythm.png" alt="Base typographique" />
-  <figcaption>
-    Ryhtme vertical<br />
-    Source: <a href="http://24ways.org/2006/compose-to-a-vertical-rhythm/">24ways.org</a>
-  </figcaption>
-</figure>
-
-<figure>
-  <img src="assets/css-grid.png" alt="Grille sur 12 colonnes" />
-  <figcaption>
-    Exemple de grille sur 12 colonnes<br />
-    Source: <a href="http://960.gs/">960.gs</a>
-  </figcaption>
-</figure>
 
 Exemples "historiques" :
 
@@ -80,6 +73,14 @@ Des frameworks plus modernes :
 * [KNACSS](http://www.knacss.com/) (basé sur un autre reset, plus minimaliste)
 
 Les frameworks modernes vont au-delà de l'aide à l'intégration en fournissant des composants complets pour les pages web (menus déroulants, onglets, …) et s'accompagnent souvent de librairies JavaScript.
+
+<figure>
+  <img src="assets/css-grid.png" alt="Grille sur 12 colonnes" width="800" />
+  <figcaption>
+    Exemple de grille sur 12 colonnes<br />
+    Source: <a href="http://960.gs/">960.gs</a>
+  </figcaption>
+</figure>
  
 ### Avantages
 

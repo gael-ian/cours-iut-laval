@@ -174,16 +174,22 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
 
     function motto(family) {
       var houses = {
-        "Targaryen":  "Fire and Blood",
         "Stark":      "Winter is Coming",
-        "Bolton":     "Our Blades Are Sharp",
-        "Greyjoy":    "We Do Not Sow",
-        "Tully":      "Family, Duty, Honor",
-        "Arryn":      "As High as Honor",
-        "Lannister":  "Hear Me Roar!",
-        "Tyrell":     "Growing Strong",
-        "Baratheon":  "Ours is the Fury",
-        "Martell":    "Unbowed, Unbent, Unbroken"
+        "Bolton":     "Our Blades Are Sharp", 
+        "Karstark":   "The Sun of Winter", 
+        "Mormont":    "Here We Stand", 
+        "Corbois":    "Righteous in Wrath", 
+        "Lannister":  "Hear Me Roar!", 
+        "Sarwyck":    "Family is hope, protect it always", 
+        "Crakehall":  "None So Fierce", 
+        "Marpheux":   "Burning Bright", 
+        "Baratheon":  "Ours is the Fury", 
+        "Caron":      "No Song So Sweet", 
+        "Grandison":  "Rouse Me Not", 
+        "Penrose":    "Set Down Our Deeds", 
+        "Lonbec":     "The Choice Is Yours", 
+        "Greyjoy":    "We Do Not Sow", 
+        "Morru":      "Though All Men Do Despise Us", 
       };
       
       return houses[family];
@@ -196,19 +202,25 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
 
     function motto(family) {
       var houses = {
-        "Targaryen":  "Fire and Blood",
         "Stark":      "Winter is Coming",
-        "Bolton":     "Our Blades Are Sharp",
-        "Greyjoy":    "We Do Not Sow",
-        "Tully":      "Family, Duty, Honor",
-        "Arryn":      "As High as Honor",
-        "Lannister":  "Hear Me Roar!",
-        "Tyrell":     "Growing Strong",
-        "Baratheon":  "Ours is the Fury",
-        "Martell":    "Unbowed, Unbent, Unbroken"
+        "Bolton":     "Our Blades Are Sharp", 
+        "Karstark":   "The Sun of Winter", 
+        "Mormont":    "Here We Stand", 
+        "Corbois":    "Righteous in Wrath", 
+        "Lannister":  "Hear Me Roar!", 
+        "Sarwyck":    "Family is hope, protect it always", 
+        "Crakehall":  "None So Fierce", 
+        "Marpheux":   "Burning Bright", 
+        "Baratheon":  "Ours is the Fury", 
+        "Caron":      "No Song So Sweet", 
+        "Grandison":  "Rouse Me Not", 
+        "Penrose":    "Set Down Our Deeds", 
+        "Lonbec":     "The Choice Is Yours", 
+        "Greyjoy":    "We Do Not Sow", 
+        "Morru":      "Though All Men Do Despise Us", 
       };
       
-      if (!houses.hasOwnProperty(family) {
+      if (!houses.hasOwnProperty(family)) {
         return '';
       }
       
@@ -218,7 +230,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     console.log(motto('Mormont'));
 
 
-## Exercice 7<br />Boucles `for`
+## Exercice 7<br />Boucle `for`
 
 ### Série entière
 
@@ -278,9 +290,9 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     console.log(decreasingIntegersSeries(7, 21));
 
 
-## Exercice 8<br />Boucles `while`
+## Exercice 8<br />Boucle `while`
 
-    function sum(array) {
+    function arraySum(array) {
       var sum = 0;
       while (0 != array.length) {
         sum += array.shift();
@@ -288,4 +300,72 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
       return sum;
     }
     
-    console.log(sum([2, 3, 5, 7, 11, 13, 17, 19]));
+    console.log(arraySum([2, 3, 5, 7, 11, 13, 17, 19]));
+
+
+## Exercice 9<br />Devise (III)
+
+    function atArms(family) {
+      var houses = {
+        "Stark":      { motto: "Winter is Coming",                  overlord: null },
+        "Bolton":     { motto: "Our Blades Are Sharp",              overlord: "Stark" },
+        "Karstark":   { motto: "The Sun of Winter",                 overlord: "Stark" },
+        "Mormont":    { motto: "Here We Stand",                     overlord: "Stark" },
+        "Corbois":    { motto: "Righteous in Wrath",                overlord: "Stark" },
+        "Lannister":  { motto: "Hear Me Roar!",                     overlord: null },
+        "Sarwyck":    { motto: "Family is hope, protect it always", overlord: "Lannister" },
+        "Crakehall":  { motto: "None So Fierce",                    overlord: "Lannister" },
+        "Marpheux":   { motto: "Burning Bright",                    overlord: "Lannister" },
+        "Baratheon":  { motto: "Ours is the Fury",                  overlord: null },
+        "Caron":      { motto: "No Song So Sweet",                  overlord: "Baratheon" },
+        "Grandison":  { motto: "Rouse Me Not",                      overlord: "Baratheon" },
+        "Penrose":    { motto: "Set Down Our Deeds",                overlord: "Baratheon" },
+        "Lonbec":     { motto: "The Choice Is Yours",               overlord: "Baratheon" },
+        "Greyjoy":    { motto: "We Do Not Sow",                     overlord: null },
+        "Morru":      { motto: "Though All Men Do Despise Us",      overlord: "Greyjoy" },
+      };
+      
+      var mottoes = [];
+      
+      if (!houses.hasOwnProperty(family)) {
+        return mottoes;
+      }
+      mottoes.push(houses[family].motto);
+      for (name in houses) {
+        if (houses[name].overlord == family) {
+          mottoes.push(houses[name].motto);
+        }
+      }
+      
+      return mottoes;
+    }
+    
+    console.log(atArms('Baratheon'));
+
+
+## Exercice 10<br />Somme de la diagonale d'une matrice
+
+    function matrixDiagonalSum(matrix) {
+      var sum  = 0;
+      var rows = matrix.length;
+      var cols = matrix[0].length;
+      
+      for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+          if (i == j) {
+            sum += matrix[i][j];
+          }
+        }
+      }
+      
+      return sum;
+    }
+    
+    var matrix = [
+      [1, 2, 3, 4],
+      [2, 3, 4, 1],
+      [3, 4, 1, 2],
+      [4, 1, 2, 3]
+    ];
+    
+    console.log(matrixDiagonalSum(matrix));
