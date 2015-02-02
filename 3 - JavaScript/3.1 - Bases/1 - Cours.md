@@ -525,7 +525,10 @@ Le moyen le plus simple pour parcourir les éléments d'un `Array` est d'utilise
 Cette méthode a cependant le défaut de ne fonctionner que sur des `Array` dont les indices sont continus, ce qui n'est pas systématiquement le cas.
 L'objet `Array` fournit une autre méthode pour parcourir son contenu via la méthode `Array.forEach`.
 
-    var planets = ["Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia", "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"];
+    var planets = [
+      "Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia",
+      "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"
+    ];
     
     // La méthode `Array.forEach` prend une fonction en argument.
     // Cette fonction sera appelée successivement pour chaque élément.
@@ -538,10 +541,17 @@ L'objet `Array` fournit une autre méthode pour parcourir son contenu via la mé
        */
     });
 
-**Exercice :** ?
+**Exercice :** Recherche dans un `Array`  
+**Exercice :** Recherche dans un `Array` (II)
 
 D'autres méthodes de l'objet `Array` permettent de transformer une liste en appliquant une même fonction à chacun de ses membres (`map`), de la filtrer (`filter`), de la trier (`sort`), de tester la valeur de ses éléments (`every`, `some`) ou de la réduire (`reduce`).
 
-**Exercice :** ?
+**Exercice :** Convertions de couleurs  
+**Exercice :** Compression  
+**Exercice :** Compte à rebours  
+**Exercice :** Filmographie  
+**Exercice :** Sous-ensemble  
+**Exercice :** Somme sélective  
+**Exercice :** Manipulation d'urls  
 
 [^objets-natifs]: <https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux>

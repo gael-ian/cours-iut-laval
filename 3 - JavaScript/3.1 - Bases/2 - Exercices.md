@@ -355,64 +355,146 @@ Complétez la table d'association construite à l'exercice 6 pour associer à ch
   </tbody>
 </table>
 
+
 ## Exercice 10<br />Somme de la diagonale d'une matrice
 
 Écrivez une fonction `matrixDiagonalSum` qui prend en argument une matrice de nombres (entiers ou non).
 Cette fonction retourne la somme des nombres présents sur la diagonale de la matrice.
 
 
--------------------
+## Exercice 11<br />Recherche dans un `Array`
 
-Faire la somme de la diagnoale d'une matrice
+Écrivez une fonction `inArray` qui prend deux arguments :
+ 
+* `needle`, un élément à rechercher
+* `haystack`, un tableau dans lequel rechercher l'élément
 
----
+La fonction retournera `true` si l'élément est trouvé dans le tableau, `false` sinon.
 
-Manipuler les paramètres d'une url
 
----
+## Exercice 12<br />Recherche dans un `Array` (II)
 
-Trouver l'élément manquant dans une liste
+Réécrire la fonction `inArray` de l'exercice précédent sans parcourir le tableau.
 
----
+> Fonctions JavaScript utiles :
+>
+> * [Array.indexOf](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/indexOf)
 
-Compte à rebour à partir d'un tableau non trié
 
----
+## Exercice 13<br />Convertions de couleurs
 
-Jeu de tir à la corde par équipe
+Réécrire les fonctions `colorHexaToRgb` et `colorRgbToHexa` sous une forme la plus courte possible.
 
----
+> Fonctions JavaScript utiles :
+>
+> * [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map)
+> * [Array.join](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/join)
 
-Réimplémenter in_array(needle, haystack)
 
----
+## Exercice 14<br />Compression
 
-Nombres Harshad / Niven, Nombres premiers, ...
+Écrire une fonction `compact` qui prend en argument un tableau et retourne une copie de ce tableau dans laquelle tous les éléments dont la valeur est `undefined`, `null`, `""` ou `0` ont été retirés.
 
----
+> Fonctions JavaScript utiles :
+>
+> * [Array.filter](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter)
 
-Détection de palindrome
 
----
+## Exercice 15<br />Compte à rebours
 
-Inversion de chaine (par caractère, par mot)
+Écrire une fonction `countdown` qui prend en argument un tableau d'entiers.
+Cette fonction doit trier les éléments du tableau dans l'ordre décroissant puis construire une chaine de caractères reprenant tous ces éléments séparés par une virgule, à l'exception du dernier qui sera remplacé par "Go".
 
----
+> Fonctions JavaScript utiles :
+>
+> * [Array.sort](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort)
+> * [Array.pop](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/pop)
 
-Compacter un tableau
 
----
+## Exercice 16<br />Filmographie
 
-Fonctions de recherche dans un tableau : all, any, none
+Écrire une fonction `sortFilmsBy` qui prend en argument un tableau de films, représenté chacun par un `Object`, et un critère de tri, sous forme d'une chaine de caractère.
+Cette fonction retournera une copie du tableau triée selon le critère passé en argument.
 
----
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Réalisateur</th>
+      <th>Année de sortie</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Conan le barbare</td>
+      <td>John Milius</td>
+      <td>1982</td>
+      <td>6.9</td>
+    </tr>
+    <tr>
+      <td>Conan le destructeur</td>
+      <td>Richard Fleischer</td>
+      <td>1984</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <td>Conan</td>
+      <td>Marcus Nispel</td>
+      <td>2011</td>
+      <td>5.2</td>
+    </tr>
+  </tbody>
+</table>
 
-Compter le nombre d'occurence dans un tableau
 
----
+## Exercice 17<br />Sous-ensemble
 
-Tri d'objet
+Écrire une fonction `subsetOf` qui prend en argument deux tableaux.
+Elle retournera `true` si tous les éléments du premier tableau sont présents dans le second, `false` sinon.
 
----
+> Fonctions JavaScript utiles :
+>
+> * [Array.every](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/every)
 
-Système de like
+
+## Exercice 18<br />Somme sélective
+
+Écrire une fonction `sum` qui prend en argument un tableau de nombres (entiers ou non).
+Elle retournera la somme de tous les nombres positifs incluent dans ce tableau.
+
+> Fonctions JavaScript utiles :
+>
+> * [Array.reduce](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/reduce)
+
+
+## Exercice 19<br />Manipulations d'url
+
+Écrire un module `Url` qui comportera trois fonctions :
+
+* `parseParameters`  
+  Cette fonction prend en argument une url et retourne ses paramètres sous la forme d'un `Object`.
+  
+* `buildParameters`  
+  Cette fonction prend en argument une collection de paramètres sous la forme d'un `Object` et les retourne sous forme d'une chaine utilisable dans une url. 
+* `mergeParameters`  
+  Cette fonction prend en argument une url et une collection de paramètres sous la forme d'un `Object` et retourne une url complète.
+  Les paramètres présents dans l'url passée en argument doivent être conservés, sauf si une valeur différente est précisée dans le second argument.
+
+Par simplicité, on considérera que :
+
+* Les paramètres sont séparés de l'url de base par un unique signe `?`
+* Les paramètres sont séparés entre eux par un signe `&`
+* Les noms et les valeurs des paramètres ne contiennent jamais de signes `=`, `&` ou `?`
+* Les paramètres sont définis sur un seul niveau et portent des valeurs uniques
+
+Exemples :
+
+    console.log(Url.parseParameters("http://search.com/find?query=JavaScript&lang=fr"));
+    // { query: "JavaScript", lang: "fr" }
+    
+    console.log(Url.buildParameters({ query: "JavaScript", lang: "fr" }));
+    // "query=JavaScript&lang=fr"
+    
+    console.log(Url.mergeParameters("http://search.com/find?query=JavaScript&lang=fr", { page: 2, lang: "en" }));
+    // "http://search.com/find?query=JavaScript&lang=en&page=2"

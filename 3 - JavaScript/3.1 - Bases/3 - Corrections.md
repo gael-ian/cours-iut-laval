@@ -369,3 +369,190 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     ];
     
     console.log(matrixDiagonalSum(matrix));
+
+
+## Exercice 11<br />Recherche dans un `Array`
+
+    function inArray(needle, haystack) {
+      var found = false;
+      
+      haystack.forEach(function(value, index, array) {
+        if (value === needle) {
+          found = true;
+        }
+      });
+      
+      return found;
+    }
+    
+    var planets = [
+      "Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia",
+      "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"
+    ];
+    
+    console.log(inArray("Galifrey", planets));
+
+
+## Exercice 12<br />Recherche dans un `Array` (II)
+
+    function inArray(needle, haystack) {
+      return -1 !== haystack.indexOf(needle);
+    }
+    
+    var planets = [
+      "Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia",
+      "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"
+    ];
+    
+    console.log(inArray("Galifrey", planets));
+
+
+## Exercice 13<br />Convertions de couleurs
+
+    function colorHexaToRgb(hexa) {
+      return 'rgb(' + [1, 3, 5].map(function(index) {
+        return parseInt(hexa.slice(index, index + 2), 16);
+      }).join(', ') + ')';
+    }
+
+    function colorRgbToHexa(rgb) {
+      return '#' + rgb.slice(4, -1).split(', ').map(function(color) {
+        return parseInt(color, 10).toString(16)
+      }).join('');
+    }
+    
+    console.log(colorHexaToRgb('#c2c6d8'));
+    console.log(colorRgbToHexa('rgb(194, 198, 216)'));
+
+
+## Exercice 14<br />Compression
+
+    function compact(array) {
+      var removed = ['', null, undefined, 0];
+      return array.filter(function(value) {
+        return -1 === removed.indexOf(value);
+      });
+    }
+    
+    console.log(compact(['a', '', 3.14, null, 'b', undefined, 12, 0]));
+
+
+## Exercice 15<br />Compte à rebours
+
+    function countdown(array) {
+      var sorted = array.sort(function(a, b) { return (b - a); });
+      sorted.pop();
+      sorted.push("Go");
+      
+      return sorted.join(', ');
+    }
+    
+    console.log(countdown([ 5, 12, 3, 8, 1 ]));
+
+
+## Exercice 16<br />Filmographie
+
+    function sortFilmsBy(films, criterion) {
+      return films.sort(function(a, b) {
+        if (a[criterion] < b[criterion]) {
+          return -1;
+        }
+        if (a[criterion] > b[criterion]) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+    
+    var films = [
+      {
+        title: "Conan le barbare",
+        director: "John Milius",
+        year: 1982,
+        score: 6.9
+      },
+      {
+        title: "Conan le destructeur",
+        director: "Richard Fleischer",
+        year: 1984,
+        score: 5.8
+      },
+      {
+        title: "Conan",
+        director: "Marcus Nispel",
+        year: 2011,
+        score: 5.2 
+      }
+    ];
+    
+    console.log(sortFilmsBy(films, 'title'));
+    console.log(sortFilmsBy(films, 'director'));
+    console.log(sortFilmsBy(films, 'year'));
+    console.log(sortFilmsBy(films, 'score'));
+
+
+## Exercice 17<br />Sous-ensemble
+
+    function subsetOf(subset, set) {
+      return subset.every(function(value) {
+        return -1 !== set.indexOf(value);
+      });
+    }
+    
+    console.log(subsetOf([ 1, 3, 5 ], [ 1, 3, 5, 7, 11, 13 ]));
+
+
+## Exercice 18<br />Somme sélective
+
+    function sum(array) {
+      return array.reduce(function(memo, value) {
+        if (value > 0) {
+          memo += value;
+        }
+        return memo;
+      }, 0);
+    }
+    
+    console.log(sum([ -5, -3, -1, 1, 3, 5 ]));
+
+
+## Exercice 19<br />Manipulation d'url
+
+    var Url = {
+    
+      parseParameters: function(url) {
+        return url.split('?').pop().split('&').reduce(function(params, param) {
+          var parts = param.split('=');
+          var name  = parts.shift();
+          var value = parts.pop();
+          
+          params[name] = value;
+          return params;
+        }, {});
+      },
+    
+      buildParameters: function(params) {
+        var parameters = [];
+        for (name in params) {
+          parameters.push(name + '=' + params[name]);
+        }
+        return parameters.join('&');
+      },
+    
+      mergeParameters: function(url, params) {
+        var baseUrl    = url.split('?').shift();
+        var parameters = Url.parseParameters(url);
+        
+        for (name in params) {
+          parameters[name] = params[name];
+        }
+        
+        return baseUrl + '?' + Url.buildParameters(parameters);
+      },
+    
+    };
+    
+    console.log(Url.parseParameters("http://search.com/find?query=JavaScript&lang=fr"));
+    console.log(Url.buildParameters({ query: "JavaScript", lang: "fr" }));
+    console.log(Url.mergeParameters("http://search.com/find?query=JavaScript&lang=fr", { page: 2, lang: "en" }));
+
