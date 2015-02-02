@@ -307,22 +307,70 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
 
     function atArms(family) {
       var houses = {
-        "Stark":      { motto: "Winter is Coming",                  overlord: null },
-        "Bolton":     { motto: "Our Blades Are Sharp",              overlord: "Stark" },
-        "Karstark":   { motto: "The Sun of Winter",                 overlord: "Stark" },
-        "Mormont":    { motto: "Here We Stand",                     overlord: "Stark" },
-        "Corbois":    { motto: "Righteous in Wrath",                overlord: "Stark" },
-        "Lannister":  { motto: "Hear Me Roar!",                     overlord: null },
-        "Sarwyck":    { motto: "Family is hope, protect it always", overlord: "Lannister" },
-        "Crakehall":  { motto: "None So Fierce",                    overlord: "Lannister" },
-        "Marpheux":   { motto: "Burning Bright",                    overlord: "Lannister" },
-        "Baratheon":  { motto: "Ours is the Fury",                  overlord: null },
-        "Caron":      { motto: "No Song So Sweet",                  overlord: "Baratheon" },
-        "Grandison":  { motto: "Rouse Me Not",                      overlord: "Baratheon" },
-        "Penrose":    { motto: "Set Down Our Deeds",                overlord: "Baratheon" },
-        "Lonbec":     { motto: "The Choice Is Yours",               overlord: "Baratheon" },
-        "Greyjoy":    { motto: "We Do Not Sow",                     overlord: null },
-        "Morru":      { motto: "Though All Men Do Despise Us",      overlord: "Greyjoy" },
+        "Stark":      {
+          motto: "Winter is Coming",
+          overlord: null
+          },
+        "Bolton":     {
+          motto: "Our Blades Are Sharp",
+          overlord: "Stark"
+          },
+        "Karstark":   {
+          motto: "The Sun of Winter",
+          overlord: "Stark"
+          },
+        "Mormont":    {
+          motto: "Here We Stand",
+          overlord: "Stark"
+          },
+        "Corbois":    {
+          motto: "Righteous in Wrath",
+          overlord: "Stark"
+          },
+        "Lannister":  {
+          motto: "Hear Me Roar!",
+          overlord: null
+          },
+        "Sarwyck":    {
+          motto: "Family is hope, protect it always",
+          overlord: "Lannister"
+          },
+        "Crakehall":  {
+          motto: "None So Fierce",
+          overlord: "Lannister"
+          },
+        "Marpheux":   {
+          motto: "Burning Bright",
+          overlord: "Lannister"
+          },
+        "Baratheon":  {
+          motto: "Ours is the Fury",
+          overlord: null
+          },
+        "Caron":      {
+          motto: "No Song So Sweet",
+          overlord: "Baratheon"
+          },
+        "Grandison":  {
+          motto: "Rouse Me Not",
+          overlord: "Baratheon"
+          },
+        "Penrose":    {
+          motto: "Set Down Our Deeds",
+          overlord: "Baratheon"
+          },
+        "Lonbec":     {
+          motto: "The Choice Is Yours",
+          overlord: "Baratheon"
+          },
+        "Greyjoy":    {
+          motto: "We Do Not Sow",
+          overlord: null
+          },
+        "Morru":      {
+          motto: "Though All Men Do Despise Us",
+          overlord: "Greyjoy"
+          },
       };
       
       var mottoes = [];

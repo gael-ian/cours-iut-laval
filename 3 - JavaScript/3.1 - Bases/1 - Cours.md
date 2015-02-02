@@ -101,17 +101,19 @@ Seule la déclaration est remontée et non l'initialisation. Ainsi, les variable
     /*
      * Ce que l'interpréteur comprend
      */
-    var a;            // La déclaration de `a` est remontée en tête du contexte global.
+    var a;            // La déclaration de `a` est remontée en tête
+                      // du contexte global.
     console.log(a);   // N'ayant pas encore initialisée, elle vaut `undefined`.
     
     function sample() {
-      var b;          // La déclaration de `b` est remontée en tête de son contexte.
+      var b;          // La déclaration de `b` est remontée en tête
+                      // de son contexte.
       console.log(b);
       b = 4;
       console.log(b);
       
-      c = 5;          // La déclaration de `c` reste inchangée car elle n'utilise
-                      // pas le mot-clé `var`.
+      c = 5;          // La déclaration de `c` reste inchangée car elle
+                      // n'utilise pas le mot-clé `var`.
       console.log(c);
     }
     sample();
@@ -128,7 +130,7 @@ Ainsi ces fonctions sont-elles accessibles dans l'ensemble du contexte où elles
      * Ce que vous écrivez
      */
     add(1, 2);        // return 3
-    //times(2, 2); // Si décommenté, déclenche une erreur :
+    //times(2, 2);    // Si décommenté, déclenche une erreur :
                       // "TypeError : times is not a function"
     
     function add(a, b) {
@@ -139,26 +141,26 @@ Ainsi ces fonctions sont-elles accessibles dans l'ensemble du contexte où elles
       return a * b;
     }
     
-    add(1, 2);         // return 3
+    add(1, 2);      // return 3
     times(2, 2);    // return 4
 
 
     /*
      * Ce que l'interpréteur comprend
      */
-    function add(a, b) {      // La fonction `add` est déclarée pour l'ensemble
-      return a + b;           // du contexte.
+    function add(a, b) {     // La fonction `add` est déclarée pour l'ensemble
+      return a + b;          // du contexte.
     }
     
-    var times;                // La déclaration de la variable `times` est
-                              // remontée en tête du contexte global.
+    var times;               // La déclaration de la variable `times` est
+                             // remontée en tête du contexte global.
     
     add(1, 2);
     // times(2, 2);
     
-    times = function(a, b) {  // La déclaration de la fonction anonyme reste
-      return a * b;           // inchangée. La fonction n'existe pas tant qu'elle
-    }                         // n'a pas été assignée à la variable `times`.
+    times = function(a, b) { // La déclaration de la fonction anonyme reste
+      return a * b;          // inchangée. La fonction n'existe pas tant
+    }                        // qu'elle n'a pas été assignée à la variable `times`.
     
     add(1, 2);
     times(2, 2);
@@ -210,8 +212,10 @@ JavaScript ne possède qu'un seul type pour représenter les nombres, entiers co
     // Nombre entiers
     var entierBase10 = 42;
     var entierBase16 = 0x2A;
-    var entierBase8  = 052;  // Cette notation ne fait plus partie des spécifications
-                               // du langage mais reste supportée.
+    var entierBase8  = 052;  // Cette notation ne fait plus partie des 
+                             // spécifications du langage mais reste
+                             // supportée.
+    
     console.log(entierBase10 === entierBase8);  // true
     console.log(entierBase10 === entierBase16); // true
     console.log(entierBase16 === entierBase8);  // true
@@ -310,7 +314,8 @@ La taille d'un tableau est accessible à travers sa propriété `length`.
 Bien que ce ne soit pas leur seul rôle dans le langage, les `Object`s de JavaScript permettent de stocker simplement des ensembles de clés et de valeurs.
 Il existe plusieurs façons de créer un `Object` :
 
-    // En utilisant le constructeur `Object` avant d'assigner les valeurs aux clés.
+    // En utilisant le constructeur `Object` avant d'assigner
+    // les valeurs aux clés.
     var point = new Object();
     point.x = 12;
     point.y = 24;
@@ -334,15 +339,15 @@ Ils peuvent être utilisé dans de nombreux contextes :
 * Comme des tables d'associations, pour stocker une valeur et un nom qui lui est associé.
 * Comme des structures, pour stocker des informations structurées sans aller jusqu'à définir un nouveau type de données.
 * Comme des modules, pour regrouper des valeurs et des fonctions relatives à une même problématique.  
-  C'est le cas par exemple du [module JavaScript `Math`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math), qui regroupe toutes les fonctions et constantes mathématiques du langage.
 
+Un exemple de ce dernier cas est le [module JavaScript `Math`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math), qui regroupe toutes les fonctions et constantes mathématiques du langage.
 
     /*
      * Exemple d'utilisation d'un Object en tant que table d'association.
      *
-     * La clé est le nom du film et la valeur le nombre d'entrées réalisées
-     * en France en 2014.
-     */
+     * La clé est le nom du film et la valeur le nombre d'entrées
+     * réalisées en France en 2014.
+     */    
     var top5BoxOffice2014 = {
       "Qu'est-ce qu'on a fait au Bon Dieu ?": 12237274,
       "Supercondriaque":                       5268599,
@@ -355,8 +360,8 @@ Ils peuvent être utilisé dans de nombreux contextes :
      * Exemple d'utilisation d'un Object en tant que structure.
      *
      * Chaque clé est une propriété de la structure.
-     * Plusieurs films structurés selon le même modèle pourront ainsi être comparés
-     * plus facilement ou manipulés ensemble.
+     * Plusieurs films structurés selon le même modèle pourront ainsi
+     * être comparés plus facilement ou manipulés ensemble.
      */
     var film = {
       name: "Interstellar",
