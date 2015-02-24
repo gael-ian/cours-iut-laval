@@ -104,10 +104,20 @@ Pour chacun des exemples de code suivants, précisez ce que retournent les ligne
 
 Parmis les système de notation des couleurs en CSS, on trouve :
 
-* La notation hexadécimale : `#c2c6d8`
 * La notation RGB : `rgb(194, 198, 216);`
+* La notation hexadécimale : `#c2c6d8`
 
-Écrivez une fonction `colorHexaToRgb` qui prend en paramètre une couleur selon la notation hexadécimale et retourne la notation RGB correspondante.
+Dans chacune de ces notations, les couleurs sont exprimées selon leurs proportions de rouge, de vert et de bleu.
+La notation RGB indique ces trois valeurs au format décimal, sur une échelle de 0 à 255.
+Dans la notation hexadécimale, les paires de caractères correspondent à ces mêmes valeurs, converties en base 16.
+
+Complétez le corps de la fonction `colorHexaToRgb` qui prend en paramètre une couleur selon la notation hexadécimale et retourne la notation RGB correspondante.
+
+    function colorHexaToRgb(hexa) {
+      // À compléter
+    }
+    
+    console.log(colorHexaToRgb('#c2c6d8')); // "rgb(194, 198, 216)"
  
 Vous testerez votre fonction avec plusieurs couleurs.
 Exemples :
@@ -125,7 +135,13 @@ Exemples :
 
 ## Exercice 3<br />Couleurs RGB vers hexadécimales
 
-Écrivez une fonction `colorRgbToHexa` qui prend en paramètre une couleur selon la notation RGB et retourne la notation hexadécimale correspondante.
+Complétez le corps de la fonction `colorRgbToHexa` qui prend en paramètre une couleur selon la notation RGB et retourne la notation hexadécimale correspondante.
+
+    function colorRgbToHexa(rgb) {
+      // À compléter
+    }
+    
+    console.log(colorRgbToHexa('rgb(194, 198, 216)')); // "#c2c6d8"
 
 Vous testerez votre fonction avec au moins tous les exemples donnés à l'exercice 2.
 
@@ -136,7 +152,13 @@ Vous testerez votre fonction avec au moins tous les exemples donnés à l'exerci
 
 ## Exercice 4<br />Compteurs de mots
 
-Écrivez une fonction `wordCount` qui prend en paramètre une chaîne de caractère et retourne le nombre de mots qu'elle contient.
+Complétez le corps de la fonction `wordCount` qui prend en paramètre une chaîne de caractère et retourne le nombre de mots qu'elle contient.
+
+    function wordCount(string) {
+      // À compléter
+    }
+    
+    console.log(wordCount('Supercalifragilisticexpialidocious')); // 1
 
 Vous complèterez cette exercice en écrivant un script qui demande à l'utilisateur de saisir une chaîne de caractères et affiche ensuite le nombre de mots dans cette phrase et sa longueur totale.
 La communication avec l'utilisateur se ferra au travers des boites de dialogue du navigateur.
@@ -149,8 +171,13 @@ La communication avec l'utilisateur se ferra au travers des boites de dialogue d
 
 ## Exercice 5<br />Devises
 
-Écrivez une fonction `motto` qui retourne la devise associée à l'une des grandes familles de Westeros dont le nom sera passé en paramêtre (en tant que chaîne de caractères).
-Si un nom de famille inconnu est passé en paramêtre, la fonction retourne une chaîne vide.
+Complétez le corps de la fonction `motto` qui retourne la devise associée à l'une des grandes familles de Westeros dont le nom sera passé en paramêtre (en tant que chaîne de caractères).
+
+    function motto(family) {
+      // À compléter
+    }
+    
+    console.log(motto('Stark')); // "Winter Is Coming"
 
 <table>
   <thead>
@@ -162,7 +189,7 @@ Si un nom de famille inconnu est passé en paramêtre, la fonction retourne une 
   <tbody>
     <tr>
       <td>Stark</td>
-      <td>Winter is Coming</td>
+      <td>Winter Is Coming</td>
     </tr>
     <tr>
       <td>Bolton</td>
@@ -243,9 +270,14 @@ Modifiez la fonction pour qu'elle retourne une chaîne vide si un nom de famille
 
 ### Série entière 
 
-Écrivez une fonction `integersSeries` qui prend deux nombres entiers `start` et `end` en paramêtres.
-Cette fonction retourne un tableau des nombres entiers compris entre `start` et `end`, inclus.
+Complétez le corps de la fonction `integersSeries`, qui prend deux nombres entiers `start` et `end` en paramêtres et retourne un tableau des nombres entiers compris entre ces deux bornes, incluses.
 Si `end` est inférieur à `start`, vous inverserez les bornes avant de construire le tableau.
+
+    function integersSeries(start, end) {
+      // À compléter
+    }
+    
+    console.log(integersSeries(15, 7)); // [7, 8, 9, 10, 11, 12, 13, 14, 15]
 
 > Fonctions JavaScript utiles :
 >
@@ -253,7 +285,13 @@ Si `end` est inférieur à `start`, vous inverserez les bornes avant de construi
 
 ### Série entière paire
 
-Écrivez une seconde fonction `evenIntegersSeries` qui ne retourne que les nombres entiers pairs compris entre les deux bornes passées en paramêtres.
+Complétez le corps de la fonction `evenIntegersSeries`, qui ne retourne que les nombres entiers pairs compris entre les deux bornes passées en paramêtres.
+
+    function evenIntegersSeries(start, end) {
+      // À compléter
+    }
+    
+    console.log(evenIntegersSeries(15, 7)); // [8, 10, 12, 14]
 
 > Fonctions JavaScript utiles :
 >
@@ -261,13 +299,24 @@ Si `end` est inférieur à `start`, vous inverserez les bornes avant de construi
 
 ### Série entière décroissante
 
-Écrivez une seconde fonction `decreasingIntegersSeries` qui retourne les nombres entiers compris entre les deux bornes passées en paramêtres par ordre décroissant.
+Complétez le corps de la fonction `decreasingIntegersSeries`, qui retourne les nombres entiers compris entre les deux bornes passées en paramêtres par ordre décroissant.
+
+    function decreasingIntegersSeries(start, end) {
+      // À compléter
+    }
+    
+    console.log(decreasingIntegersSeries(15, 7)); // [15, 14, 13, 12, 11, 10, 9, 8, 7]
 
 
 ## Exercice 8<br />Boucle `while`
 
-Écrivez une fonction `arraySum` qui prend en argument un tableau de nombres (entiers ou non).
-Cette fonction retourne la somme des nombres présents dans le tableau.
+Complétez le corps de la fonction `arraySum`, qui prend en argument un tableau de nombres (entiers ou non) et retourne la somme des nombres présents dans le tableau.
+
+    function arraySum(start, end) {
+      // À compléter
+    }
+    
+    console.log(arraySum([2, 3, 5, 7, 11, 13, 1])); // 42
 
 > Fonctions JavaScript utiles :
 >
@@ -276,9 +325,15 @@ Cette fonction retourne la somme des nombres présents dans le tableau.
 
 ## Exercice 9<br />Devise (III)
 
-Complétez la table d'association construite à l'exercice 6 pour associer à chaque famille une mention de sa maison suzeraine.
-Écrivez une fonction `toArms` qui prend en argument le nom d'une famille sous forme de chaîne de caractères. Cette fonction retournera un tableau constitué de sa devise et de celles de tous ses vassaux.
+Complétez le corps de la fonction `toArms`, qui prend en argument le nom d'une famille sous forme de chaîne de caractères et retourne un tableau constitué de sa devise et de celles de tous ses vassaux.
 
+Vous reprendrez comme base la table d'association construite à l'exercice 6, en associant à chaque famille une mention de sa maison suzeraine.
+
+    function atArms(family) {
+      // À compléter
+    }
+    
+    console.log(atArms('Baratheon')); // ["Ours is the Fury", "No Song So Sweet", "Rouse Me Not", "Set Down Our Deeds", "The Choice Is Yours"]
 
 <table>
   <thead>
@@ -358,18 +413,35 @@ Complétez la table d'association construite à l'exercice 6 pour associer à ch
 
 ## Exercice 10<br />Somme de la diagonale d'une matrice
 
-Écrivez une fonction `matrixDiagonalSum` qui prend en argument une matrice de nombres (entiers ou non).
-Cette fonction retourne la somme des nombres présents sur la diagonale de la matrice.
+Complétez le corps de la fonction `matrixDiagonalSum`, qui prend en argument une matrice de nombres (entiers ou non) et retourne la somme des nombres présents sur la diagonale de la matrice.
 
+
+    function matrixDiagonalSum(matrix) {
+      // À compléter
+    }
+    
+    // var matrix = ?;
+    console.log(matrixDiagonalSum(matrix));
 
 ## Exercice 11<br />Recherche dans un `Array`
 
-Écrivez une fonction `inArray` qui prend deux arguments :
+Complétez le corps de la fonction `inArray`, qui prend deux arguments :
  
 * `needle`, un élément à rechercher
 * `haystack`, un tableau dans lequel rechercher l'élément
 
 La fonction retournera `true` si l'élément est trouvé dans le tableau, `false` sinon.
+
+    function inArray(needle, haystack) {
+      // À compléter
+    }
+    
+    var planets = [
+      "Adipose 3", "Pyrovilia", "Trenzalore", "Apalapucia",
+      "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"
+    ];
+    
+    console.log(inArray("Galifrey", planets)); // false
 
 
 ## Exercice 12<br />Recherche dans un `Array` (II)
@@ -393,7 +465,13 @@ Réécrire les fonctions `colorHexaToRgb` et `colorRgbToHexa` sous une forme la 
 
 ## Exercice 14<br />Compression
 
-Écrire une fonction `compact` qui prend en argument un tableau et retourne une copie de ce tableau dans laquelle tous les éléments dont la valeur est `undefined`, `null`, `""` ou `0` ont été retirés.
+Complétez le corps de la fonction `compact`, qui prend en argument un tableau et retourne une copie de ce tableau dans laquelle tous les éléments dont la valeur est `undefined`, `null`, `""` ou `0` ont été retirés.
+
+    function compact(array) {
+      // À compléter
+    }
+    
+    console.log(compact(['a', '', 3.14, null, 'b', undefined, 12, 0])); // ['a', 3.14, 'b', 12]
 
 > Fonctions JavaScript utiles :
 >
@@ -402,8 +480,14 @@ Réécrire les fonctions `colorHexaToRgb` et `colorRgbToHexa` sous une forme la 
 
 ## Exercice 15<br />Compte à rebours
 
-Écrire une fonction `countdown` qui prend en argument un tableau d'entiers.
+Complétez le corps de la fonction `countdown`, qui prend en argument un tableau d'entiers.
 Cette fonction doit trier les éléments du tableau dans l'ordre décroissant puis construire une chaine de caractères reprenant tous ces éléments séparés par une virgule, à l'exception du dernier qui sera remplacé par "Go".
+
+    function countdown(array) {
+      // À compléter
+    }
+    
+    console.log(countdown([ 5, 12, 3, 8, 1 ])); // "12, 8, 5, 3, Go"
 
 > Fonctions JavaScript utiles :
 >
@@ -413,8 +497,18 @@ Cette fonction doit trier les éléments du tableau dans l'ordre décroissant pu
 
 ## Exercice 16<br />Filmographie
 
-Écrire une fonction `sortFilmsBy` qui prend en argument un tableau de films, représenté chacun par un `Object`, et un critère de tri, sous forme d'une chaine de caractère.
+Complétez le corps de la fonction `sortFilmsBy`, qui prend en argument un tableau de films, représenté chacun par un `Object`, et un critère de tri, sous forme d'une chaine de caractère.
 Cette fonction retournera une copie du tableau triée selon le critère passé en argument.
+
+    function sortFilmsBy(films, criterion) {
+      // À compléter
+    }
+    
+    var films = [
+      // À compléter
+    ];
+    
+    console.log(sortFilmsBy(films, 'title'));
 
 <table>
   <thead>
@@ -450,8 +544,13 @@ Cette fonction retournera une copie du tableau triée selon le critère passé e
 
 ## Exercice 17<br />Sous-ensemble
 
-Écrire une fonction `subsetOf` qui prend en argument deux tableaux.
-Elle retournera `true` si tous les éléments du premier tableau sont présents dans le second, `false` sinon.
+Complétez le corps de la fonction `subsetOf`, qui prend en argument deux tableaux et retourne `true` si tous les éléments du premier tableau sont présents dans le second, `false` sinon.
+
+    function subsetOf(subset, set) {
+      // À compléter
+    }
+    
+    console.log(subsetOf([ 1, 3, 5 ], [ 1, 3, 5, 7, 11, 13 ])); // true
 
 > Fonctions JavaScript utiles :
 >
@@ -460,8 +559,13 @@ Elle retournera `true` si tous les éléments du premier tableau sont présents 
 
 ## Exercice 18<br />Somme sélective
 
-Écrire une fonction `sum` qui prend en argument un tableau de nombres (entiers ou non).
-Elle retournera la somme de tous les nombres positifs incluent dans ce tableau.
+Complétez le corps de la fonction `sum`, qui prend en argument un tableau de nombres (entiers ou non) et retourne la somme de tous les nombres positifs incluent dans ce tableau.
+
+    function sum(array) {
+      // À compléter
+    }
+    
+    console.log(sum([ -5, -3, -1, 1, 3, 5 ])); // 9
 
 > Fonctions JavaScript utiles :
 >
@@ -474,7 +578,6 @@ Elle retournera la somme de tous les nombres positifs incluent dans ce tableau.
 
 * `parseParameters`  
   Cette fonction prend en argument une url et retourne ses paramètres sous la forme d'un `Object`.
-  
 * `buildParameters`  
   Cette fonction prend en argument une collection de paramètres sous la forme d'un `Object` et les retourne sous forme d'une chaine utilisable dans une url. 
 * `mergeParameters`  
