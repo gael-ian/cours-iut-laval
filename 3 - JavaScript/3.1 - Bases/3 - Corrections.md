@@ -137,6 +137,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(colorHexaToRgb('#c2c6d8'));
+    // "rgb(194, 198, 216)"
 
 
 ## Exercice 3<br />Couleurs RGB vers hexadécimales
@@ -157,6 +158,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(colorRgbToHexa('rgb(194, 198, 216)'));
+    // "#c2c6d8"
 
 
 ## Exercice 4<br />Compteur de mots
@@ -165,6 +167,9 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
       var words = string.split(' ');
       return words.length;
     }
+    
+    console.log(wordCount('Supercalifragilisticexpialidocious'));
+    // 1
     
     var string = window.prompt("Veuillez saisir une phrase.");
     window.alert("Votre phrase comporte " + wordCount(string) + " mots pour " + string.length + " caractères.");
@@ -196,6 +201,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(motto('Stark'));
+    // "Winter Is Coming"
 
 
 ## Exercice 6<br />Devises (suite)
@@ -228,6 +234,10 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(motto('Mormont'));
+    // "Here We Stand"
+    
+    console.log(motto('Targaryen'));
+    // ""
 
 
 ## Exercice 7<br />Boucle `for`
@@ -250,6 +260,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(integersSeries(15, 7));
+    // [7, 8, 9, 10, 11, 12, 13, 14, 15]
 
 ### Série entière paire
 
@@ -269,6 +280,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(evenIntegersSeries(7, 21));
+    // [8, 10, 12, 14, 16, 18, 20]
 
 ### Série entière décroissante
 
@@ -287,7 +299,8 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
       return integers;
     }
     
-    console.log(decreasingIntegersSeries(7, 21));
+    console.log(decreasingIntegersSeries(12, 6));
+    // [12, 11, 10, 9, 8, 7, 6]
 
 
 ## Exercice 8<br />Boucle `while`
@@ -300,7 +313,8 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
       return sum;
     }
     
-    console.log(arraySum([2, 3, 5, 7, 11, 13, 17, 19]));
+    console.log(arraySum([1, 2, 3, 5, 7, 11, 13]));
+    // 42
 
 
 ## Exercice 9<br />Devise (III)
@@ -389,6 +403,11 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(atArms('Baratheon'));
+    // [ "Ours is the Fury",
+    //   "No Song So Sweet",
+    //   "Rouse Me Not",
+    //   "Set Down Our Deeds",
+    //   "The Choice Is Yours" ]
 
 
 ## Exercice 10<br />Somme de la diagonale d'une matrice
@@ -417,6 +436,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     ];
     
     console.log(matrixDiagonalSum(matrix));
+    // 8
 
 
 ## Exercice 11<br />Recherche dans un `Array`
@@ -439,6 +459,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     ];
     
     console.log(inArray("Galifrey", planets));
+    // false
 
 
 ## Exercice 12<br />Recherche dans un `Array` (II)
@@ -453,6 +474,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     ];
     
     console.log(inArray("Galifrey", planets));
+    // false
 
 
 ## Exercice 13<br />Convertions de couleurs
@@ -470,7 +492,9 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(colorHexaToRgb('#c2c6d8'));
+    // 'rgb(194, 198, 216)'
     console.log(colorRgbToHexa('rgb(194, 198, 216)'));
+    // '#c2c6d8'
 
 
 ## Exercice 14<br />Compression
@@ -483,6 +507,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(compact(['a', '', 3.14, null, 'b', undefined, 12, 0]));
+    // ['a', 3.14, 'b', 12]
 
 
 ## Exercice 15<br />Compte à rebours
@@ -496,6 +521,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(countdown([ 5, 12, 3, 8, 1 ]));
+    // "12, 8, 5, 3, Go"
 
 
 ## Exercice 16<br />Filmographie
@@ -534,9 +560,20 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     ];
     
     console.log(sortFilmsBy(films, 'title'));
+    // Le tableau `films`, par ordre alphabétique des titres :
+    // Conan, Conan le barbare, Conan le destructeur
+    
     console.log(sortFilmsBy(films, 'director'));
+    // Le tableau `films`, par ordre alphabétique des noms de réalisateurs :
+    // Conan le barbare, Conan, Conan le destructeur
+    
     console.log(sortFilmsBy(films, 'year'));
+    // Le tableau `films`, par ordre chronologique de sortie :
+    // Conan le barbare, Conan le destructeur, Conan
+    
     console.log(sortFilmsBy(films, 'score'));
+    // Le tableau `films`, par ordre croissant des notes sur IMDB :
+    // Conan le barbare, Conan le destructeur, Conan
 
 
 ## Exercice 17<br />Sous-ensemble
@@ -548,6 +585,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(subsetOf([ 1, 3, 5 ], [ 1, 3, 5, 7, 11, 13 ]));
+    // true
 
 
 ## Exercice 18<br />Somme sélective
@@ -562,6 +600,7 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     }
     
     console.log(sum([ -5, -3, -1, 1, 3, 5 ]));
+    // 9
 
 
 ## Exercice 19<br />Manipulation d'url
@@ -600,7 +639,14 @@ Contrairement aux déclarations de fonctions, les fonctions anonymes restent ind
     
     };
     
+    var url    = "http://search.com/find?query=JavaScript&lang=fr";
+    var params = { page: 2, lang: "en" };
+    
     console.log(Url.parseParameters("http://search.com/find?query=JavaScript&lang=fr"));
-    console.log(Url.buildParameters({ query: "JavaScript", lang: "fr" }));
-    console.log(Url.mergeParameters("http://search.com/find?query=JavaScript&lang=fr", { page: 2, lang: "en" }));
+    // { query: "JavaScript", lang: "fr" }
+    
+    console.log(Url.buildParameters({ page: 2, lang: "en" }));
+    // "page=2&lang=en"
 
+    console.log(Url.mergeParameters(url, params));
+    // "http://search.com/find?query=JavaScript&lang=en&page=2"

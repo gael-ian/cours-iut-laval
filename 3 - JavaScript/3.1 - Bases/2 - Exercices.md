@@ -117,7 +117,8 @@ Complétez le corps de la fonction `colorHexaToRgb` qui prend en paramètre une 
       // À compléter
     }
     
-    console.log(colorHexaToRgb('#c2c6d8')); // "rgb(194, 198, 216)"
+    console.log(colorHexaToRgb('#c2c6d8'));
+    // "rgb(194, 198, 216)"
  
 Vous testerez votre fonction avec plusieurs couleurs.
 Exemples :
@@ -141,7 +142,8 @@ Complétez le corps de la fonction `colorRgbToHexa` qui prend en paramètre une 
       // À compléter
     }
     
-    console.log(colorRgbToHexa('rgb(194, 198, 216)')); // "#c2c6d8"
+    console.log(colorRgbToHexa('rgb(194, 198, 216)'));
+    // "#c2c6d8"
 
 Vous testerez votre fonction avec au moins tous les exemples donnés à l'exercice 2.
 
@@ -158,7 +160,8 @@ Complétez le corps de la fonction `wordCount` qui prend en paramètre une chaî
       // À compléter
     }
     
-    console.log(wordCount('Supercalifragilisticexpialidocious')); // 1
+    console.log(wordCount('Supercalifragilisticexpialidocious'));
+    // 1
 
 Vous complèterez cette exercice en écrivant un script qui demande à l'utilisateur de saisir une chaîne de caractères et affiche ensuite le nombre de mots dans cette phrase et sa longueur totale.
 La communication avec l'utilisateur se ferra au travers des boites de dialogue du navigateur.
@@ -177,7 +180,8 @@ Complétez le corps de la fonction `motto` qui retourne la devise associée à l
       // À compléter
     }
     
-    console.log(motto('Stark')); // "Winter Is Coming"
+    console.log(motto('Stark'));
+    // "Winter Is Coming"
 
 <table>
   <thead>
@@ -277,7 +281,8 @@ Si `end` est inférieur à `start`, vous inverserez les bornes avant de construi
       // À compléter
     }
     
-    console.log(integersSeries(15, 7)); // [7, 8, 9, 10, 11, 12, 13, 14, 15]
+    console.log(integersSeries(15, 7));
+    // [7, 8, 9, 10, 11, 12, 13, 14, 15]
 
 > Fonctions JavaScript utiles :
 >
@@ -291,7 +296,8 @@ Complétez le corps de la fonction `evenIntegersSeries`, qui ne retourne que les
       // À compléter
     }
     
-    console.log(evenIntegersSeries(15, 7)); // [8, 10, 12, 14]
+    console.log(evenIntegersSeries(7, 21));
+    // [8, 10, 12, 14, 16, 18, 20]
 
 > Fonctions JavaScript utiles :
 >
@@ -305,7 +311,8 @@ Complétez le corps de la fonction `decreasingIntegersSeries`, qui retourne les 
       // À compléter
     }
     
-    console.log(decreasingIntegersSeries(15, 7)); // [15, 14, 13, 12, 11, 10, 9, 8, 7]
+    console.log(decreasingIntegersSeries(12, 6));
+    // [12, 11, 10, 9, 8, 7, 6]
 
 
 ## Exercice 8<br />Boucle `while`
@@ -316,7 +323,8 @@ Complétez le corps de la fonction `arraySum`, qui prend en argument un tableau 
       // À compléter
     }
     
-    console.log(arraySum([2, 3, 5, 7, 11, 13, 1])); // 42
+    console.log(arraySum([1, 2, 3, 5, 7, 11, 13]));
+    // 42
 
 > Fonctions JavaScript utiles :
 >
@@ -333,7 +341,12 @@ Vous reprendrez comme base la table d'association construite à l'exercice 6, en
       // À compléter
     }
     
-    console.log(atArms('Baratheon')); // ["Ours is the Fury", "No Song So Sweet", "Rouse Me Not", "Set Down Our Deeds", "The Choice Is Yours"]
+    console.log(atArms('Baratheon'));
+    // [ "Ours is the Fury",
+    //   "No Song So Sweet",
+    //   "Rouse Me Not",
+    //   "Set Down Our Deeds",
+    //   "The Choice Is Yours" ]
 
 <table>
   <thead>
@@ -441,7 +454,8 @@ La fonction retournera `true` si l'élément est trouvé dans le tableau, `false
       "Skaro", "Clom", "Raxacoricofallapatorius", "Ry'leh"
     ];
     
-    console.log(inArray("Galifrey", planets)); // false
+    console.log(inArray("Galifrey", planets));
+    // false
 
 
 ## Exercice 12<br />Recherche dans un `Array` (II)
@@ -471,7 +485,8 @@ Complétez le corps de la fonction `compact`, qui prend en argument un tableau e
       // À compléter
     }
     
-    console.log(compact(['a', '', 3.14, null, 'b', undefined, 12, 0])); // ['a', 3.14, 'b', 12]
+    console.log(compact(['a', '', 3.14, null, 'b', undefined, 12, 0]));
+    // ['a', 3.14, 'b', 12]
 
 > Fonctions JavaScript utiles :
 >
@@ -487,7 +502,8 @@ Cette fonction doit trier les éléments du tableau dans l'ordre décroissant pu
       // À compléter
     }
     
-    console.log(countdown([ 5, 12, 3, 8, 1 ])); // "12, 8, 5, 3, Go"
+    console.log(countdown([ 5, 12, 3, 8, 1 ]));
+    // "12, 8, 5, 3, Go"
 
 > Fonctions JavaScript utiles :
 >
@@ -550,7 +566,8 @@ Complétez le corps de la fonction `subsetOf`, qui prend en argument deux tablea
       // À compléter
     }
     
-    console.log(subsetOf([ 1, 3, 5 ], [ 1, 3, 5, 7, 11, 13 ])); // true
+    console.log(subsetOf([ 1, 3, 5 ], [ 1, 3, 5, 7, 11, 13 ]));
+    // true
 
 > Fonctions JavaScript utiles :
 >
@@ -565,7 +582,8 @@ Complétez le corps de la fonction `sum`, qui prend en argument un tableau de no
       // À compléter
     }
     
-    console.log(sum([ -5, -3, -1, 1, 3, 5 ])); // 9
+    console.log(sum([ -5, -3, -1, 1, 3, 5 ]));
+    // 9
 
 > Fonctions JavaScript utiles :
 >
@@ -593,11 +611,14 @@ Par simplicité, on considérera que :
 
 Exemples :
 
+    var url    = "http://search.com/find?query=JavaScript&lang=fr";
+    var params = { page: 2, lang: "en" };
+    
     console.log(Url.parseParameters("http://search.com/find?query=JavaScript&lang=fr"));
     // { query: "JavaScript", lang: "fr" }
     
-    console.log(Url.buildParameters({ query: "JavaScript", lang: "fr" }));
-    // "query=JavaScript&lang=fr"
-    
-    console.log(Url.mergeParameters("http://search.com/find?query=JavaScript&lang=fr", { page: 2, lang: "en" }));
+    console.log(Url.buildParameters({ page: 2, lang: "en" }));
+    // "page=2&lang=en"
+
+    console.log(Url.mergeParameters(url, params));
     // "http://search.com/find?query=JavaScript&lang=en&page=2"

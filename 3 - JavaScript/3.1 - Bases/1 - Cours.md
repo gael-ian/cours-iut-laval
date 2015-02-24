@@ -293,7 +293,11 @@ Un tableau peut contenir n'importe quel type de valeurs et toutes les valeurs d'
 À l'intérieur d'un tableau, les éléments sont ordonnées. Les positions sont numérotées à partir de 0.
 Il est possible d'accéder directement à un élément d'un tableau en utilisant les crochets `[]`.
 
-    var nains = ['Prof', 'Atchoum', 'Dormeur', 'Grincheux', 'Joyeux', 'Timide', 'Simplet'];
+    var nains = [
+      'Prof', 'Atchoum', 'Dormeur',
+      'Grincheux', 'Joyeux', 'Timide',
+      'Simplet'
+    ];
     
     console.log(nains[0]);  // "Prof"
     console.log(nains[3]);  // 'Grincheux'
@@ -342,12 +346,10 @@ Ils peuvent être utilisé dans de nombreux contextes :
 
 Un exemple de ce dernier cas est le [module JavaScript `Math`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math), qui regroupe toutes les fonctions et constantes mathématiques du langage.
 
-    /*
-     * Exemple d'utilisation d'un Object en tant que table d'association.
-     *
-     * La clé est le nom du film et la valeur le nombre d'entrées
-     * réalisées en France en 2014.
-     */    
+#### Exemple d'utilisation d'un Object en tant que table d'association
+
+La clé est le nom du film et la valeur le nombre d'entrées réalisées en France en 2014.
+
     var top5BoxOffice2014 = {
       "Qu'est-ce qu'on a fait au Bon Dieu ?": 12237274,
       "Supercondriaque":                       5268599,
@@ -355,24 +357,21 @@ Un exemple de ce dernier cas est le [module JavaScript `Math`](https://developer
       "Le Hobbit : La bataille des 5 armées":  4685341,
       "La Famille Bélier":                     3983184
     }
-    
-    /*
-     * Exemple d'utilisation d'un Object en tant que structure.
-     *
-     * Chaque clé est une propriété de la structure.
-     * Plusieurs films structurés selon le même modèle pourront ainsi
-     * être comparés plus facilement ou manipulés ensemble.
-     */
+
+#### Exemple d'utilisation d'un Object en tant que structure
+
+Chaque clé est une propriété de la structure.
+Plusieurs films structurés selon le même modèle pourront ainsi être comparés plus facilement ou manipulés ensemble.
+
     var film = {
       name: "Interstellar",
       director: "Christopher Nolan",
       releaseYear: 2014,
       casting: [ "Matthew McConaughey", "Anne Hathaway", "Michael Caine" ]
     };
-    
-    /*
-     * Exemple d'utilisation d'un Object en tant que module.
-     */
+
+#### Exemple d'utilisation d'un Object en tant que module
+
     var StringInflector = {
       MAX_LENGTH: 255,
       
@@ -460,6 +459,7 @@ Une boucle `for` doit être employée à chaque fois que l'on connait à l'avanc
        * n'a pas atteint la valeur finale
        * `i++` est l'instruction exécutée à la fin de chaque itération pour
        * faire évoluer la valeur du compteur.
+       */
     }
     
     // Cette boucle `for` peut être abrégée en :
@@ -485,8 +485,9 @@ Contrairement à une boucle `for` où cela est déconseillé, les instructions �
 
     var i = 0;
     while (i < 10) {
-      i++;  // Sans incrémentation de `i` à l'intérieur de la boucle la condition
-            // `i < 10` reste toujours vérifiée. La boucle est alors infinie. 
+      i++;  // Sans incrémentation de `i` à l'intérieur de la boucle
+            // la condition `i < 10` reste toujours vérifiée.
+            // La boucle est alors infinie. 
     }
 
 **Exercice :** Sommes
