@@ -50,18 +50,17 @@ _3h_
 _3h_
 
 * Variables
+* Fonctions
 * Types et structures natives
 * Boucles
-* Fonctions
 
-### Évènements
+### Fonctions
 
 _3h_
 
+* Fonctions et paramètres
 * Fonction de callback
-* Gestionnaires d'évènements
-* Timing
-* Animations
+* Contexte d'exécution
 
 ### Programmation objet
 
