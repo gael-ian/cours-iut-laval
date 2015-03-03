@@ -332,7 +332,7 @@ Les valeurs peuvent être de n'importe quel type et toutes n'ont pas obligatoire
 
     var options = {
       container: "#galery",
-      title: "Les compagnes du 10ème Docteur"
+      title: "Les compagnes du 10ème Docteur",
       legends: [ "Rose Tyler", "Martha Jones", "Donna Noble" ],
       maxWidth: 200,
       displayControls: true
