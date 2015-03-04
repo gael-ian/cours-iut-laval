@@ -29,7 +29,8 @@
     }
     
     nim(Math.ceil(Math.random() * 12), function(winner, turns) {
-      alert("Joueur " + winner + " remporte la partie en " + turns + "tour(s).");
+      alert("Joueur " + winner + " remporte la partie en " \
+        + turns + "tour(s).");
     });
 
 
@@ -55,8 +56,12 @@
       return '<a ' + htmlAttributes.join(' ') + '>' + label + '</a>';
     }
     
-    console.log(linkTo("Astronomy Picture of the Day", "http://apod.nasa.gov/apod/",
-      "link-primary", "Daily astronomy picture from professional astronomers", "apod"));
+    console.log(linkTo("Astronomy Picture of the Day",
+                       "http://apod.nasa.gov/apod/",
+                       "link-primary",
+                       "Daily astronomy picture from professional astronomers",
+                       "apod"));
+    
     // '<a href="http://apod.nasa.gov/apod/" class="link-primary" id="apod"
     //     title="Daily astronomy picture from professional astronomers">
     //     Astronomy Picture of the Day</a>';
@@ -88,13 +93,13 @@
     }
     
     console.log(linkTo("La Grande Évasion", "http://www.lagrandeevasion.fr/", {
-      'title': 'la première webradio 100% musique de film',
       'class': 'link-discovery',
       'rel':   'external'
     }));
     
-    // '<a href="http://www.lagrandeevasion.fr/" class="link-discovery"
-    //     title="la première webradio 100% musique de film"
+    // '<a href="http://www.lagrandeevasion.fr/"
+    //     class="link-discovery"
+    //     title="La Grande Évasion"
     //     rel="external">La Grande Évasion</a>';
 
 

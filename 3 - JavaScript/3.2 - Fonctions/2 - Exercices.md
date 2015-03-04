@@ -28,7 +28,8 @@ Les autres boites de dialogue utiliseront la méthode [window.alert](https://dev
     }
     
     nim(Math.ceil(Math.random() * 12), function(winner, turns) {
-      alert("Joueur " + winner + " remporte la partie en " + turns + "tour(s).");
+      alert("Joueur " + winner + " remporte la partie en " \
+        + turns + "tour(s).");
     });
 
 
@@ -45,9 +46,15 @@ Complétez la fonction `linkTo`, qui prend en argument deux paramètres obligato
 
 Ajoutez à cette méthode des paramètres optionnels autorisant à une classe CSS appliquée au lien (par défaut `link-primary`), son `title` (par défaut identique à `label`) et son `id` (sans valeur par défaut).
 
-    console.log(linkTo("Astronomy Picture of the Day", "http://apod.nasa.gov/apod/",
-      "link-primary", "Daily astronomy picture from professional astronomers", "apod"));
-    // '<a href="http://apod.nasa.gov/apod/" class="link-primary" id="apod"
+    console.log(linkTo("Astronomy Picture of the Day",
+                       "http://apod.nasa.gov/apod/",
+                       "link-primary",
+                       "Daily astronomy picture from professional astronomers",
+                       "apod"));
+    
+    // '<a href="http://apod.nasa.gov/apod/"
+    //     class="link-primary"
+    //     id="apod"
     //     title="Daily astronomy picture from professional astronomers">
     //     Astronomy Picture of the Day</a>';
 
@@ -56,11 +63,15 @@ Ajoutez à cette méthode des paramètres optionnels autorisant à une classe CS
 
 Remplacer dans la fonction `linkTo` les trois paramètres optionnels par un unique paramètre `attributes`. Vous ferrez en sorte que les valeurs par défaut mise en place à l'exercice précédent reste valable et que n'importe quel attribut passé dans cette table d'association soit appliqué au lien généré.
 
-    console.log(linkTo("Astronomy Picture of the Day", "http://apod.nasa.gov/apod/",
-      "link-primary", "Daily astronomy picture from professional astronomers", "apod"));
-    // '<a href="http://apod.nasa.gov/apod/" class="link-primary" id="apod"
-    //     title="Daily astronomy picture from professional astronomers">
-    //     Astronomy Picture of the Day</a>';
+    console.log(linkTo("La Grande Évasion", "http://www.lagrandeevasion.fr/", {
+      'class': 'link-discovery',
+      'rel':   'external'
+    }));
+    
+    // '<a href="http://www.lagrandeevasion.fr/"
+    //     class="link-discovery"
+    //     title="La Grande Évasion"
+    //     rel="external">La Grande Évasion</a>';
 
 ## Exercice 4<br />Calcul de moyenne
 

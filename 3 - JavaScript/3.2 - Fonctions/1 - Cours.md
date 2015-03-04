@@ -21,7 +21,7 @@ Ces fonctions passées en paramètres sont appelées des fonctions de rappel.
     // `forEach` exécute la fonction de rappel passée en argument
     // pour chaque entrée du tableau `top3Singles`.
     top3Singles.forEach(function(single, index, top) {
-      console.log("N°" + index + " des singles les plus vendus en France en 2014 : " + single);
+      console.log("N°" + index + " des singles en France en 2014 : " + single);
     });
     
     // La fonction ajoutée au gestionnaire d'évènements de l'élément `body`
@@ -211,7 +211,7 @@ Ces souplesses de l'interpréteur peuvent également être exploitées dans un a
       // 3 paramètres mais nous savons ici que nous n'avons besoin que des deux
       // premiers.
       
-      console.log("N°" + index + " des singles les plus vendus en France en 2014 : " + single);
+      console.log("N°" + index + " des singles en France en 2014 : " + single);
     });
 
     var top3Artists = top3Singles.reduce(function(top, single) {
