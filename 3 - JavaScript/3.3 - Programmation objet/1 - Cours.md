@@ -1,149 +1,14 @@
-# Programmation objet en JavaScript
+# Programmation Orienté Objet
 
 
 ## Sommaire
 
-* Variables
-* Fonctions
-* Prototype & Héritage
+* Définir un objet
+* Héritage
+* Mixins
 
 
-## Variables
-
-### Déclaration
-
-Déclaration d'une variable, 2 méthodes :
-
-* `var name;`
-* `var name = value;`
-* `name = value;`
-
-Une variable dont la valeur n'a pas encore été définie vaut `undefined`.
-Faire appel à une variable non définie lance une exception `ReferenceError`.
-
-### Portée des variables
-
-Différence entre variables globales et variables locales :
-
-* Une variable locale n'existe qu'à l'intérieur de la fonction où elle a été déclarée
-* Une variable globale est accessible partout
-
-Lorsque le mot-clé `var` est omis, la variable est systématiquement déclarée comme globale, sans tenir compte du contexte dans lequelle elle est définie.
-
-`"use strict";` interdit la création "par erreur" d'une variable globale par l'oubli du mot-clé `var`.
-
-
-## Fonctions
-
-    // Création d'une fonction avec la déclaration function
-    add(1, 2);         // return 3
-    
-    function add(a, b) {
-      return a + b;
-    }
-    
-    add(1, 2);         // return 3
-
-Les fonctions déclarées sous la forme `function name() {}` sont accessibles dans l'ensemble du contexte où elles sont déclarées.
-
-    // Création d'une fonction anonyme
-    add(1, 2);         // TypeError : add is not a function
-    
-    var add = function(a, b) {
-      return a + b;
-    };
-    
-    add(1, 2);         // return 3
-
-Les fonctions anonymes sont des fonctions créées au cours de l'exécution du script et ne sont pas accessible avant leur déclaration.
-Il est possible de déclarer une fonction anynome partout où il est possible d'écrire une expression.
-
-    // Création d'une fonction à la fois anonyme et nommée
-    factoriel(3);       // ReferenceError: factoriel is not defined
-    f(3);               // TypeError: f is not a function
-    
-    var f = function factoriel(n) {
-      return (n > 1 ? n * factoriel(n-1) : 1);
-    };
-    
-    factoriel(3);       // ReferenceError: factoriel is not defined
-    f(3);               // return 6
-
-Il est possible de nommer une fonction anonyme. Ceci ajoute la possibilité d'appeler la fonction depuis elle-même.
-
-Utilisations des fonctions anonymes :
-
-* Fonctions à usage unique
-* Création conditionnelle d'une fonction
-* Cloisonnement d'un code en utilisant une fonction anonyme directement appelée
-
-    // Script isolé dans son propre contexte
-    ;(function() {
-    
-      // Tout code écrit ici est exécuté en dehors du contexte global
-      
-    })();
-    
-    
-    // Rendre certains éléments du contexte global utilisables
-    ;(function(dep, w) {
-    
-      // A l'intérieur de cette fonction, l'objet `window` est accessible via `w`
-      // (et `window` puisque c'est une variable globale)
-      
-    })(dependance, window);
-    
-    
-    // Rendre certaines fonctions utilisables dans le contexte global
-    var RMath = (function() {
-    
-      function puissance(n, e) {
-        return (e < 1 ? 1 : (n * puissance(n, e - 1)) );
-      }
-    
-      function factoriel(n) {
-        return (n <= 1 ? 1 : (n * factoriel(n-1)) );
-      }
-      
-      function fibonacci(n) {
-        return (n <= 1 ? n : (fibonacci(n-2) + fibonacci(n-1)) );
-      }
-      
-      return {
-        'factoriel': factoriel,
-        'fibonacci': fibonacci
-      };
-      
-    })();
-    
-    RMath.fibonacci(3);     // Return 
-    RMath.factoriel(3);     // Return 6
-    RMath.puissance(2, 3);  // TypeError: RMath.puissance is not a function
-
-### Valeurs par défaut des paramètres
-
-JavaScript ne prévoit pas de syntaxe pour définir la valeur par défaut des arguments d'une fonction.
-En revanche, il autorise à appeler une fonction avec un nombre d'arguments différents de celui indiqué par sa définition.
-
-Si une fonction est appelée avec un nombre d'arguments inférieur, ceux qui n'auront pas été défini vaudront `undefined`.
-
-    function arrondi(valeur, precision) {
-      var precision = precision || 2;
-      return valeur.toFixed(precision);
-    }
-
-Si une fonction est appelée avec un nombre d'arguments supérieur, ceux qui n'auront pû être assignés à aucun des arguments définis de la fonction seront accessible via l'objet `arguments` (toujours disponible à l'intérieur d'une fonction).
-
-    function applyFunction(functionName /*, args */) {
-      var args = Array.prototype.slice(arguments, 1);
-      return window[functionName].apply(this, args);
-    }
-
-
-## Programmation Orienté Objet
-
-
-### Définir un objet
+## Définir un objet
 
 Un objet JavaScript est défini par :
 
@@ -305,7 +170,7 @@ Ce dernier inconvénient peut être contourné simplement :
     var p = new Person('Bruce', 'Wayne');
 
 
-### Héritage
+## Héritage
 
 En JavaScript, l'héritage n'existe pas plus que les classes. Il est cependant possible de reproduire un comportement identique en utilisant le chainage de prototype. C'est exactement ce que propose de faire `Object.create`.
 
@@ -357,7 +222,7 @@ Plutôt que de réécrire le code du constructeur de l'objet parent dans le cons
     
     var batman = new SuperHero('Batman', 'Bruce', 'Wayne');
 
-### Mixins
+## Mixins
 
 JavaScript ne supporte pas l'héritage multiple. Pour partager des fonctions entre objets qui n'appartiennent pas à la même chaine de prototypes, il est relativement simple d'écrire un système (naïf) de mixins pour étendre horizonalement les objets.
 
