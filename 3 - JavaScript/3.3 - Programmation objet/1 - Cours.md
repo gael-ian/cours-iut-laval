@@ -35,14 +35,17 @@ Ceci peut être écrit de façon plus concise :
     var Person = {
       firstName:   'Bruce',
       lastName:    'Wayne',
-      getFullName: function() { return [this.firstName, this.lastName].join(' '); }
+      getFullName: function() {
+        return [this.firstName, this.lastName].join(' ');
+      }
     };
 
 Introduite par ECMAScript 5.1, une notation plus longue expose un peu plus précisemment le comportement interne du langage :
 
     // Créer un nouvel objet
     var Person = Object.create(Object.prototype);
-    // Il est possible de définir un objet sans prototype avec `var Person = Object.create(null);`
+    // Il est possible de définir un objet sans prototype
+    // avec `var Person = Object.create(null);`
     
     // Ajouter une propriété à cet objet :
     Object.defineProperty(Person, 'firstname', {
@@ -51,10 +54,12 @@ Introduite par ECMAScript 5.1, une notation plus longue expose un peu plus préc
       
       writable:     true,     // Cette propriété doit-elle être modifiable ?
       
-      enumerable:   true,     // Cette propriété doit-elle apparaître lors d'une énumération,
-                              // par exemple dans une boucle `for (property in object) {}`
+      enumerable:   true,     // Cette propriété doit-elle apparaître lors d'une
+                              // énumération, par exemple dans une boucle
+                              // `for (property in object) {}`
       
-      configurable: true      // Le comportement de cette propriété doit-il pouvoir être modifié ?
+      configurable: true      // Le comportement de cette propriété doit-il
+                              // pouvoir être modifié ?
     });
     
     Object.defineProperty(Person, 'lastName', {
@@ -64,11 +69,14 @@ Introduite par ECMAScript 5.1, une notation plus longue expose un peu plus préc
       configurable: true
     });
     
-    // Par défaut, une propriété crée via `O.property = 'value';` sera modifiable, énumérable et reconfigurable
+    // Par défaut, une propriété crée via `O.property = 'value';` sera
+    // modifiable, énumérable et reconfigurable
 
     // Ajouter une "méthode" à cet objet :
     Object.defineProperty(Person, 'getFullName', {
-      value:        function() { return [this.firstName, this.lastName].join(' '); },
+      value:        function() {
+        return [this.firstName, this.lastName].join(' ');
+      },
       writable:     true,
       enumerable:   true,
       configurable: true
@@ -117,7 +125,8 @@ Il est possible d'ajouter des arguments au constructeur comme à n'importe quell
       };
       
       // Un constructeur ne doit **jamais** retourner de valeur.
-      // L'objet créé serait remplacé par la valeur retournée et aurait donc été instancié pour rien.
+      // L'objet créé serait remplacé par la valeur retournée et aurait donc
+      // été instancié pour rien.
     };
     
     var p = new Person('Bruce', 'Wayne');
@@ -235,18 +244,22 @@ JavaScript ne supporte pas l'héritage multiple. Pour partager des fonctions ent
     var hasVehicle = {
       vehicleName:    '',
       drive: function(name) {
-        console.log("Rangez les pousettes, voilà " + this.getFullName() + " au volant de sa " this.vehicleName);
+        console.log("Rangez les pousettes, voilà " + this.getFullName() + \
+          " au volant de sa " this.vehicleName);
       }
     };
     
     var canFly = {
       fly: function() {
-        console.log("C'est un avion ? C'est un oiseau ? Non, c'est " + this.getFullName());
+        console.log("C'est un avion ? C'est un oiseau ? Non, c'est " + \
+          this.getFullName());
       }
     };
     
-    mixin(SuperHero.prototype, hasVehicle); // Tous les super-héros ont un véhicule ?
-    mixin(SuperHero.prototype, canFly);     // Tous les super-héros peuvent voler ?
+    // Tous les super-héros ont un véhicule ?
+    mixin(SuperHero.prototype, hasVehicle);
+    // Tous les super-héros peuvent voler ?
+    mixin(SuperHero.prototype, canFly);
     
     var batman   = new SuperHero('Batman', 'Bruce', 'Wayne');
     var superman = new SuperHero('Superman', 'Clark', 'Kent');
