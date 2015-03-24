@@ -263,15 +263,15 @@ Ces images peuvent être obtenues depuis un élément `img`, `video` ou depuis u
       context.drawImage(this, 100, 100, 200, 200);
       
       // Copie la zone de l'image commencant au point de coordonnées (10, 15)
-      // et mesurant 40x80 pixels vers le canvas, au point de coordonnées (400, 400)
-      // et en forcant ses dimensions à 200x200
+      // et mesurant 40x80 pixels vers le canvas, au point de coordonnées
+      // (400, 400) et en forcant ses dimensions à 200x200
       context.drawImage(this, 10, 15, 40, 80, 400, 400, 200, 200);
       
       
-      // On peut également utiliser l'image pour créer un motif...
+      // On peut également utiliser l'image pour créer un motif…
       var pattern = context.createPattern(this, 'repeat-x');
       
-      // ... et utiliser ce motif comme style de remplissage
+      // … et utiliser ce motif comme style de remplissage
       context.fillStyle = pattern;
       context.fillRect(0, 0, context.canvas.width, context.canvas.height);
       

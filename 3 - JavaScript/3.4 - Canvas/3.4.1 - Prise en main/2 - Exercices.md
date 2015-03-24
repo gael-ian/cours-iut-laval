@@ -7,18 +7,23 @@
     <img src="assets/exercices/armenia.png" alt="République d'Arménie" />
     <figcaption>Drapeau de la République d'Arménie</figcaption>
   </figure>
-  
-  <figure>
-    <img src="assets/exercices/mauritius.png" alt="République de Maurice" />
-    <figcaption>Drapeau de la République de Maurice</figcaption>
-  </figure>
 </div>
 
 Dans un canvas de 960x600 pixels, reproduisez le drapeau de la République d'Arménie.
 
 Modifier votre script pour encadrer le drapeau d'une bordure blanche de 5px d'épaisseur.
 
+<div style="clear: both;"></div>
+<div style="float: right">
+  <figure>
+    <img src="assets/exercices/mauritius.png" alt="République de Maurice" />
+    <figcaption>Drapeau de la République de Maurice</figcaption>
+  </figure>
+</div>
+
 Modifiez votre script pour reproduire le drapeau de la République de Maurice.
+
+<div style="clear: both;"></div>
 
 Modifiez à nouveau votre script pour pouvoir afficher aléatoirement n'importe lequel des drapeaux multicolores à bandes horizontales de même taille au monde au chargement de la page.
 
@@ -49,17 +54,15 @@ Modifiez à nouveau votre script pour pouvoir afficher aléatoirement n'importe 
 
 ## Exercice 2<br />Compositions
 
-<div style="float: right">
-  <figure>
-    <img src="assets/exercices/piet-mondrain--composition.png" alt="République d'Arménie" />
-    <figcaption>
-      Composition II in Red, Blue and Yellow<br />
-      <a href="http://fr.wikipedia.org/wiki/Piet_Mondrian">Piet Mondrain</a>
-    </figcaption>
-  </figure>
-</div>
-
 Dans un canvas de 500x600 pixels, reproduisez le tableau *Composition II in Red, Blue and Yellow* de Piet Mondrain.
+
+<figure>
+  <img src="assets/exercices/piet-mondrain--composition.png" alt="République d'Arménie" />
+  <figcaption>
+    Composition II in Red, Blue and Yellow<br />
+    <a href="http://fr.wikipedia.org/wiki/Piet_Mondrian">Piet Mondrain</a>
+  </figcaption>
+</figure>
 
 Modifier votre script pour définir aléatoirement les dimensions du canvas au chargement de la page. La largeur devra être comprise entre 400 et 600 pixels et la hauteur entre 500 et 700 pixels.
 

@@ -36,10 +36,14 @@ Les fonctions de dessin sont accessibles depuis l'objet représentant le context
     <canvas id="slate"></canvas>
     
     <script type="text/javascript">
-      var slate     = document.getElementById('slate')
-        , context2d = slate.getContext('2d')                                                // Fourni un contexte 2D
-        , context3d = slate.getContext('webgl') || slate.getContext('experimental-webgl')   // Fourni un contexte 3D
-        ;
+      var slate = document.getElementById('slate');
+      
+      // Récupérer un contexte 2D
+      var context2d = slate.getContext('2d');
+      
+      // Récupérer un contexte 3D
+      var context3d = slate.getContext('webgl') || 
+                      slate.getContext('experimental-webgl');
     </script>
 
 Le contexte 2D est spécifié par le W3C [^2D-specification] et largement supporté. WebGL est une implémentation en JavaScript du standard OpenGL ES 2.0 spécifiée par Khronos Group [^webgl-specification] et n'est supportée que par les navigateurs les plus récents.  
@@ -107,12 +111,16 @@ Pour toutes les autres formes, il faudra passer par les méthodes de contruction
 
 On dit souvent que le plus court chemin entre deux points est la ligne droite. C'est vrai également dans l'API de dessin 2D de `<canvas>` où il n'existe pas de méthode pour tracer des lignes. Pour tracer la diagonale de notre canvas par exemple, il sera donc nécessaire de construire le chemin décrivant cette diagonale avant d'en demander le tracé du contour.
 
-    context.beginPath();                        // Démarre un nouveau chemin
-    context.moveTo(0, context.canvas.height);   // Déplace le curseur en bas à gauche du canvas
-    context.lineTo(context.canvas.width, 0);    // Ajoute au chemin une ligne reliant le point courant
-                                                // au coin supérieur droit.
+    // Démarrer un nouveau chemin
+    context.beginPath();
     
-    context.stroke();                           // Trace le contour du chemin
+    // Déplace le curseur en bas à gauche du canvas
+    context.moveTo(0, context.canvas.height);
+    // Ajouter au chemin une ligne reliant le point courant au coin supérieur droit.
+    context.lineTo(context.canvas.width, 0);
+    
+    // Tracer le contour du chemin
+    context.stroke();                           
 
 
 **Exercice 2 :** Compositions
@@ -123,27 +131,27 @@ Les méthodes de constructions de chemins disponibles dans l'API de dessin 2D pe
 
 Un triangle peut ainsi être décrit comme un chemin passant par trois points.
 
-    // Démarre un nouveau chemin
+    // Démarrer un nouveau chemin
     context.beginPath();
     
-    // Déplace le curseur en bas à gauche du canvas
+    // Déplacer le curseur en bas à gauche du canvas
     context.moveTo(0, context.canvas.height);
     
-    // Ajoute au chemin une ligne reliant le point courant
+    // Ajouter au chemin une ligne reliant le point courant
     // au point situé au milieu du bord supérieur
     context.lineTo(context.canvas.width / 2, 0);
     
-    // Ajoute au chemin une ligne reliant le point courant
+    // Ajouter au chemin une ligne reliant le point courant
     // au point situé en bas à droite du canvas
     context.lineTo(context.canvas.width, context.canvas.height);
     
-    // Ferme le chemin en reliant le point courant au point de départ
+    // Fermer le chemin en reliant le point courant au point de départ
     context.closePath();
     
-    // Trace le contour du chemin
+    // Tracer le contour du chemin
     context.stroke();
     
-    // Rempli l'espace délimité par le chemin
+    // Remplir l'espace délimité par le chemin
     // (Ceci est possible car notre chemin est clos)
     context.fill();
 
